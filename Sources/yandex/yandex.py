@@ -1,5 +1,4 @@
 import os
-import secrets
 from yandex_music import Client
 CHART_ID = 'belarus'
 TOKEN = os.environ.get('AQAAAABiu4_vAAgJ512cuW5RwU8HsyJ7W0gZEls')
