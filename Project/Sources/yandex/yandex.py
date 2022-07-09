@@ -23,6 +23,7 @@ def collect_yandex_charts():
             track_text = '👑 ' + track_text
         track_text = f'{chart.position} {track_text}'
         text.append(track_text)
-    print('\n'.join(text))
+    a = '\n'.join(text)
+    return a
 
 collect_yandex_charts()

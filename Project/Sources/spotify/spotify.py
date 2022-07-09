@@ -19,6 +19,6 @@ def collect_spotify_charts():
         artist_name = artist[0]['name']
         track = track_info['name']
         num = num+1
-        print(f"{num}. {artist_name} - {track}")
+        # print(f"{num}. {artist_name} - {track}")
 
 collect_spotify_charts()

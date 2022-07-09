@@ -2,11 +2,10 @@ from flask import Flask, render_template
 from Sources.yandex.yandex import collect_yandex_charts
 from Sources.spotify.spotify import collect_spotify_charts
 app = Flask(__name__)
-# collect_yandex_charts()
-# collect_spotify_charts()
 @app.route('/')
 def index():
-    return render_template('index.html')
+    data = collect_spotify_charts()
+    return render_template('index.html', data=data)
 
 
 @app.route('/filter')
