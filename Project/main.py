@@ -1,10 +1,12 @@
 from flask import Flask, render_template
 from Sources.yandex.yandex import collect_yandex_charts
 from Sources.spotify.spotify import collect_spotify_charts
+import json
 app = Flask(__name__)
 @app.route('/')
 def index():
-    data = collect_spotify_charts()
+    with open(r"D:\pythonProject\Charts\Project\Sources\spotify\spotify_data.json") as json_file:
+        data = json.load(json_file)
     return render_template('index.html', data=data)
 
 
