@@ -7,7 +7,11 @@ app = Flask(__name__)
 def index():
     with open(r"D:\pythonProject\Charts\Project\Sources\spotify\spotify_data.json") as json_file:
         data = json.load(json_file)
-    return render_template('index.html', data=data)
+    with open(r"D:\pythonProject\Charts\Project\Sources\yandex\yandex_data.json") as json_file2:
+        data2 = json.load(json_file2)
+
+    return render_template('index.html', data=data, value=data2)
+
 
 
 @app.route('/filter')
