@@ -8,14 +8,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    artist1 = spotify.find_one({"artist-0": {"$exists": "true"}})['artist-0']
-    song1 = spotify.find_one({"track-0": {"$exists": "true"}})['track-0']
-    artist2 = spotify.find_one({"artist-1": {"$exists": "true"}})['artist-1']
-    song2 = spotify.find_one({"track-1": {"$exists": "true"}})['track-1']
-    artist3 = spotify.find_one({"artist-2": {"$exists": "true"}})['artist-2']
-    song3 = spotify.find_one({"track-2": {"$exists": "true"}})['track-2']
-    artist4 = spotify.find_one({"artist-3": {"$exists": "true"}})['artist-3']
-    song4 = spotify.find_one({"track-3": {"$exists": "true"}})['track-3']
+    spotify1 = spotify.find_one({"song-0": {"$exists": "true"}})['song-0']
+    spotify2 = spotify.find_one({"song-1": {"$exists": "true"}})['song-1']
+    spotify3 = spotify.find_one({"song-2": {"$exists": "true"}})['song-2']
+    spotify4 = spotify.find_one({"song-3": {"$exists": "true"}})['song-3']
+    spotify5 = spotify.find_one({"song-4": {"$exists": "true"}})['song-4']
+    spotify6 = spotify.find_one({"song-5": {"$exists": "true"}})['song-5']
+    spotify7 = spotify.find_one({"song-6": {"$exists": "true"}})['song-6']
+    spotify8 = spotify.find_one({"song-7": {"$exists": "true"}})['song-7']
 
     yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
     yandex2 = yandex.find_one({"song-1": {"$exists": "true"}})['song-1']
@@ -27,7 +27,6 @@ def index():
     yandex8 = yandex.find_one({"song-7": {"$exists": "true"}})['song-7']
     yandex9 = yandex.find_one({"song-8": {"$exists": "true"}})['song-8']
     yandex10 = yandex.find_one({"song-9": {"$exists": "true"}})['song-9']
-
     yandex11 = yandex.find_one({"song-10": {"$exists": "true"}})['song-10']
     yandex12 = yandex.find_one({"song-11": {"$exists": "true"}})['song-11']
     yandex13 = yandex.find_one({"song-12": {"$exists": "true"}})['song-12']
@@ -69,20 +68,21 @@ def index():
     yandex49 = yandex.find_one({"song-48": {"$exists": "true"}})['song-48']
     yandex50 = yandex.find_one({"song-49": {"$exists": "true"}})['song-49']
 
-    return render_template('index.html', data1=f"{artist1} - {song1}", data2=f"{artist2} - {song2}",
-                           data3=f"{artist3} - {song3}", data4=f"{artist4} - {song4}", yandex1 = yandex1,
-                           yandex2 = yandex2, yandex3 = yandex3, yandex4 = yandex4, yandex5 = yandex5, yandex6 = yandex6
-                           , yandex7 = yandex7, yandex8 = yandex8, yandex9 = yandex9, yandex10 = yandex10
-                           , yandex11 = yandex11, yandex12 = yandex12, yandex13 = yandex13, yandex14 = yandex14
-                           , yandex15 = yandex15, yandex16 = yandex16, yandex17 = yandex17, yandex18 = yandex18
-                           , yandex19 = yandex19, yandex20 = yandex20, yandex21 = yandex21, yandex22 = yandex22
-                           , yandex23 = yandex23, yandex24 = yandex24, yandex25 = yandex25, yandex26 = yandex26
-                           , yandex27 = yandex27, yandex28 = yandex28, yandex29 = yandex29, yandex30 = yandex30
-                           , yandex31 = yandex31, yandex32 = yandex32, yandex33 = yandex33, yandex34 = yandex34
-                           , yandex35 = yandex35, yandex36 = yandex36, yandex37 = yandex37, yandex38 = yandex38
-                           , yandex39 = yandex39, yandex40 = yandex40, yandex41 = yandex41, yandex42 = yandex42
-                           , yandex43 = yandex43, yandex44 = yandex44, yandex45 = yandex45, yandex46 = yandex46
-                           , yandex47 = yandex47, yandex48 = yandex48, yandex49 = yandex49, yandex50 = yandex50)
+    return render_template('index.html', spotify1=spotify1, spotify2=spotify2, spotify3=spotify3, spotify4=spotify4,
+                           spotify5=spotify5, spotify6=spotify6, spotify7=spotify7, spotify8=spotify8,
+                           yandex1 = yandex1, yandex2 = yandex2, yandex3 = yandex3, yandex4 = yandex4,
+                           yandex5 = yandex5, yandex6 = yandex6, yandex7 = yandex7, yandex8 = yandex8,
+                           yandex9 = yandex9, yandex10 = yandex10, yandex11 = yandex11, yandex12 = yandex12,
+                           yandex13 = yandex13, yandex14 = yandex14, yandex15 = yandex15, yandex16 = yandex16,
+                           yandex17 = yandex17, yandex18 = yandex18, yandex19 = yandex19, yandex20 = yandex20,
+                           yandex21 = yandex21, yandex22 = yandex22, yandex23 = yandex23, yandex24 = yandex24,
+                           yandex25 = yandex25, yandex26 = yandex26, yandex27 = yandex27, yandex28 = yandex28,
+                           yandex29 = yandex29, yandex30 = yandex30, yandex31 = yandex31, yandex32 = yandex32,
+                           yandex33 = yandex33, yandex34 = yandex34, yandex35 = yandex35, yandex36 = yandex36,
+                           yandex37 = yandex37, yandex38 = yandex38, yandex39 = yandex39, yandex40 = yandex40,
+                           yandex41 = yandex41, yandex42 = yandex42, yandex43 = yandex43, yandex44 = yandex44,
+                           yandex45 = yandex45, yandex46 = yandex46, yandex47 = yandex47, yandex48 = yandex48,
+                           yandex49 = yandex49, yandex50 = yandex50)
 
 
 @app.route('/filter')
