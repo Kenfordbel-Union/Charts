@@ -8,7 +8,7 @@ secret = 'ba6756bbc94249f58737f36628451743'
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
 mycollection = mydb["spotify"]
-
+#ДОБАВИТЬ ИНТЕРВАЛ, КАЖДЫЕ СУТКИ
 def collect_spotify_charts():
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
 
@@ -29,7 +29,4 @@ def collect_spotify_charts():
         track_name_for_db = {f"track-{num2}":track}
         num2 = num2+1
         db_insert_track = mycollection.insert_one(track_name_for_db)
-    x = mycollection.find()
-    for data2 in x:
-        print(data2)
 collect_spotify_charts()

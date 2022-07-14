@@ -7,7 +7,7 @@ TOKEN = os.environ.get('AQAAAABiu4_vAAgJ512cuW5RwU8HsyJ7W0gZEls')
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
 mycollection = mydb["yandex"]
-
+#ДОБАВИТЬ ИНТЕРВАЛ, КАЖДЫЕ СУТКИ
 def collect_yandex_charts():
     num = 0
     client = Client(TOKEN).init()
