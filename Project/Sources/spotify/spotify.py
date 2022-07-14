@@ -14,7 +14,7 @@ def collect_spotify_charts():
 
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     playlist_id = "37i9dQZEVXbLRLeF2cVSaP"
-    data = sp.playlist_tracks(playlist_id, fields=None, limit=100, offset=0, market=None, additional_types=('track', ))
+    data = sp.playlist_items(playlist_id, fields=None, limit=100, offset=0, market=None, additional_types=('track', ))
     data = data['items']
     num = 0
     num2 = 0
@@ -22,11 +22,8 @@ def collect_spotify_charts():
         track_info = each['track']
         artist = track_info['artists']
         artist_name = artist[0]['name']
-        artist_name_for_db = {f"artist-{num}":artist_name}
-        num = num+1
-        db_insert_artist = mycollection.insert_one(artist_name_for_db)
         track = track_info['name']
-        track_name_for_db = {f"track-{num2}":track}
-        num2 = num2+1
-        db_insert_track = mycollection.insert_one(track_name_for_db)
+        song_for_db = {f"song-{num}":f"{track} - {artist_name}"}
+        db_insert_songs = mycollection.insert_one(song_for_db)
+        num = num+1
 collect_spotify_charts()
