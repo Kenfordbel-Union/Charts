@@ -2,6 +2,7 @@
     max-width: 1600px;
     margin: 0 auto;
     padding: 15px;
+    background-color: rgba(255, 255, 128, .5);
 }
 .container .grid_list{
     border: 1px solid #cccccc;
@@ -9,6 +10,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 15px;
+    background-color: rgb(255, 255, 128);
 }
 .container .grid_list .item{
     border: 1px solid #cccccc;
@@ -16,6 +18,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px;
+    background-color: rgb(255, 255, 70);
 }
 .container .grid_list .item .field{
     display: block;
