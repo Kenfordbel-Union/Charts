@@ -1,6 +1,4 @@
 import pymongo
-import time
-import schedule
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
 spotify = mydb["spotify"]

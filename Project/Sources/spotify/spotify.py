@@ -1,6 +1,5 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-import json
 import pymongo
 cid = 'dbf0dc8d604c4c609128508a05aaf09e'
 secret = 'ba6756bbc94249f58737f36628451743'
