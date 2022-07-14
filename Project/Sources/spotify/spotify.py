@@ -6,8 +6,8 @@ cid = 'dbf0dc8d604c4c609128508a05aaf09e'
 secret = 'ba6756bbc94249f58737f36628451743'
 
 mongo = pymongo.MongoClient()
-# mydb = mongo["spotify"]
-# mycollection = mydb["songs"]
+mydb = mongo["charts"]
+mycollection = mydb["spotify"]
 
 def collect_spotify_charts():
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
@@ -16,21 +16,20 @@ def collect_spotify_charts():
     playlist_id = "37i9dQZEVXbLRLeF2cVSaP"
     data = sp.playlist_tracks(playlist_id, fields=None, limit=100, offset=0, market=None, additional_types=('track', ))
     data = data['items']
-    text_data = ""
     num = 0
-    list_of_songs = {}
+    num2 = 0
     for each in data:
         track_info = each['track']
         artist = track_info['artists']
         artist_name = artist[0]['name']
-        track = track_info['name']
-        list_of_songs[artist_name] = track
+        artist_name_for_db = {f"artist-{num}":artist_name}
         num = num+1
-    for i in list_of_songs:
-        text_data += str(f"{i} - {list_of_songs[i]}\n")
-        print(f"{i} - {list_of_songs[i]}")
-    with open("spotify_data.json", "w") as outfile:
-        a = json.dump(list_of_songs, outfile)
-    with open("spotify_data_str.txt", "w", encoding='utf-8') as texting:
-        b = texting.write(text_data)
+        db_insert_artist = mycollection.insert_one(artist_name_for_db)
+        track = track_info['name']
+        track_name_for_db = {f"track-{num2}":track}
+        num2 = num2+1
+        db_insert_track = mycollection.insert_one(track_name_for_db)
+    x = mycollection.find()
+    for data2 in x:
+        print(data2)
 collect_spotify_charts()
