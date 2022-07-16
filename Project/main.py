@@ -3,7 +3,11 @@ import pymongo
 import os
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
+
 spotify = mydb["spotify"]
+spotify_pic_db = mongo["pictures"]
+spoti_pic_col = spotify_pic_db['spotify']
+
 yandex = mydb["yandex"]
 app = Flask(__name__)
 
@@ -61,6 +65,57 @@ def index():
     spotify48 = spotify.find_one({"song-47": {"$exists": "true"}})['song-47']
     spotify49 = spotify.find_one({"song-48": {"$exists": "true"}})['song-48']
     spotify50 = spotify.find_one({"song-49": {"$exists": "true"}})['song-49']
+
+    spotify_pic1 = spoti_pic_col.find_one({"logo-0": {"$exists": "true"}})['logo-0']
+    spotify_pic2 = spoti_pic_col.find_one({"logo-1": {"$exists": "true"}})['logo-1']
+    spotify_pic3 = spoti_pic_col.find_one({"logo-2": {"$exists": "true"}})['logo-2']
+    spotify_pic4 = spoti_pic_col.find_one({"logo-3": {"$exists": "true"}})['logo-3']
+    spotify_pic5 = spoti_pic_col.find_one({"logo-4": {"$exists": "true"}})['logo-4']
+    spotify_pic6 = spoti_pic_col.find_one({"logo-5": {"$exists": "true"}})['logo-5']
+    spotify_pic7 = spoti_pic_col.find_one({"logo-6": {"$exists": "true"}})['logo-6']
+    spotify_pic8 = spoti_pic_col.find_one({"logo-7": {"$exists": "true"}})['logo-7']
+    spotify_pic9 = spoti_pic_col.find_one({"logo-8": {"$exists": "true"}})['logo-8']
+    spotify_pic10 = spoti_pic_col.find_one({"logo-9": {"$exists": "true"}})['logo-9']
+    spotify_pic11 = spoti_pic_col.find_one({"logo-10": {"$exists": "true"}})['logo-10']
+    spotify_pic12 = spoti_pic_col.find_one({"logo-11": {"$exists": "true"}})['logo-11']
+    spotify_pic13 = spoti_pic_col.find_one({"logo-12": {"$exists": "true"}})['logo-12']
+    spotify_pic14 = spoti_pic_col.find_one({"logo-13": {"$exists": "true"}})['logo-13']
+    spotify_pic15 = spoti_pic_col.find_one({"logo-14": {"$exists": "true"}})['logo-14']
+    spotify_pic16 = spoti_pic_col.find_one({"logo-15": {"$exists": "true"}})['logo-15']
+    spotify_pic17 = spoti_pic_col.find_one({"logo-16": {"$exists": "true"}})['logo-16']
+    spotify_pic18 = spoti_pic_col.find_one({"logo-17": {"$exists": "true"}})['logo-17']
+    spotify_pic19 = spoti_pic_col.find_one({"logo-18": {"$exists": "true"}})['logo-18']
+    spotify_pic20 = spoti_pic_col.find_one({"logo-19": {"$exists": "true"}})['logo-19']
+    spotify_pic21 = spoti_pic_col.find_one({"logo-20": {"$exists": "true"}})['logo-20']
+    spotify_pic22 = spoti_pic_col.find_one({"logo-21": {"$exists": "true"}})['logo-21']
+    spotify_pic23 = spoti_pic_col.find_one({"logo-22": {"$exists": "true"}})['logo-22']
+    spotify_pic24 = spoti_pic_col.find_one({"logo-23": {"$exists": "true"}})['logo-23']
+    spotify_pic25 = spoti_pic_col.find_one({"logo-24": {"$exists": "true"}})['logo-24']
+    spotify_pic26 = spoti_pic_col.find_one({"logo-25": {"$exists": "true"}})['logo-25']
+    spotify_pic27 = spoti_pic_col.find_one({"logo-26": {"$exists": "true"}})['logo-26']
+    spotify_pic28 = spoti_pic_col.find_one({"logo-27": {"$exists": "true"}})['logo-27']
+    spotify_pic29 = spoti_pic_col.find_one({"logo-28": {"$exists": "true"}})['logo-28']
+    spotify_pic30 = spoti_pic_col.find_one({"logo-29": {"$exists": "true"}})['logo-29']
+    spotify_pic31 = spoti_pic_col.find_one({"logo-30": {"$exists": "true"}})['logo-30']
+    spotify_pic32 = spoti_pic_col.find_one({"logo-31": {"$exists": "true"}})['logo-31']
+    spotify_pic33 = spoti_pic_col.find_one({"logo-32": {"$exists": "true"}})['logo-32']
+    spotify_pic34 = spoti_pic_col.find_one({"logo-33": {"$exists": "true"}})['logo-33']
+    spotify_pic35 = spoti_pic_col.find_one({"logo-34": {"$exists": "true"}})['logo-34']
+    spotify_pic36 = spoti_pic_col.find_one({"logo-35": {"$exists": "true"}})['logo-35']
+    spotify_pic37 = spoti_pic_col.find_one({"logo-36": {"$exists": "true"}})['logo-36']
+    spotify_pic38 = spoti_pic_col.find_one({"logo-37": {"$exists": "true"}})['logo-37']
+    spotify_pic39 = spoti_pic_col.find_one({"logo-38": {"$exists": "true"}})['logo-38']
+    spotify_pic40 = spoti_pic_col.find_one({"logo-39": {"$exists": "true"}})['logo-39']
+    spotify_pic41 = spoti_pic_col.find_one({"logo-40": {"$exists": "true"}})['logo-40']
+    spotify_pic42 = spoti_pic_col.find_one({"logo-41": {"$exists": "true"}})['logo-41']
+    spotify_pic43 = spoti_pic_col.find_one({"logo-42": {"$exists": "true"}})['logo-42']
+    spotify_pic44 = spoti_pic_col.find_one({"logo-43": {"$exists": "true"}})['logo-43']
+    spotify_pic45 = spoti_pic_col.find_one({"logo-44": {"$exists": "true"}})['logo-44']
+    spotify_pic46 = spoti_pic_col.find_one({"logo-45": {"$exists": "true"}})['logo-45']
+    spotify_pic47 = spoti_pic_col.find_one({"logo-46": {"$exists": "true"}})['logo-46']
+    spotify_pic48 = spoti_pic_col.find_one({"logo-47": {"$exists": "true"}})['logo-47']
+    spotify_pic49 = spoti_pic_col.find_one({"logo-48": {"$exists": "true"}})['logo-48']
+    spotify_pic50 = spoti_pic_col.find_one({"logo-49": {"$exists": "true"}})['logo-49']
 
     yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
     yandex2 = yandex.find_one({"song-1": {"$exists": "true"}})['song-1']
@@ -125,7 +180,25 @@ def index():
                            spotify37=spotify37, spotify38=spotify38, spotify39=spotify39, spotify40=spotify40,
                            spotify41=spotify41, spotify42=spotify42, spotify43=spotify43, spotify44=spotify44,
                            spotify45=spotify45, spotify46=spotify46, spotify47=spotify47, spotify48=spotify48,
-                           spotify49=spotify49, spotify50=spotify50,
+                           spotify49=spotify49, spotify50=spotify50, spotify_pic1=spotify_pic1,
+                           spotify_pic2=spotify_pic2, spotify_pic3=spotify_pic3, spotify_pic4=spotify_pic4,
+                           spotify_pic5=spotify_pic5, spotify_pic6=spotify_pic6, spotify_pic7=spotify_pic7,
+                           spotify_pic8=spotify_pic8, spotify_pic9=spotify_pic9, spotify_pic10=spotify_pic10,
+                           spotify_pic11=spotify_pic11, spotify_pic12=spotify_pic12,spotify_pic13=spotify_pic13,
+                           spotify_pic14=spotify_pic14, spotify_pic15=spotify_pic15, spotify_pic16=spotify_pic16,
+                           spotify_pic17=spotify_pic17, spotify_pic18=spotify_pic18, spotify_pic19=spotify_pic19,
+                           spotify_pic20=spotify_pic20, spotify_pic21=spotify_pic21, spotify_pic22=spotify_pic22,
+                           spotify_pic23=spotify_pic23, spotify_pic24=spotify_pic24, spotify_pic25=spotify_pic25,
+                           spotify_pic26=spotify_pic26, spotify_pic27=spotify_pic27, spotify_pic28=spotify_pic28,
+                           spotify_pic29=spotify_pic29, spotify_pic30=spotify_pic30, spotify_pic31=spotify_pic31,
+                           spotify_pic32=spotify_pic32, spotify_pic33=spotify_pic33, spotify_pic34=spotify_pic34,
+                           spotify_pic35=spotify_pic35, spotify_pic36=spotify_pic36, spotify_pic37=spotify_pic37,
+                           spotify_pic38=spotify_pic38, spotify_pic39=spotify_pic39, spotify_pic40=spotify_pic40,
+                           spotify_pic41=spotify_pic41, spotify_pic42=spotify_pic42, spotify_pic43=spotify_pic43,
+                           spotify_pic44=spotify_pic44, spotify_pic45=spotify_pic45, spotify_pic46=spotify_pic46,
+                           spotify_pic47=spotify_pic47, spotify_pic48=spotify_pic48, spotify_pic49=spotify_pic49,
+                           spotify_pic50=spotify_pic50,
+
                            yandex1 = yandex1, yandex2 = yandex2, yandex3 = yandex3, yandex4 = yandex4,
                            yandex5 = yandex5, yandex6 = yandex6, yandex7 = yandex7, yandex8 = yandex8,
                            yandex9 = yandex9, yandex10 = yandex10, yandex11 = yandex11, yandex12 = yandex12,
