@@ -5,8 +5,13 @@ cid = 'dbf0dc8d604c4c609128508a05aaf09e'
 secret = 'ba6756bbc94249f58737f36628451743'
 
 mongo = pymongo.MongoClient()
-mydb = mongo["charts"]
-mycollection = mydb["spotify"]
+
+charts_db = mongo["charts"]
+songs_col = charts_db["spotify"]
+
+pictures_db = mongo["pictures"]
+pic_col = pictures_db["spotify"]
+
 #ДОБАВИТЬ ИНТЕРВАЛ, КАЖДЫЕ СУТКИ
 def collect_spotify_charts():
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
@@ -18,12 +23,20 @@ def collect_spotify_charts():
     data = data['items']
     num = 0
     num2 = 0
-    for each in data:
-        track_info = each['track']
+    for song in data:
+        track_info = song['track']
+        img = track_info['album']
+        images = img['images']
+        small_logo = images[1]
+        finally_logo = small_logo['url']
+        print(finally_logo)
         artist = track_info['artists']
         artist_name = artist[0]['name']
         track = track_info['name']
         song_for_db = {f"song-{num}":f"{track} - {artist_name}"}
-        db_insert_songs = mycollection.insert_one(song_for_db)
+        logo_for_db = {f"logo-{num}":str(finally_logo)}
+        db_insert_picture = pic_col.insert_one(logo_for_db)
+        db_insert_songs = songs_col.insert_one(song_for_db)
+
         num = num+1
 collect_spotify_charts()
