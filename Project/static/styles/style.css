@@ -2,6 +2,17 @@
     margin: 0;
     padding: 0;
 }
+::-webkit-scrollbar{
+    width: 15px;
+    display: none;
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 8px;
+}
 .container{
     top: 0;
     left: 0;
@@ -26,19 +37,29 @@
     width: auto;
 }
 .container .normal_size .grid_list .spotify{
+    width: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: 712px;
     width: 250px;
     border: solid;
+    border-color: green;
     border-radius: 50px;
     box-sizing: border-box;
-
-
-
-
+    overflow-y: auto;
 }
+.container .normal_size .grid_list .spotify li{
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+.container .normal_size .grid_list .spotify a:hover{
+    background-color: #ccc;
+}
+
 .container .normal_size .grid_list .spotify .field{
     display: block;
     margin-bottom: 15px;
