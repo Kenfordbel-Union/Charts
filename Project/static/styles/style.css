@@ -2,16 +2,10 @@
     margin: 0;
     padding: 0;
 }
+
 ::-webkit-scrollbar{
     width: 15px;
     display: none;
-}
-::-webkit-scrollbar-track{
-    background: transparent;
-}
-::-webkit-scrollbar-thumb{
-    background: white;
-    border-radius: 8px;
 }
 .container{
     top: 0;
@@ -23,7 +17,7 @@
 }
 .container .normal_size{
     width: 1600px;
-    height: 100%;
+    height: 1400px;
     margin: auto;
 }
 
@@ -50,6 +44,70 @@
     overflow-y: auto;
 }
 .container .normal_size .grid_list .spotify li{
+    background-color: linear-gradient(180deg, #EAAFCB 37.5%, #9DBAE6 100%);
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    border: solid;
+    border-color: green;
+    border-width:1px 0px;
+    font-size: large;
+}
+.container .normal_size .grid_list .yandex{
+    width: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 712px;
+    width: 250px;
+    border: solid;
+    border-color: yellow;
+    border-radius: 50px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.container .normal_size .grid_list .yandex li{
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+.container .normal_size .grid_list .apple{
+    width: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 712px;
+    width: 250px;
+    border: solid;
+    border-color: blue;
+    border-radius: 50px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.container .normal_size .grid_list .apple li{
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+.container .normal_size .grid_list .yt{
+    width: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 712px;
+    width: 250px;
+    border: solid;
+    border-color: red;
+    border-radius: 50px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.container .normal_size .grid_list .yt li{
     background-color: #eee;
     color: black;
     display: block;

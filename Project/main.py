@@ -19,6 +19,48 @@ def index():
     spotify6 = spotify.find_one({"song-5": {"$exists": "true"}})['song-5']
     spotify7 = spotify.find_one({"song-6": {"$exists": "true"}})['song-6']
     spotify8 = spotify.find_one({"song-7": {"$exists": "true"}})['song-7']
+    spotify9 = spotify.find_one({"song-8": {"$exists": "true"}})['song-8']
+    spotify10 = spotify.find_one({"song-9": {"$exists": "true"}})['song-9']
+    spotify11 = spotify.find_one({"song-10": {"$exists": "true"}})['song-10']
+    spotify12 = spotify.find_one({"song-11": {"$exists": "true"}})['song-11']
+    spotify13 = spotify.find_one({"song-12": {"$exists": "true"}})['song-12']
+    spotify14 = spotify.find_one({"song-13": {"$exists": "true"}})['song-13']
+    spotify15 = spotify.find_one({"song-14": {"$exists": "true"}})['song-14']
+    spotify16 = spotify.find_one({"song-15": {"$exists": "true"}})['song-15']
+    spotify17 = spotify.find_one({"song-16": {"$exists": "true"}})['song-16']
+    spotify18 = spotify.find_one({"song-17": {"$exists": "true"}})['song-17']
+    spotify19 = spotify.find_one({"song-18": {"$exists": "true"}})['song-18']
+    spotify20 = spotify.find_one({"song-19": {"$exists": "true"}})['song-19']
+    spotify21 = spotify.find_one({"song-20": {"$exists": "true"}})['song-20']
+    spotify22 = spotify.find_one({"song-21": {"$exists": "true"}})['song-21']
+    spotify23 = spotify.find_one({"song-22": {"$exists": "true"}})['song-22']
+    spotify24 = spotify.find_one({"song-23": {"$exists": "true"}})['song-23']
+    spotify25 = spotify.find_one({"song-24": {"$exists": "true"}})['song-24']
+    spotify26 = spotify.find_one({"song-25": {"$exists": "true"}})['song-25']
+    spotify27 = spotify.find_one({"song-26": {"$exists": "true"}})['song-26']
+    spotify28 = spotify.find_one({"song-27": {"$exists": "true"}})['song-27']
+    spotify29 = spotify.find_one({"song-28": {"$exists": "true"}})['song-28']
+    spotify30 = spotify.find_one({"song-29": {"$exists": "true"}})['song-29']
+    spotify31 = spotify.find_one({"song-30": {"$exists": "true"}})['song-30']
+    spotify32 = spotify.find_one({"song-31": {"$exists": "true"}})['song-31']
+    spotify33 = spotify.find_one({"song-32": {"$exists": "true"}})['song-32']
+    spotify34 = spotify.find_one({"song-33": {"$exists": "true"}})['song-33']
+    spotify35 = spotify.find_one({"song-34": {"$exists": "true"}})['song-34']
+    spotify36 = spotify.find_one({"song-35": {"$exists": "true"}})['song-35']
+    spotify37 = spotify.find_one({"song-36": {"$exists": "true"}})['song-36']
+    spotify38 = spotify.find_one({"song-37": {"$exists": "true"}})['song-37']
+    spotify39 = spotify.find_one({"song-38": {"$exists": "true"}})['song-38']
+    spotify40 = spotify.find_one({"song-39": {"$exists": "true"}})['song-39']
+    spotify41 = spotify.find_one({"song-40": {"$exists": "true"}})['song-40']
+    spotify42 = spotify.find_one({"song-41": {"$exists": "true"}})['song-41']
+    spotify43 = spotify.find_one({"song-42": {"$exists": "true"}})['song-42']
+    spotify44 = spotify.find_one({"song-43": {"$exists": "true"}})['song-43']
+    spotify45 = spotify.find_one({"song-44": {"$exists": "true"}})['song-44']
+    spotify46 = spotify.find_one({"song-45": {"$exists": "true"}})['song-45']
+    spotify47 = spotify.find_one({"song-46": {"$exists": "true"}})['song-46']
+    spotify48 = spotify.find_one({"song-47": {"$exists": "true"}})['song-47']
+    spotify49 = spotify.find_one({"song-48": {"$exists": "true"}})['song-48']
+    spotify50 = spotify.find_one({"song-49": {"$exists": "true"}})['song-49']
 
     yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
     yandex2 = yandex.find_one({"song-1": {"$exists": "true"}})['song-1']
@@ -73,6 +115,17 @@ def index():
 
     return render_template('index.html', logo=logo, spotify1=spotify1, spotify2=spotify2, spotify3=spotify3, spotify4=spotify4,
                            spotify5=spotify5, spotify6=spotify6, spotify7=spotify7, spotify8=spotify8,
+                           spotify9=spotify9, spotify10=spotify10, spotify11=spotify11, spotify12=spotify12,
+                           spotify13=spotify13, spotify14=spotify14, spotify15=spotify15, spotify16=spotify16,
+                           spotify17=spotify17, spotify18=spotify18, spotify19=spotify19, spotify20=spotify20,
+                           spotify21=spotify21, spotify22=spotify22, spotify23=spotify23, spotify24=spotify24,
+                           spotify25=spotify25, spotify26=spotify26, spotify27=spotify27, spotify28=spotify28,
+                           spotify29=spotify29, spotify30=spotify30, spotify31=spotify31, spotify32=spotify32,
+                           spotify33=spotify33, spotify34=spotify34, spotify35=spotify35, spotify36=spotify36,
+                           spotify37=spotify37, spotify38=spotify38, spotify39=spotify39, spotify40=spotify40,
+                           spotify41=spotify41, spotify42=spotify42, spotify43=spotify43, spotify44=spotify44,
+                           spotify45=spotify45, spotify46=spotify46, spotify47=spotify47, spotify48=spotify48,
+                           spotify49=spotify49, spotify50=spotify50,
                            yandex1 = yandex1, yandex2 = yandex2, yandex3 = yandex3, yandex4 = yandex4,
                            yandex5 = yandex5, yandex6 = yandex6, yandex7 = yandex7, yandex8 = yandex8,
                            yandex9 = yandex9, yandex10 = yandex10, yandex11 = yandex11, yandex12 = yandex12,
