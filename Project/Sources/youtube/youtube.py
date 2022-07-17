@@ -44,31 +44,3 @@ for track in pesni:
     num = num + 1
 
 
-
-
-
-
-
-
-
-    # title = items[0]['title']
-    # is_artist = items[0]['artists']
-    # try:
-    #     artists = is_artist[0]["name"]
-    #     artists2 = is_artist[1]["name"]
-    #     print(artists, artists2)
-    # except:
-    #     print("lose")
-    # break
-
-
-    #
-    # def check_artists():
-    #     for every in is_artist:
-    #         artist = every['name']
-    #         print(artist)
-    #         return artist
-    # print(f"{artist} - {title}")
-    #
-    # break
-
