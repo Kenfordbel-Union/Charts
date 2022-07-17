@@ -10,7 +10,7 @@ mydb = mongo["charts"]
 spotify = mydb["spotify"]
 yandex = mydb["yandex"]
 youtube = mydb["youtube"]
-
+uri = os.environ["MONGODB_URI"]
 os.startfile(r'D:\pythonProject\Charts\Project\Sources\youtube\youtube.py')
 sp.collect_spotify_charts()
 ya.collect_yandex_charts()
