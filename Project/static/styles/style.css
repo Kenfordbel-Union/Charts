@@ -1,6 +1,10 @@
 .html, body {
     margin: 0;
     padding: 0;
+    background: linear-gradient(180deg, #EAAFCB 0%, #9DBAE6 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 @font-face {
     font-family: 'GFS Neohellenic1';
@@ -15,50 +19,59 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, #EAAFCB 37.5%, #9DBAE6 100%);
-    background-size: cover;
+    background-image: url('background.png');
+    background-size: 100%;
+
 }
 .container .normal_size{
-    width: 100%;
-    height: auto;
-    margin: auto;
+    width: 1600px;
+    height: 1480px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .container .normal_size .grid_list{
     display: grid;
     position: relative;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 13px;
-    width: 1200px;
+    grid-column-gap: 7px;
     height: auto;
-    margin: auto;
+    width: 100%;
+    padding-top: 0px;
 }
 .container .normal_size .grid_list .list{
-    width: 10px;
-    height: 610px;
-    width: 284px;
-    max-width: 100%;
-    border-radius: 50px;
-
-    border-width: 0px 5px 5px 5px;
+    height: 818px;
+    width: 95%;
+    border-radius: 60px;
+    border-width: 0px 7px 7px 7px;
     border-style: solid;
     border-color: #FFFFFF;
 }
+
+.container .normal_size .grid_list .list .bottom_logo{
+    height: 90px;
+    width: 222px;
+    position: relative;
+    top: 570px;
+    left: 75px;
+}
+
 .container .normal_size .grid_list .list .main_zone{
+    width: 100%;
     box-sizing: border-box;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 31px;
-    margin-bottom: 105px;
-    max-height: 400px;
+    margin-top: -80px;
+    max-height: 522px;
 }
 .container .normal_size .grid_list .list .main_zone .inside{
     background-color: linear-gradient(180deg, #EAAFCB 37.5%, #9DBAE6 100%);
     display: flex;
-    height: 70px;
-    width: 260px;
+    width: 93%;
+    height: 80px;
     background: #FFFFFF;
     border-radius: 10px;
     font-size: large;
@@ -69,34 +82,36 @@
     position: relative;
 }
 .container .normal_size .grid_list .list .main_zone .inside .pictures {
-    max-height: 64px;
-    max-width: 64px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 3px;
+    max-height: 70px;
+    max-width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
     border-radius: 10px;
 }
 .container .normal_size .grid_list .list .main_zone .inside .song_name{
     position: relative;
-    margin-left: 5px;
-    margin-top: 8px;
+    margin-left: 8px;
+    margin-top: 10px;
     width: 100%;
-    height: 24px;
+    height: 40px;
     overflow: hidden;
     padding-bottom: 5px;
+    font-size: larger;
 } 
 .container .normal_size .grid_list .list .main_zone .inside .waves{
     position: absolute;
-    bottom: 3px;
-    right: 7px;
+    bottom: 2px;
+    right: 5px;
+    width: 250px;
+    height: 40px;
   }
 .img {
-    max-width: 1600px;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%;
+    width: 100%;
 }
 .marquee {
     width: 100%;
@@ -121,12 +136,41 @@
     transform: translateX(calc(-450px + 100%));
   }
   .svg_logo{
-    width: 100px;
-    height: 100px;
-    margin-left: 95px;
-    margin-top: -26px;
+    width: 130px;
+    height: 130px;
+    margin-left: 120px;
+    margin-top: -35px;
+    padding-bottom: 30px;
   }
+  .shadow{
+    position: relative;
+    width: 120px;
+    height: 35px;
+    bottom: 30px;
+    right: 86px;
 
+  }
+  .play_background{
+    background: #201f1f4d;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 22px;
+    top: 22px;
+    border-radius: 20px;
+  }
+  .play_background .play_arrow{
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    left: 14px;
+    top: 14px;
+  }
+  /* .button_play{
+    width: 30px;
+    height: 35px;
+    flex: auto;
+  } */
 
 
 
