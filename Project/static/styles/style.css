@@ -28,7 +28,6 @@
     height: 1480px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .container .normal_size .grid_list{
@@ -42,7 +41,7 @@
 }
 .container .normal_size .grid_list .list{
     height: 818px;
-    width: 95%;
+    width: 97%;
     border-radius: 60px;
     border-width: 0px 7px 7px 7px;
     border-style: solid;
@@ -53,7 +52,7 @@
     height: 90px;
     width: 222px;
     position: relative;
-    top: 570px;
+    top: 530px;
     left: 75px;
 }
 
@@ -64,7 +63,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: -80px;
+    margin-top: -110px;
     max-height: 522px;
 }
 .container .normal_size .grid_list .list .main_zone .inside{
@@ -80,10 +79,11 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    min-height: 80px;
 }
 .container .normal_size .grid_list .list .main_zone .inside .pictures {
-    max-height: 70px;
-    max-width: 70px;
+    height: 70px;
+    width: 70px;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
@@ -136,11 +136,11 @@
     transform: translateX(calc(-450px + 100%));
   }
   .svg_logo{
-    width: 130px;
-    height: 130px;
-    margin-left: 120px;
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
     margin-top: -35px;
-    padding-bottom: 30px;
+
   }
   .shadow{
     position: relative;
