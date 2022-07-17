@@ -9,8 +9,6 @@ mongo = pymongo.MongoClient()
 charts_db = mongo["charts"]
 songs_col = charts_db["spotify"]
 
-pictures_db = mongo["pictures"]
-pic_col = pictures_db["spotify"]
 
 #ДОБАВИТЬ ИНТЕРВАЛ, КАЖДЫЕ СУТКИ
 def collect_spotify_charts():
