@@ -1,4 +1,5 @@
 yandex_music
 spotipy
+ytmusicapi
 flask
 pymongo
