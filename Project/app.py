@@ -1,17 +1,25 @@
 from flask import Flask, render_template
 import pymongo
 import os
+from Sources.spotify import spotify as sp
+from Sources.youtube import youtube as yt
+from Sources.yandex import yandex as ya
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
 
 spotify = mydb["spotify"]
 yandex = mydb["yandex"]
 youtube = mydb["youtube"]
+
+os.startfile(r'D:\pythonProject\Charts\Project\Sources\youtube\youtube.py')
+sp.collect_spotify_charts()
+ya.collect_yandex_charts()
+
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    logo = os.path.join(r'D:\pythonProject\Charts\Project\static\images\logo.png')
+    logo = os.path.join(r'Project/static/images/logo.png')
 
     spotify1 = spotify.find_one({"song-0": {"$exists": "true"}})['song-0']
     spotify2 = spotify.find_one({"song-1": {"$exists": "true"}})['song-1']
