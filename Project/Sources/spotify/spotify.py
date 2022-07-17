@@ -29,14 +29,20 @@ def collect_spotify_charts():
         images = img['images']
         small_logo = images[1]
         finally_logo = small_logo['url']
-        print(finally_logo)
         artist = track_info['artists']
         artist_name = artist[0]['name']
         track = track_info['name']
         song_for_db = {f"song-{num}":f"{track} - {artist_name}"}
-        logo_for_db = {f"logo-{num}":str(finally_logo)}
-        db_insert_picture = pic_col.insert_one(logo_for_db)
         db_insert_songs = songs_col.insert_one(song_for_db)
-
+        result = songs_col.update_one(
+            {f"song-{num}": f"{track} - {artist_name}"},
+            {
+                "$set": {
+                    f"logo-{num}": f"{finally_logo}"
+                },
+                "$currentDate": {"lastModified": True}
+            }
+        )
         num = num+1
 collect_spotify_charts()
+
