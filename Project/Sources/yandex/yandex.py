@@ -12,7 +12,6 @@ def collect_yandex_charts():
     num = 0
     client = Client(TOKEN).init()
     chart = client.chart(CHART_ID).chart
-    print(chart)
     for track_short in chart.tracks:
         track, chart = track_short.track, track_short.chart
         artists = ''
