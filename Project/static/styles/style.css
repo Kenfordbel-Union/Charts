@@ -67,6 +67,7 @@
     justify-content: flex-start;
     margin-top: -110px;
     max-height: 522px;
+
 }
 .container .normal_size .grid_list .list .main_zone .inside{
     background-color: linear-gradient(180deg, #EAAFCB 37.5%, #9DBAE6 100%);
@@ -82,6 +83,7 @@
     margin-right: auto;
     position: relative;
     min-height: 80px;
+
 }
 .container .normal_size .grid_list .list .main_zone .inside .pictures {
     height: 70px;
@@ -91,6 +93,7 @@
     margin-left: 5px;
     border-radius: 10px;
 }
+   
 .container .normal_size .grid_list .list .main_zone .inside .song_name{
     position: relative;
     margin-left: 8px;
@@ -271,8 +274,4 @@
     display: block;
     margin-bottom: 15px;
     padding: 5px;
-}
-
-
-
-
+/* } */

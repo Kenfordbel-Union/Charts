@@ -11,10 +11,6 @@ spotify = mydb["spotify"]
 yandex = mydb["yandex"]
 youtube = mydb["youtube"]
 
-os.startfile(r'D:\pythonProject\Charts\Project\Sources\youtube\youtube.py')
-sp.collect_spotify_charts()
-ya.collect_yandex_charts()
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -122,6 +118,57 @@ def index():
     spotify_pic48 = spotify.find_one({"logo-47": {"$exists": "true"}})['logo-47']
     spotify_pic49 = spotify.find_one({"logo-48": {"$exists": "true"}})['logo-48']
     spotify_pic50 = spotify.find_one({"logo-49": {"$exists": "true"}})['logo-49']
+
+    spotify_sing1 = spotify.find_one({"sing-0": {"$exists": "true"}})['sing-0']
+    spotify_sing2 = spotify.find_one({"sing-1": {"$exists": "true"}})['sing-1']
+    spotify_sing3 = spotify.find_one({"sing-2": {"$exists": "true"}})['sing-2']
+    spotify_sing4 = spotify.find_one({"sing-3": {"$exists": "true"}})['sing-3']
+    spotify_sing5 = spotify.find_one({"sing-4": {"$exists": "true"}})['sing-4']
+    spotify_sing6 = spotify.find_one({"sing-5": {"$exists": "true"}})['sing-5']
+    spotify_sing7 = spotify.find_one({"sing-6": {"$exists": "true"}})['sing-6']
+    spotify_sing8 = spotify.find_one({"sing-7": {"$exists": "true"}})['sing-7']
+    spotify_sing9 = spotify.find_one({"sing-8": {"$exists": "true"}})['sing-8']
+    spotify_sing10 = spotify.find_one({"sing-9": {"$exists": "true"}})['sing-9']
+    spotify_sing11 = spotify.find_one({"sing-10": {"$exists": "true"}})['sing-10']
+    spotify_sing12 = spotify.find_one({"sing-11": {"$exists": "true"}})['sing-11']
+    spotify_sing13 = spotify.find_one({"sing-12": {"$exists": "true"}})['sing-12']
+    spotify_sing14 = spotify.find_one({"sing-13": {"$exists": "true"}})['sing-13']
+    spotify_sing15 = spotify.find_one({"sing-14": {"$exists": "true"}})['sing-14']
+    spotify_sing16 = spotify.find_one({"sing-15": {"$exists": "true"}})['sing-15']
+    spotify_sing17 = spotify.find_one({"sing-16": {"$exists": "true"}})['sing-16']
+    spotify_sing18 = spotify.find_one({"sing-17": {"$exists": "true"}})['sing-17']
+    spotify_sing19 = spotify.find_one({"sing-18": {"$exists": "true"}})['sing-18']
+    spotify_sing20 = spotify.find_one({"sing-19": {"$exists": "true"}})['sing-19']
+    spotify_sing21 = spotify.find_one({"sing-20": {"$exists": "true"}})['sing-20']
+    spotify_sing22 = spotify.find_one({"sing-21": {"$exists": "true"}})['sing-21']
+    spotify_sing23 = spotify.find_one({"sing-22": {"$exists": "true"}})['sing-22']
+    spotify_sing24 = spotify.find_one({"sing-23": {"$exists": "true"}})['sing-23']
+    spotify_sing25 = spotify.find_one({"sing-24": {"$exists": "true"}})['sing-24']
+    spotify_sing26 = spotify.find_one({"sing-25": {"$exists": "true"}})['sing-25']
+    spotify_sing27 = spotify.find_one({"sing-26": {"$exists": "true"}})['sing-26']
+    spotify_sing28 = spotify.find_one({"sing-27": {"$exists": "true"}})['sing-27']
+    spotify_sing29 = spotify.find_one({"sing-28": {"$exists": "true"}})['sing-28']
+    spotify_sing30 = spotify.find_one({"sing-29": {"$exists": "true"}})['sing-29']
+    spotify_sing31 = spotify.find_one({"sing-30": {"$exists": "true"}})['sing-30']
+    spotify_sing32 = spotify.find_one({"sing-31": {"$exists": "true"}})['sing-31']
+    spotify_sing33 = spotify.find_one({"sing-32": {"$exists": "true"}})['sing-32']
+    spotify_sing34 = spotify.find_one({"sing-33": {"$exists": "true"}})['sing-33']
+    spotify_sing35 = spotify.find_one({"sing-34": {"$exists": "true"}})['sing-34']
+    spotify_sing36 = spotify.find_one({"sing-35": {"$exists": "true"}})['sing-35']
+    spotify_sing37 = spotify.find_one({"sing-36": {"$exists": "true"}})['sing-36']
+    spotify_sing38 = spotify.find_one({"sing-37": {"$exists": "true"}})['sing-37']
+    spotify_sing39 = spotify.find_one({"sing-38": {"$exists": "true"}})['sing-38']
+    spotify_sing40 = spotify.find_one({"sing-39": {"$exists": "true"}})['sing-39']
+    spotify_sing41 = spotify.find_one({"sing-40": {"$exists": "true"}})['sing-40']
+    spotify_sing42 = spotify.find_one({"sing-41": {"$exists": "true"}})['sing-41']
+    spotify_sing43 = spotify.find_one({"sing-42": {"$exists": "true"}})['sing-42']
+    spotify_sing44 = spotify.find_one({"sing-43": {"$exists": "true"}})['sing-43']
+    spotify_sing45 = spotify.find_one({"sing-44": {"$exists": "true"}})['sing-44']
+    spotify_sing46 = spotify.find_one({"sing-45": {"$exists": "true"}})['sing-45']
+    spotify_sing47 = spotify.find_one({"sing-46": {"$exists": "true"}})['sing-46']
+    spotify_sing48 = spotify.find_one({"sing-47": {"$exists": "true"}})['sing-47']
+    spotify_sing49 = spotify.find_one({"sing-48": {"$exists": "true"}})['sing-48']
+    spotify_sing50 = spotify.find_one({"sing-49": {"$exists": "true"}})['sing-49']
 
     youtube1 = youtube.find_one({"song-0": {"$exists": "true"}})['song-0']
     youtube2 = youtube.find_one({"song-1": {"$exists": "true"}})['song-1']
@@ -287,7 +334,26 @@ def index():
                            spotify_pic41=spotify_pic41, spotify_pic42=spotify_pic42, spotify_pic43=spotify_pic43,
                            spotify_pic44=spotify_pic44, spotify_pic45=spotify_pic45, spotify_pic46=spotify_pic46,
                            spotify_pic47=spotify_pic47, spotify_pic48=spotify_pic48, spotify_pic49=spotify_pic49,
-                           spotify_pic50=spotify_pic50, youtube1=youtube1, youtube2=youtube2, youtube3=youtube3,
+                           spotify_pic50=spotify_pic50, spotify_sing1=spotify_sing1,spotify_sing2=spotify_sing2,
+                           spotify_sing3=spotify_sing3, spotify_sing4=spotify_sing4,spotify_sing5=spotify_sing5,
+                           spotify_sing6=spotify_sing6, spotify_sing7=spotify_sing7,spotify_sing8=spotify_sing8,
+                           spotify_sing9=spotify_sing9, spotify_sing10=spotify_sing10,spotify_sing11=spotify_sing11,
+                           spotify_sing12=spotify_sing12,spotify_sing13=spotify_sing13,spotify_sing14=spotify_sing14,
+                           spotify_sing15=spotify_sing15, spotify_sing16=spotify_sing16,spotify_sing17=spotify_sing17,
+                           spotify_sing18=spotify_sing18, spotify_sing19=spotify_sing19,spotify_sing20=spotify_sing20,
+                           spotify_sing21=spotify_sing21, spotify_sing22=spotify_sing22,spotify_sing23=spotify_sing23,
+                           spotify_sing24=spotify_sing24, spotify_sing25=spotify_sing25,spotify_sing26=spotify_sing26,
+                           spotify_sing27=spotify_sing27, spotify_sing28=spotify_sing28,spotify_sing29=spotify_sing29,
+                           spotify_sing30=spotify_sing30, spotify_sing31=spotify_sing31,spotify_sing32=spotify_sing32,
+                           spotify_sing33=spotify_sing33, spotify_sing34=spotify_sing34,spotify_sing35=spotify_sing35,
+                           spotify_sing36=spotify_sing36, spotify_sing37=spotify_sing37,spotify_sing38=spotify_sing38,
+                           spotify_sing39=spotify_sing39, spotify_sing40=spotify_sing40,spotify_sing41=spotify_sing41,
+                           spotify_sing42=spotify_sing42, spotify_sing43=spotify_sing43,spotify_sing44=spotify_sing44,
+                           spotify_sing45=spotify_sing45, spotify_sing46=spotify_sing46,spotify_sing47=spotify_sing47,
+                           spotify_sing48=spotify_sing48, spotify_sing49=spotify_sing49, spotify_sing50=spotify_sing50,
+
+
+                           youtube1=youtube1, youtube2=youtube2, youtube3=youtube3,
                            youtube4=youtube4, youtube5=youtube5, youtube6=youtube6, youtube7=youtube7,
                            youtube8=youtube8, youtube9=youtube9, youtube10=youtube10, youtube11=youtube11,
                            youtube12=youtube12, youtube13=youtube13, youtube14=youtube14, youtube15=youtube15,
