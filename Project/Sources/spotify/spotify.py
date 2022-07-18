@@ -32,15 +32,30 @@ def collect_spotify_charts():
         track = track_info['name']
         song_for_db = {f"song-{num}":f"{track} - {artist_name}"}
         db_insert_songs = songs_col.insert_one(song_for_db)
-        result = songs_col.update_one(
-            {f"song-{num}": f"{track} - {artist_name}"},
-            {
-                "$set": {
-                    f"logo-{num}": f"{finally_logo}"
-                },
-                "$currentDate": {"lastModified": True}
-            }
-        )
-        num = num+1
+        urls = track_info['preview_url']
+        if urls == None:
+            result = songs_col.update_one(
+                {f"song-{num}": f"{track} - {artist_name}"},
+                {
+                    "$set": {
+                        f"logo-{num}": f"{finally_logo}",
+                        f"sing-{num}": f"/filter",
+                    },
+                    "$currentDate": {"lastModified": True}
+                }
+            )
+            num = num+1
+        else:
+            result = songs_col.update_one(
+                {f"song-{num}": f"{track} - {artist_name}"},
+                {
+                    "$set": {
+                        f"logo-{num}": f"{finally_logo}",
+                        f"sing-{num}": f"{urls}",
+                    },
+                    "$currentDate": {"lastModified": True}
+                }
+            )
+            num = num + 1
 collect_spotify_charts()
 
