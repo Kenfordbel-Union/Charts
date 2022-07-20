@@ -2,14 +2,14 @@ from flask import Flask, render_template
 import pymongo
 import os
 from Sources.spotify import spotify as sp
-from Sources.youtube import youtube as yt
+# from Sources.youtube import youtube as yt
 from Sources.yandex import yandex as ya
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
 
 spotify = mydb["spotify"]
 yandex = mydb["yandex"]
-youtube = mydb["youtube"]
+# youtube = mydb["youtube"]
 
 app = Flask(__name__)
 
@@ -170,88 +170,88 @@ def index():
     spotify_sing49 = spotify.find_one({"sing-48": {"$exists": "true"}})['sing-48']
     spotify_sing50 = spotify.find_one({"sing-49": {"$exists": "true"}})['sing-49']
 
-    youtube1 = youtube.find_one({"song-0": {"$exists": "true"}})['song-0']
-    youtube2 = youtube.find_one({"song-1": {"$exists": "true"}})['song-1']
-    youtube3 = youtube.find_one({"song-2": {"$exists": "true"}})['song-2']
-    youtube4 = youtube.find_one({"song-3": {"$exists": "true"}})['song-3']
-    youtube5 = youtube.find_one({"song-4": {"$exists": "true"}})['song-4']
-    youtube6 = youtube.find_one({"song-5": {"$exists": "true"}})['song-5']
-    youtube7 = youtube.find_one({"song-6": {"$exists": "true"}})['song-6']
-    youtube8 = youtube.find_one({"song-7": {"$exists": "true"}})['song-7']
-    youtube9 = youtube.find_one({"song-8": {"$exists": "true"}})['song-8']
-    youtube10 = youtube.find_one({"song-9": {"$exists": "true"}})['song-9']
-    youtube11 = youtube.find_one({"song-10": {"$exists": "true"}})['song-10']
-    youtube12 = youtube.find_one({"song-11": {"$exists": "true"}})['song-11']
-    youtube13 = youtube.find_one({"song-12": {"$exists": "true"}})['song-12']
-    youtube14 = youtube.find_one({"song-13": {"$exists": "true"}})['song-13']
-    youtube15 = youtube.find_one({"song-14": {"$exists": "true"}})['song-14']
-    youtube16 = youtube.find_one({"song-15": {"$exists": "true"}})['song-15']
-    youtube17 = youtube.find_one({"song-16": {"$exists": "true"}})['song-16']
-    youtube18 = youtube.find_one({"song-17": {"$exists": "true"}})['song-17']
-    youtube19 = youtube.find_one({"song-18": {"$exists": "true"}})['song-18']
-    youtube20 = youtube.find_one({"song-19": {"$exists": "true"}})['song-19']
-    youtube21 = youtube.find_one({"song-20": {"$exists": "true"}})['song-20']
-    youtube22 = youtube.find_one({"song-21": {"$exists": "true"}})['song-21']
-    youtube23 = youtube.find_one({"song-22": {"$exists": "true"}})['song-22']
-    youtube24 = youtube.find_one({"song-23": {"$exists": "true"}})['song-23']
-    youtube25 = youtube.find_one({"song-24": {"$exists": "true"}})['song-24']
-    youtube26 = youtube.find_one({"song-25": {"$exists": "true"}})['song-25']
-    youtube27 = youtube.find_one({"song-26": {"$exists": "true"}})['song-26']
-    youtube28 = youtube.find_one({"song-27": {"$exists": "true"}})['song-27']
-    youtube29 = youtube.find_one({"song-28": {"$exists": "true"}})['song-28']
-    youtube30 = youtube.find_one({"song-29": {"$exists": "true"}})['song-29']
-    youtube31 = youtube.find_one({"song-30": {"$exists": "true"}})['song-30']
-    youtube32 = youtube.find_one({"song-31": {"$exists": "true"}})['song-31']
-    youtube33 = youtube.find_one({"song-32": {"$exists": "true"}})['song-32']
-    youtube34 = youtube.find_one({"song-33": {"$exists": "true"}})['song-33']
-    youtube35 = youtube.find_one({"song-34": {"$exists": "true"}})['song-34']
-    youtube36 = youtube.find_one({"song-35": {"$exists": "true"}})['song-35']
-    youtube37 = youtube.find_one({"song-36": {"$exists": "true"}})['song-36']
-    youtube38 = youtube.find_one({"song-37": {"$exists": "true"}})['song-37']
-    youtube39 = youtube.find_one({"song-38": {"$exists": "true"}})['song-38']
-    youtube40 = youtube.find_one({"song-39": {"$exists": "true"}})['song-39']
+    # youtube1 = youtube.find_one({"song-0": {"$exists": "true"}})['song-0']
+    # youtube2 = youtube.find_one({"song-1": {"$exists": "true"}})['song-1']
+    # youtube3 = youtube.find_one({"song-2": {"$exists": "true"}})['song-2']
+    # youtube4 = youtube.find_one({"song-3": {"$exists": "true"}})['song-3']
+    # youtube5 = youtube.find_one({"song-4": {"$exists": "true"}})['song-4']
+    # youtube6 = youtube.find_one({"song-5": {"$exists": "true"}})['song-5']
+    # youtube7 = youtube.find_one({"song-6": {"$exists": "true"}})['song-6']
+    # youtube8 = youtube.find_one({"song-7": {"$exists": "true"}})['song-7']
+    # youtube9 = youtube.find_one({"song-8": {"$exists": "true"}})['song-8']
+    # youtube10 = youtube.find_one({"song-9": {"$exists": "true"}})['song-9']
+    # youtube11 = youtube.find_one({"song-10": {"$exists": "true"}})['song-10']
+    # youtube12 = youtube.find_one({"song-11": {"$exists": "true"}})['song-11']
+    # youtube13 = youtube.find_one({"song-12": {"$exists": "true"}})['song-12']
+    # youtube14 = youtube.find_one({"song-13": {"$exists": "true"}})['song-13']
+    # youtube15 = youtube.find_one({"song-14": {"$exists": "true"}})['song-14']
+    # youtube16 = youtube.find_one({"song-15": {"$exists": "true"}})['song-15']
+    # youtube17 = youtube.find_one({"song-16": {"$exists": "true"}})['song-16']
+    # youtube18 = youtube.find_one({"song-17": {"$exists": "true"}})['song-17']
+    # youtube19 = youtube.find_one({"song-18": {"$exists": "true"}})['song-18']
+    # youtube20 = youtube.find_one({"song-19": {"$exists": "true"}})['song-19']
+    # youtube21 = youtube.find_one({"song-20": {"$exists": "true"}})['song-20']
+    # youtube22 = youtube.find_one({"song-21": {"$exists": "true"}})['song-21']
+    # youtube23 = youtube.find_one({"song-22": {"$exists": "true"}})['song-22']
+    # youtube24 = youtube.find_one({"song-23": {"$exists": "true"}})['song-23']
+    # youtube25 = youtube.find_one({"song-24": {"$exists": "true"}})['song-24']
+    # youtube26 = youtube.find_one({"song-25": {"$exists": "true"}})['song-25']
+    # youtube27 = youtube.find_one({"song-26": {"$exists": "true"}})['song-26']
+    # youtube28 = youtube.find_one({"song-27": {"$exists": "true"}})['song-27']
+    # youtube29 = youtube.find_one({"song-28": {"$exists": "true"}})['song-28']
+    # youtube30 = youtube.find_one({"song-29": {"$exists": "true"}})['song-29']
+    # youtube31 = youtube.find_one({"song-30": {"$exists": "true"}})['song-30']
+    # youtube32 = youtube.find_one({"song-31": {"$exists": "true"}})['song-31']
+    # youtube33 = youtube.find_one({"song-32": {"$exists": "true"}})['song-32']
+    # youtube34 = youtube.find_one({"song-33": {"$exists": "true"}})['song-33']
+    # youtube35 = youtube.find_one({"song-34": {"$exists": "true"}})['song-34']
+    # youtube36 = youtube.find_one({"song-35": {"$exists": "true"}})['song-35']
+    # youtube37 = youtube.find_one({"song-36": {"$exists": "true"}})['song-36']
+    # youtube38 = youtube.find_one({"song-37": {"$exists": "true"}})['song-37']
+    # youtube39 = youtube.find_one({"song-38": {"$exists": "true"}})['song-38']
+    # youtube40 = youtube.find_one({"song-39": {"$exists": "true"}})['song-39']
 
 
-    youtube_pic1 = youtube.find_one({"logo-0": {"$exists": "true"}})['logo-0']
-    youtube_pic2 = youtube.find_one({"logo-1": {"$exists": "true"}})['logo-1']
-    youtube_pic3 = youtube.find_one({"logo-2": {"$exists": "true"}})['logo-2']
-    youtube_pic4 = youtube.find_one({"logo-3": {"$exists": "true"}})['logo-3']
-    youtube_pic5 = youtube.find_one({"logo-4": {"$exists": "true"}})['logo-4']
-    youtube_pic6 = youtube.find_one({"logo-5": {"$exists": "true"}})['logo-5']
-    youtube_pic7 = youtube.find_one({"logo-6": {"$exists": "true"}})['logo-6']
-    youtube_pic8 = youtube.find_one({"logo-7": {"$exists": "true"}})['logo-7']
-    youtube_pic9 = youtube.find_one({"logo-8": {"$exists": "true"}})['logo-8']
-    youtube_pic10 = youtube.find_one({"logo-9": {"$exists": "true"}})['logo-9']
-    youtube_pic11 = youtube.find_one({"logo-10": {"$exists": "true"}})['logo-10']
-    youtube_pic12 = youtube.find_one({"logo-11": {"$exists": "true"}})['logo-11']
-    youtube_pic13 = youtube.find_one({"logo-12": {"$exists": "true"}})['logo-12']
-    youtube_pic14 = youtube.find_one({"logo-13": {"$exists": "true"}})['logo-13']
-    youtube_pic15 = youtube.find_one({"logo-14": {"$exists": "true"}})['logo-14']
-    youtube_pic16 = youtube.find_one({"logo-15": {"$exists": "true"}})['logo-15']
-    youtube_pic17 = youtube.find_one({"logo-16": {"$exists": "true"}})['logo-16']
-    youtube_pic18 = youtube.find_one({"logo-17": {"$exists": "true"}})['logo-17']
-    youtube_pic19 = youtube.find_one({"logo-18": {"$exists": "true"}})['logo-18']
-    youtube_pic20 = youtube.find_one({"logo-19": {"$exists": "true"}})['logo-19']
-    youtube_pic21 = youtube.find_one({"logo-20": {"$exists": "true"}})['logo-20']
-    youtube_pic22 = youtube.find_one({"logo-21": {"$exists": "true"}})['logo-21']
-    youtube_pic23 = youtube.find_one({"logo-22": {"$exists": "true"}})['logo-22']
-    youtube_pic24 = youtube.find_one({"logo-23": {"$exists": "true"}})['logo-23']
-    youtube_pic25 = youtube.find_one({"logo-24": {"$exists": "true"}})['logo-24']
-    youtube_pic26 = youtube.find_one({"logo-25": {"$exists": "true"}})['logo-25']
-    youtube_pic27 = youtube.find_one({"logo-26": {"$exists": "true"}})['logo-26']
-    youtube_pic28 = youtube.find_one({"logo-27": {"$exists": "true"}})['logo-27']
-    youtube_pic29 = youtube.find_one({"logo-28": {"$exists": "true"}})['logo-28']
-    youtube_pic30 = youtube.find_one({"logo-29": {"$exists": "true"}})['logo-29']
-    youtube_pic31 = youtube.find_one({"logo-30": {"$exists": "true"}})['logo-30']
-    youtube_pic32 = youtube.find_one({"logo-31": {"$exists": "true"}})['logo-31']
-    youtube_pic33 = youtube.find_one({"logo-32": {"$exists": "true"}})['logo-32']
-    youtube_pic34 = youtube.find_one({"logo-33": {"$exists": "true"}})['logo-33']
-    youtube_pic35 = youtube.find_one({"logo-34": {"$exists": "true"}})['logo-34']
-    youtube_pic36 = youtube.find_one({"logo-35": {"$exists": "true"}})['logo-35']
-    youtube_pic37 = youtube.find_one({"logo-36": {"$exists": "true"}})['logo-36']
-    youtube_pic38 = youtube.find_one({"logo-37": {"$exists": "true"}})['logo-37']
-    youtube_pic39 = youtube.find_one({"logo-38": {"$exists": "true"}})['logo-38']
-    youtube_pic40 = youtube.find_one({"logo-39": {"$exists": "true"}})['logo-39']
+    # youtube_pic1 = youtube.find_one({"logo-0": {"$exists": "true"}})['logo-0']
+    # youtube_pic2 = youtube.find_one({"logo-1": {"$exists": "true"}})['logo-1']
+    # youtube_pic3 = youtube.find_one({"logo-2": {"$exists": "true"}})['logo-2']
+    # youtube_pic4 = youtube.find_one({"logo-3": {"$exists": "true"}})['logo-3']
+    # youtube_pic5 = youtube.find_one({"logo-4": {"$exists": "true"}})['logo-4']
+    # youtube_pic6 = youtube.find_one({"logo-5": {"$exists": "true"}})['logo-5']
+    # youtube_pic7 = youtube.find_one({"logo-6": {"$exists": "true"}})['logo-6']
+    # youtube_pic8 = youtube.find_one({"logo-7": {"$exists": "true"}})['logo-7']
+    # youtube_pic9 = youtube.find_one({"logo-8": {"$exists": "true"}})['logo-8']
+    # youtube_pic10 = youtube.find_one({"logo-9": {"$exists": "true"}})['logo-9']
+    # youtube_pic11 = youtube.find_one({"logo-10": {"$exists": "true"}})['logo-10']
+    # youtube_pic12 = youtube.find_one({"logo-11": {"$exists": "true"}})['logo-11']
+    # youtube_pic13 = youtube.find_one({"logo-12": {"$exists": "true"}})['logo-12']
+    # youtube_pic14 = youtube.find_one({"logo-13": {"$exists": "true"}})['logo-13']
+    # youtube_pic15 = youtube.find_one({"logo-14": {"$exists": "true"}})['logo-14']
+    # youtube_pic16 = youtube.find_one({"logo-15": {"$exists": "true"}})['logo-15']
+    # youtube_pic17 = youtube.find_one({"logo-16": {"$exists": "true"}})['logo-16']
+    # youtube_pic18 = youtube.find_one({"logo-17": {"$exists": "true"}})['logo-17']
+    # youtube_pic19 = youtube.find_one({"logo-18": {"$exists": "true"}})['logo-18']
+    # youtube_pic20 = youtube.find_one({"logo-19": {"$exists": "true"}})['logo-19']
+    # youtube_pic21 = youtube.find_one({"logo-20": {"$exists": "true"}})['logo-20']
+    # youtube_pic22 = youtube.find_one({"logo-21": {"$exists": "true"}})['logo-21']
+    # youtube_pic23 = youtube.find_one({"logo-22": {"$exists": "true"}})['logo-22']
+    # youtube_pic24 = youtube.find_one({"logo-23": {"$exists": "true"}})['logo-23']
+    # youtube_pic25 = youtube.find_one({"logo-24": {"$exists": "true"}})['logo-24']
+    # youtube_pic26 = youtube.find_one({"logo-25": {"$exists": "true"}})['logo-25']
+    # youtube_pic27 = youtube.find_one({"logo-26": {"$exists": "true"}})['logo-26']
+    # youtube_pic28 = youtube.find_one({"logo-27": {"$exists": "true"}})['logo-27']
+    # youtube_pic29 = youtube.find_one({"logo-28": {"$exists": "true"}})['logo-28']
+    # youtube_pic30 = youtube.find_one({"logo-29": {"$exists": "true"}})['logo-29']
+    # youtube_pic31 = youtube.find_one({"logo-30": {"$exists": "true"}})['logo-30']
+    # youtube_pic32 = youtube.find_one({"logo-31": {"$exists": "true"}})['logo-31']
+    # youtube_pic33 = youtube.find_one({"logo-32": {"$exists": "true"}})['logo-32']
+    # youtube_pic34 = youtube.find_one({"logo-33": {"$exists": "true"}})['logo-33']
+    # youtube_pic35 = youtube.find_one({"logo-34": {"$exists": "true"}})['logo-34']
+    # youtube_pic36 = youtube.find_one({"logo-35": {"$exists": "true"}})['logo-35']
+    # youtube_pic37 = youtube.find_one({"logo-36": {"$exists": "true"}})['logo-36']
+    # youtube_pic38 = youtube.find_one({"logo-37": {"$exists": "true"}})['logo-37']
+    # youtube_pic39 = youtube.find_one({"logo-38": {"$exists": "true"}})['logo-38']
+    # youtube_pic40 = youtube.find_one({"logo-39": {"$exists": "true"}})['logo-39']
 
 
     yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
@@ -353,30 +353,30 @@ def index():
                            spotify_sing48=spotify_sing48, spotify_sing49=spotify_sing49, spotify_sing50=spotify_sing50,
 
 
-                           youtube1=youtube1, youtube2=youtube2, youtube3=youtube3,
-                           youtube4=youtube4, youtube5=youtube5, youtube6=youtube6, youtube7=youtube7,
-                           youtube8=youtube8, youtube9=youtube9, youtube10=youtube10, youtube11=youtube11,
-                           youtube12=youtube12, youtube13=youtube13, youtube14=youtube14, youtube15=youtube15,
-                           youtube16=youtube16, youtube17=youtube17, youtube18=youtube18, youtube19=youtube19,
-                           youtube20=youtube20, youtube21=youtube21, youtube22=youtube22, youtube23=youtube23,
-                           youtube24=youtube24, youtube25=youtube25, youtube26=youtube26, youtube27=youtube27,
-                           youtube28=youtube28, youtube29=youtube29, youtube30=youtube30, youtube31=youtube31,
-                           youtube32=youtube32, youtube33=youtube33, youtube34=youtube34, youtube35=youtube35,
-                           youtube36=youtube36, youtube37=youtube37, youtube38=youtube38, youtube39=youtube39,
-                            youtube40=youtube40, youtube_pic1=youtube_pic1,
-                           youtube_pic2=youtube_pic2, youtube_pic3=youtube_pic3, youtube_pic4=youtube_pic4,
-                           youtube_pic5=youtube_pic5, youtube_pic6=youtube_pic6, youtube_pic7=youtube_pic7,
-                           youtube_pic8=youtube_pic8, youtube_pic9=youtube_pic9, youtube_pic10=youtube_pic10,
-                           youtube_pic11=youtube_pic11, youtube_pic12=youtube_pic12,youtube_pic13=youtube_pic13,
-                           youtube_pic14=youtube_pic14, youtube_pic15=youtube_pic15, youtube_pic16=youtube_pic16,
-                           youtube_pic17=youtube_pic17, youtube_pic18=youtube_pic18, youtube_pic19=youtube_pic19,
-                           youtube_pic20=youtube_pic20, youtube_pic21=youtube_pic21, youtube_pic22=youtube_pic22,
-                           youtube_pic23=youtube_pic23, youtube_pic24=youtube_pic24, youtube_pic25=youtube_pic25,
-                           youtube_pic26=youtube_pic26, youtube_pic27=youtube_pic27, youtube_pic28=youtube_pic28,
-                           youtube_pic29=youtube_pic29, youtube_pic30=youtube_pic30, youtube_pic31=youtube_pic31,
-                           youtube_pic32=youtube_pic32, youtube_pic33=youtube_pic33, youtube_pic34=youtube_pic34,
-                           youtube_pic35=youtube_pic35, youtube_pic36=youtube_pic36, youtube_pic37=youtube_pic37,
-                           youtube_pic38=youtube_pic38, youtube_pic39=youtube_pic39, youtube_pic40=youtube_pic40,
+                        #    youtube1=youtube1, youtube2=youtube2, youtube3=youtube3,
+                        #    youtube4=youtube4, youtube5=youtube5, youtube6=youtube6, youtube7=youtube7,
+                        #    youtube8=youtube8, youtube9=youtube9, youtube10=youtube10, youtube11=youtube11,
+                        #    youtube12=youtube12, youtube13=youtube13, youtube14=youtube14, youtube15=youtube15,
+                        #    youtube16=youtube16, youtube17=youtube17, youtube18=youtube18, youtube19=youtube19,
+                        #    youtube20=youtube20, youtube21=youtube21, youtube22=youtube22, youtube23=youtube23,
+                        #    youtube24=youtube24, youtube25=youtube25, youtube26=youtube26, youtube27=youtube27,
+                        #    youtube28=youtube28, youtube29=youtube29, youtube30=youtube30, youtube31=youtube31,
+                        #    youtube32=youtube32, youtube33=youtube33, youtube34=youtube34, youtube35=youtube35,
+                        #    youtube36=youtube36, youtube37=youtube37, youtube38=youtube38, youtube39=youtube39,
+                        #     youtube40=youtube40, youtube_pic1=youtube_pic1,
+                        #    youtube_pic2=youtube_pic2, youtube_pic3=youtube_pic3, youtube_pic4=youtube_pic4,
+                        #    youtube_pic5=youtube_pic5, youtube_pic6=youtube_pic6, youtube_pic7=youtube_pic7,
+                        #    youtube_pic8=youtube_pic8, youtube_pic9=youtube_pic9, youtube_pic10=youtube_pic10,
+                        #    youtube_pic11=youtube_pic11, youtube_pic12=youtube_pic12,youtube_pic13=youtube_pic13,
+                        #    youtube_pic14=youtube_pic14, youtube_pic15=youtube_pic15, youtube_pic16=youtube_pic16,
+                        #    youtube_pic17=youtube_pic17, youtube_pic18=youtube_pic18, youtube_pic19=youtube_pic19,
+                        #    youtube_pic20=youtube_pic20, youtube_pic21=youtube_pic21, youtube_pic22=youtube_pic22,
+                        #    youtube_pic23=youtube_pic23, youtube_pic24=youtube_pic24, youtube_pic25=youtube_pic25,
+                        #    youtube_pic26=youtube_pic26, youtube_pic27=youtube_pic27, youtube_pic28=youtube_pic28,
+                        #    youtube_pic29=youtube_pic29, youtube_pic30=youtube_pic30, youtube_pic31=youtube_pic31,
+                        #    youtube_pic32=youtube_pic32, youtube_pic33=youtube_pic33, youtube_pic34=youtube_pic34,
+                        #    youtube_pic35=youtube_pic35, youtube_pic36=youtube_pic36, youtube_pic37=youtube_pic37,
+                        #    youtube_pic38=youtube_pic38, youtube_pic39=youtube_pic39, youtube_pic40=youtube_pic40,
 
                            yandex1 = yandex1, yandex2 = yandex2, yandex3 = yandex3, yandex4 = yandex4,
                            yandex5 = yandex5, yandex6 = yandex6, yandex7 = yandex7, yandex8 = yandex8,
