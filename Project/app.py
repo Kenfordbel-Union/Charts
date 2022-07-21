@@ -10,6 +10,7 @@ mydb = mongo["charts"]
 spotify = mydb["spotify"]
 yandex = mydb["yandex"]
 youtube = mydb["youtube"]
+deezer = mydb["deezer"]
 
 app = Flask(__name__)
 
@@ -305,6 +306,210 @@ def index():
     yandex49 = yandex.find_one({"song-48": {"$exists": "true"}})['song-48']
     yandex50 = yandex.find_one({"song-49": {"$exists": "true"}})['song-49']
 
+    deezer1 = deezer.find_one({"song-0": {"$exists": "true"}})['song-0']
+    deezer2 = deezer.find_one({"song-1": {"$exists": "true"}})['song-1']
+    deezer3 = deezer.find_one({"song-2": {"$exists": "true"}})['song-2']
+    deezer4 = deezer.find_one({"song-3": {"$exists": "true"}})['song-3']
+    deezer5 = deezer.find_one({"song-4": {"$exists": "true"}})['song-4']
+    deezer6 = deezer.find_one({"song-5": {"$exists": "true"}})['song-5']
+    deezer7 = deezer.find_one({"song-6": {"$exists": "true"}})['song-6']
+    deezer8 = deezer.find_one({"song-7": {"$exists": "true"}})['song-7']
+    deezer9 = deezer.find_one({"song-8": {"$exists": "true"}})['song-8']
+    deezer10 = deezer.find_one({"song-9": {"$exists": "true"}})['song-9']
+    deezer11 = deezer.find_one({"song-10": {"$exists": "true"}})['song-10']
+    deezer12 = deezer.find_one({"song-11": {"$exists": "true"}})['song-11']
+    deezer13 = deezer.find_one({"song-12": {"$exists": "true"}})['song-12']
+    deezer14 = deezer.find_one({"song-13": {"$exists": "true"}})['song-13']
+    deezer15 = deezer.find_one({"song-14": {"$exists": "true"}})['song-14']
+    deezer16 = deezer.find_one({"song-15": {"$exists": "true"}})['song-15']
+    deezer17 = deezer.find_one({"song-16": {"$exists": "true"}})['song-16']
+    deezer18 = deezer.find_one({"song-17": {"$exists": "true"}})['song-17']
+    deezer19 = deezer.find_one({"song-18": {"$exists": "true"}})['song-18']
+    deezer20 = deezer.find_one({"song-19": {"$exists": "true"}})['song-19']
+    deezer21 = deezer.find_one({"song-20": {"$exists": "true"}})['song-20']
+    deezer22 = deezer.find_one({"song-21": {"$exists": "true"}})['song-21']
+    deezer23 = deezer.find_one({"song-22": {"$exists": "true"}})['song-22']
+    deezer24 = deezer.find_one({"song-23": {"$exists": "true"}})['song-23']
+    deezer25 = deezer.find_one({"song-24": {"$exists": "true"}})['song-24']
+    deezer26 = deezer.find_one({"song-25": {"$exists": "true"}})['song-25']
+    deezer27 = deezer.find_one({"song-26": {"$exists": "true"}})['song-26']
+    deezer28 = deezer.find_one({"song-27": {"$exists": "true"}})['song-27']
+    deezer29 = deezer.find_one({"song-28": {"$exists": "true"}})['song-28']
+    deezer30 = deezer.find_one({"song-29": {"$exists": "true"}})['song-29']
+    deezer31 = deezer.find_one({"song-30": {"$exists": "true"}})['song-30']
+    deezer32 = deezer.find_one({"song-31": {"$exists": "true"}})['song-31']
+    deezer33 = deezer.find_one({"song-32": {"$exists": "true"}})['song-32']
+    deezer34 = deezer.find_one({"song-33": {"$exists": "true"}})['song-33']
+    deezer35 = deezer.find_one({"song-34": {"$exists": "true"}})['song-34']
+    deezer36 = deezer.find_one({"song-35": {"$exists": "true"}})['song-35']
+    deezer37 = deezer.find_one({"song-36": {"$exists": "true"}})['song-36']
+    deezer38 = deezer.find_one({"song-37": {"$exists": "true"}})['song-37']
+    deezer39 = deezer.find_one({"song-38": {"$exists": "true"}})['song-38']
+    deezer40 = deezer.find_one({"song-39": {"$exists": "true"}})['song-39']
+    deezer41 = deezer.find_one({"song-40": {"$exists": "true"}})['song-40']
+    deezer42 = deezer.find_one({"song-41": {"$exists": "true"}})['song-41']
+    deezer43 = deezer.find_one({"song-42": {"$exists": "true"}})['song-42']
+    deezer44 = deezer.find_one({"song-43": {"$exists": "true"}})['song-43']
+    deezer45 = deezer.find_one({"song-44": {"$exists": "true"}})['song-44']
+    deezer46 = deezer.find_one({"song-45": {"$exists": "true"}})['song-45']
+    deezer47 = deezer.find_one({"song-46": {"$exists": "true"}})['song-46']
+    deezer48 = deezer.find_one({"song-47": {"$exists": "true"}})['song-47']
+    deezer49 = deezer.find_one({"song-48": {"$exists": "true"}})['song-48']
+    deezer50 = deezer.find_one({"song-49": {"$exists": "true"}})['song-49']
+
+    deezer_sing1 = deezer.find_one({"sing-0": {"$exists": "true"}})['sing-0']
+    deezer_sing2 = deezer.find_one({"sing-1": {"$exists": "true"}})['sing-1']
+    deezer_sing3 = deezer.find_one({"sing-2": {"$exists": "true"}})['sing-2']
+    deezer_sing4 = deezer.find_one({"sing-3": {"$exists": "true"}})['sing-3']
+    deezer_sing5 = deezer.find_one({"sing-4": {"$exists": "true"}})['sing-4']
+    deezer_sing6 = deezer.find_one({"sing-5": {"$exists": "true"}})['sing-5']
+    deezer_sing7 = deezer.find_one({"sing-6": {"$exists": "true"}})['sing-6']
+    deezer_sing8 = deezer.find_one({"sing-7": {"$exists": "true"}})['sing-7']
+    deezer_sing9 = deezer.find_one({"sing-8": {"$exists": "true"}})['sing-8']
+    deezer_sing10 = deezer.find_one({"sing-9": {"$exists": "true"}})['sing-9']
+    deezer_sing11 = deezer.find_one({"sing-10": {"$exists": "true"}})['sing-10']
+    deezer_sing12 = deezer.find_one({"sing-11": {"$exists": "true"}})['sing-11']
+    deezer_sing13 = deezer.find_one({"sing-12": {"$exists": "true"}})['sing-12']
+    deezer_sing14 = deezer.find_one({"sing-13": {"$exists": "true"}})['sing-13']
+    deezer_sing15 = deezer.find_one({"sing-14": {"$exists": "true"}})['sing-14']
+    deezer_sing16 = deezer.find_one({"sing-15": {"$exists": "true"}})['sing-15']
+    deezer_sing17 = deezer.find_one({"sing-16": {"$exists": "true"}})['sing-16']
+    deezer_sing18 = deezer.find_one({"sing-17": {"$exists": "true"}})['sing-17']
+    deezer_sing19 = deezer.find_one({"sing-18": {"$exists": "true"}})['sing-18']
+    deezer_sing20 = deezer.find_one({"sing-19": {"$exists": "true"}})['sing-19']
+    deezer_sing21 = deezer.find_one({"sing-20": {"$exists": "true"}})['sing-20']
+    deezer_sing22 = deezer.find_one({"sing-21": {"$exists": "true"}})['sing-21']
+    deezer_sing23 = deezer.find_one({"sing-22": {"$exists": "true"}})['sing-22']
+    deezer_sing24 = deezer.find_one({"sing-23": {"$exists": "true"}})['sing-23']
+    deezer_sing25 = deezer.find_one({"sing-24": {"$exists": "true"}})['sing-24']
+    deezer_sing26 = deezer.find_one({"sing-25": {"$exists": "true"}})['sing-25']
+    deezer_sing27 = deezer.find_one({"sing-26": {"$exists": "true"}})['sing-26']
+    deezer_sing28 = deezer.find_one({"sing-27": {"$exists": "true"}})['sing-27']
+    deezer_sing29 = deezer.find_one({"sing-28": {"$exists": "true"}})['sing-28']
+    deezer_sing30 = deezer.find_one({"sing-29": {"$exists": "true"}})['sing-29']
+    deezer_sing31 = deezer.find_one({"sing-30": {"$exists": "true"}})['sing-30']
+    deezer_sing32 = deezer.find_one({"sing-31": {"$exists": "true"}})['sing-31']
+    deezer_sing33 = deezer.find_one({"sing-32": {"$exists": "true"}})['sing-32']
+    deezer_sing34 = deezer.find_one({"sing-33": {"$exists": "true"}})['sing-33']
+    deezer_sing35 = deezer.find_one({"sing-34": {"$exists": "true"}})['sing-34']
+    deezer_sing36 = deezer.find_one({"sing-35": {"$exists": "true"}})['sing-35']
+    deezer_sing37 = deezer.find_one({"sing-36": {"$exists": "true"}})['sing-36']
+    deezer_sing38 = deezer.find_one({"sing-37": {"$exists": "true"}})['sing-37']
+    deezer_sing39 = deezer.find_one({"sing-38": {"$exists": "true"}})['sing-38']
+    deezer_sing40 = deezer.find_one({"sing-39": {"$exists": "true"}})['sing-39']
+    deezer_sing41 = deezer.find_one({"sing-40": {"$exists": "true"}})['sing-40']
+    deezer_sing42 = deezer.find_one({"sing-41": {"$exists": "true"}})['sing-41']
+    deezer_sing43 = deezer.find_one({"sing-42": {"$exists": "true"}})['sing-42']
+    deezer_sing44 = deezer.find_one({"sing-43": {"$exists": "true"}})['sing-43']
+    deezer_sing45 = deezer.find_one({"sing-44": {"$exists": "true"}})['sing-44']
+    deezer_sing46 = deezer.find_one({"sing-45": {"$exists": "true"}})['sing-45']
+    deezer_sing47 = deezer.find_one({"sing-46": {"$exists": "true"}})['sing-46']
+    deezer_sing48 = deezer.find_one({"sing-47": {"$exists": "true"}})['sing-47']
+    deezer_sing49 = deezer.find_one({"sing-48": {"$exists": "true"}})['sing-48']
+    deezer_sing50 = deezer.find_one({"sing-49": {"$exists": "true"}})['sing-49']
+
+    deezer_pic1 = deezer.find_one({"logo-0": {"$exists": "true"}})['logo-0']
+    deezer_pic2 = deezer.find_one({"logo-1": {"$exists": "true"}})['logo-1']
+    deezer_pic3 = deezer.find_one({"logo-2": {"$exists": "true"}})['logo-2']
+    deezer_pic4 = deezer.find_one({"logo-3": {"$exists": "true"}})['logo-3']
+    deezer_pic5 = deezer.find_one({"logo-4": {"$exists": "true"}})['logo-4']
+    deezer_pic6 = deezer.find_one({"logo-5": {"$exists": "true"}})['logo-5']
+    deezer_pic7 = deezer.find_one({"logo-6": {"$exists": "true"}})['logo-6']
+    deezer_pic8 = deezer.find_one({"logo-7": {"$exists": "true"}})['logo-7']
+    deezer_pic9 = deezer.find_one({"logo-8": {"$exists": "true"}})['logo-8']
+    deezer_pic10 = deezer.find_one({"logo-9": {"$exists": "true"}})['logo-9']
+    deezer_pic11 = deezer.find_one({"logo-10": {"$exists": "true"}})['logo-10']
+    deezer_pic12 = deezer.find_one({"logo-11": {"$exists": "true"}})['logo-11']
+    deezer_pic13 = deezer.find_one({"logo-12": {"$exists": "true"}})['logo-12']
+    deezer_pic14 = deezer.find_one({"logo-13": {"$exists": "true"}})['logo-13']
+    deezer_pic15 = deezer.find_one({"logo-14": {"$exists": "true"}})['logo-14']
+    deezer_pic16 = deezer.find_one({"logo-15": {"$exists": "true"}})['logo-15']
+    deezer_pic17 = deezer.find_one({"logo-16": {"$exists": "true"}})['logo-16']
+    deezer_pic18 = deezer.find_one({"logo-17": {"$exists": "true"}})['logo-17']
+    deezer_pic19 = deezer.find_one({"logo-18": {"$exists": "true"}})['logo-18']
+    deezer_pic20 = deezer.find_one({"logo-19": {"$exists": "true"}})['logo-19']
+    deezer_pic21 = deezer.find_one({"logo-20": {"$exists": "true"}})['logo-20']
+    deezer_pic22 = deezer.find_one({"logo-21": {"$exists": "true"}})['logo-21']
+    deezer_pic23 = deezer.find_one({"logo-22": {"$exists": "true"}})['logo-22']
+    deezer_pic24 = deezer.find_one({"logo-23": {"$exists": "true"}})['logo-23']
+    deezer_pic25 = deezer.find_one({"logo-24": {"$exists": "true"}})['logo-24']
+    deezer_pic26 = deezer.find_one({"logo-25": {"$exists": "true"}})['logo-25']
+    deezer_pic27 = deezer.find_one({"logo-26": {"$exists": "true"}})['logo-26']
+    deezer_pic28 = deezer.find_one({"logo-27": {"$exists": "true"}})['logo-27']
+    deezer_pic29 = deezer.find_one({"logo-28": {"$exists": "true"}})['logo-28']
+    deezer_pic30 = deezer.find_one({"logo-29": {"$exists": "true"}})['logo-29']
+    deezer_pic31 = deezer.find_one({"logo-30": {"$exists": "true"}})['logo-30']
+    deezer_pic32 = deezer.find_one({"logo-31": {"$exists": "true"}})['logo-31']
+    deezer_pic33 = deezer.find_one({"logo-32": {"$exists": "true"}})['logo-32']
+    deezer_pic34 = deezer.find_one({"logo-33": {"$exists": "true"}})['logo-33']
+    deezer_pic35 = deezer.find_one({"logo-34": {"$exists": "true"}})['logo-34']
+    deezer_pic36 = deezer.find_one({"logo-35": {"$exists": "true"}})['logo-35']
+    deezer_pic37 = deezer.find_one({"logo-36": {"$exists": "true"}})['logo-36']
+    deezer_pic38 = deezer.find_one({"logo-37": {"$exists": "true"}})['logo-37']
+    deezer_pic39 = deezer.find_one({"logo-38": {"$exists": "true"}})['logo-38']
+    deezer_pic40 = deezer.find_one({"logo-39": {"$exists": "true"}})['logo-39']
+    deezer_pic41 = deezer.find_one({"logo-40": {"$exists": "true"}})['logo-40']
+    deezer_pic42 = deezer.find_one({"logo-41": {"$exists": "true"}})['logo-41']
+    deezer_pic43 = deezer.find_one({"logo-42": {"$exists": "true"}})['logo-42']
+    deezer_pic44 = deezer.find_one({"logo-43": {"$exists": "true"}})['logo-43']
+    deezer_pic45 = deezer.find_one({"logo-44": {"$exists": "true"}})['logo-44']
+    deezer_pic46 = deezer.find_one({"logo-45": {"$exists": "true"}})['logo-45']
+    deezer_pic47 = deezer.find_one({"logo-46": {"$exists": "true"}})['logo-46']
+    deezer_pic48 = deezer.find_one({"logo-47": {"$exists": "true"}})['logo-47']
+    deezer_pic49 = deezer.find_one({"logo-48": {"$exists": "true"}})['logo-48']
+    deezer_pic50 = deezer.find_one({"logo-49": {"$exists": "true"}})['logo-49']
+
+    deezer_link1 = deezer.find_one({"link-0": {"$exists": "true"}})['link-0']
+    deezer_link2 = deezer.find_one({"link-1": {"$exists": "true"}})['link-1']
+    deezer_link3 = deezer.find_one({"link-2": {"$exists": "true"}})['link-2']
+    deezer_link4 = deezer.find_one({"link-3": {"$exists": "true"}})['link-3']
+    deezer_link5 = deezer.find_one({"link-4": {"$exists": "true"}})['link-4']
+    deezer_link6 = deezer.find_one({"link-5": {"$exists": "true"}})['link-5']
+    deezer_link7 = deezer.find_one({"link-6": {"$exists": "true"}})['link-6']
+    deezer_link8 = deezer.find_one({"link-7": {"$exists": "true"}})['link-7']
+    deezer_link9 = deezer.find_one({"link-8": {"$exists": "true"}})['link-8']
+    deezer_link10 = deezer.find_one({"link-9": {"$exists": "true"}})['link-9']
+    deezer_link11 = deezer.find_one({"link-10": {"$exists": "true"}})['link-10']
+    deezer_link12 = deezer.find_one({"link-11": {"$exists": "true"}})['link-11']
+    deezer_link13 = deezer.find_one({"link-12": {"$exists": "true"}})['link-12']
+    deezer_link14 = deezer.find_one({"link-13": {"$exists": "true"}})['link-13']
+    deezer_link15 = deezer.find_one({"link-14": {"$exists": "true"}})['link-14']
+    deezer_link16 = deezer.find_one({"link-15": {"$exists": "true"}})['link-15']
+    deezer_link17 = deezer.find_one({"link-16": {"$exists": "true"}})['link-16']
+    deezer_link18 = deezer.find_one({"link-17": {"$exists": "true"}})['link-17']
+    deezer_link19 = deezer.find_one({"link-18": {"$exists": "true"}})['link-18']
+    deezer_link20 = deezer.find_one({"link-19": {"$exists": "true"}})['link-19']
+    deezer_link21 = deezer.find_one({"link-20": {"$exists": "true"}})['link-20']
+    deezer_link22 = deezer.find_one({"link-21": {"$exists": "true"}})['link-21']
+    deezer_link23 = deezer.find_one({"link-22": {"$exists": "true"}})['link-22']
+    deezer_link24 = deezer.find_one({"link-23": {"$exists": "true"}})['link-23']
+    deezer_link25 = deezer.find_one({"link-24": {"$exists": "true"}})['link-24']
+    deezer_link26 = deezer.find_one({"link-25": {"$exists": "true"}})['link-25']
+    deezer_link27 = deezer.find_one({"link-26": {"$exists": "true"}})['link-26']
+    deezer_link28 = deezer.find_one({"link-27": {"$exists": "true"}})['link-27']
+    deezer_link29 = deezer.find_one({"link-28": {"$exists": "true"}})['link-28']
+    deezer_link30 = deezer.find_one({"link-29": {"$exists": "true"}})['link-29']
+    deezer_link31 = deezer.find_one({"link-30": {"$exists": "true"}})['link-30']
+    deezer_link32 = deezer.find_one({"link-31": {"$exists": "true"}})['link-31']
+    deezer_link33 = deezer.find_one({"link-32": {"$exists": "true"}})['link-32']
+    deezer_link34 = deezer.find_one({"link-33": {"$exists": "true"}})['link-33']
+    deezer_link35 = deezer.find_one({"link-34": {"$exists": "true"}})['link-34']
+    deezer_link36 = deezer.find_one({"link-35": {"$exists": "true"}})['link-35']
+    deezer_link37 = deezer.find_one({"link-36": {"$exists": "true"}})['link-36']
+    deezer_link38 = deezer.find_one({"link-37": {"$exists": "true"}})['link-37']
+    deezer_link39 = deezer.find_one({"link-38": {"$exists": "true"}})['link-38']
+    deezer_link40 = deezer.find_one({"link-39": {"$exists": "true"}})['link-39']
+    deezer_link41 = deezer.find_one({"link-40": {"$exists": "true"}})['link-40']
+    deezer_link42 = deezer.find_one({"link-41": {"$exists": "true"}})['link-41']
+    deezer_link43 = deezer.find_one({"link-42": {"$exists": "true"}})['link-42']
+    deezer_link44 = deezer.find_one({"link-43": {"$exists": "true"}})['link-43']
+    deezer_link45 = deezer.find_one({"link-44": {"$exists": "true"}})['link-44']
+    deezer_link46 = deezer.find_one({"link-45": {"$exists": "true"}})['link-45']
+    deezer_link47 = deezer.find_one({"link-46": {"$exists": "true"}})['link-46']
+    deezer_link48 = deezer.find_one({"link-47": {"$exists": "true"}})['link-47']
+    deezer_link49 = deezer.find_one({"link-48": {"$exists": "true"}})['link-48']
+    deezer_link50 = deezer.find_one({"link-49": {"$exists": "true"}})['link-49']
+
     return render_template('index.html', logo=logo, spotify1=spotify1, spotify2=spotify2, spotify3=spotify3, spotify4=spotify4,
                            spotify5=spotify5, spotify6=spotify6, spotify7=spotify7, spotify8=spotify8,
                            spotify9=spotify9, spotify10=spotify10, spotify11=spotify11, spotify12=spotify12,
@@ -390,7 +595,71 @@ def index():
                            yandex37 = yandex37, yandex38 = yandex38, yandex39 = yandex39, yandex40 = yandex40,
                            yandex41 = yandex41, yandex42 = yandex42, yandex43 = yandex43, yandex44 = yandex44,
                            yandex45 = yandex45, yandex46 = yandex46, yandex47 = yandex47, yandex48 = yandex48,
-                           yandex49 = yandex49, yandex50 = yandex50)
+                           yandex49 = yandex49, yandex50 = yandex50, deezer1=deezer1, deezer2=deezer2, deezer3=deezer3,
+                           deezer4=deezer4,
+                           deezer5=deezer5, deezer6=deezer6, deezer7=deezer7, deezer8=deezer8,
+                           deezer9=deezer9, deezer10=deezer10, deezer11=deezer11, deezer12=deezer12,
+                           deezer13=deezer13, deezer14=deezer14, deezer15=deezer15, deezer16=deezer16,
+                           deezer17=deezer17, deezer18=deezer18, deezer19=deezer19, deezer20=deezer20,
+                           deezer21=deezer21, deezer22=deezer22, deezer23=deezer23, deezer24=deezer24,
+                           deezer25=deezer25, deezer26=deezer26, deezer27=deezer27, deezer28=deezer28,
+                           deezer29=deezer29, deezer30=deezer30, deezer31=deezer31, deezer32=deezer32,
+                           deezer33=deezer33, deezer34=deezer34, deezer35=deezer35, deezer36=deezer36,
+                           deezer37=deezer37, deezer38=deezer38, deezer39=deezer39, deezer40=deezer40,
+                           deezer41=deezer41, deezer42=deezer42, deezer43=deezer43, deezer44=deezer44,
+                           deezer45=deezer45, deezer46=deezer46, deezer47=deezer47, deezer48=deezer48,
+                           deezer49=deezer49, deezer50=deezer50, deezer_pic1=deezer_pic1,
+                           deezer_pic2=deezer_pic2, deezer_pic3=deezer_pic3, deezer_pic4=deezer_pic4,
+                           deezer_pic5=deezer_pic5, deezer_pic6=deezer_pic6, deezer_pic7=deezer_pic7,
+                           deezer_pic8=deezer_pic8, deezer_pic9=deezer_pic9, deezer_pic10=deezer_pic10,
+                           deezer_pic11=deezer_pic11, deezer_pic12=deezer_pic12,deezer_pic13=deezer_pic13,
+                           deezer_pic14=deezer_pic14, deezer_pic15=deezer_pic15, deezer_pic16=deezer_pic16,
+                           deezer_pic17=deezer_pic17, deezer_pic18=deezer_pic18, deezer_pic19=deezer_pic19,
+                           deezer_pic20=deezer_pic20, deezer_pic21=deezer_pic21, deezer_pic22=deezer_pic22,
+                           deezer_pic23=deezer_pic23, deezer_pic24=deezer_pic24, deezer_pic25=deezer_pic25,
+                           deezer_pic26=deezer_pic26, deezer_pic27=deezer_pic27, deezer_pic28=deezer_pic28,
+                           deezer_pic29=deezer_pic29, deezer_pic30=deezer_pic30, deezer_pic31=deezer_pic31,
+                           deezer_pic32=deezer_pic32, deezer_pic33=deezer_pic33, deezer_pic34=deezer_pic34,
+                           deezer_pic35=deezer_pic35, deezer_pic36=deezer_pic36, deezer_pic37=deezer_pic37,
+                           deezer_pic38=deezer_pic38, deezer_pic39=deezer_pic39, deezer_pic40=deezer_pic40,
+                           deezer_pic41=deezer_pic41, deezer_pic42=deezer_pic42, deezer_pic43=deezer_pic43,
+                           deezer_pic44=deezer_pic44, deezer_pic45=deezer_pic45, deezer_pic46=deezer_pic46,
+                           deezer_pic47=deezer_pic47, deezer_pic48=deezer_pic48, deezer_pic49=deezer_pic49,
+                           deezer_pic50=deezer_pic50, deezer_sing1=deezer_sing1,deezer_sing2=deezer_sing2,
+                           deezer_sing3=deezer_sing3, deezer_sing4=deezer_sing4,deezer_sing5=deezer_sing5,
+                           deezer_sing6=deezer_sing6, deezer_sing7=deezer_sing7,deezer_sing8=deezer_sing8,
+                           deezer_sing9=deezer_sing9, deezer_sing10=deezer_sing10,deezer_sing11=deezer_sing11,
+                           deezer_sing12=deezer_sing12,deezer_sing13=deezer_sing13,deezer_sing14=deezer_sing14,
+                           deezer_sing15=deezer_sing15, deezer_sing16=deezer_sing16,deezer_sing17=deezer_sing17,
+                           deezer_sing18=deezer_sing18, deezer_sing19=deezer_sing19,deezer_sing20=deezer_sing20,
+                           deezer_sing21=deezer_sing21, deezer_sing22=deezer_sing22,deezer_sing23=deezer_sing23,
+                           deezer_sing24=deezer_sing24, deezer_sing25=deezer_sing25,deezer_sing26=deezer_sing26,
+                           deezer_sing27=deezer_sing27, deezer_sing28=deezer_sing28,deezer_sing29=deezer_sing29,
+                           deezer_sing30=deezer_sing30, deezer_sing31=deezer_sing31,deezer_sing32=deezer_sing32,
+                           deezer_sing33=deezer_sing33, deezer_sing34=deezer_sing34,deezer_sing35=deezer_sing35,
+                           deezer_sing36=deezer_sing36, deezer_sing37=deezer_sing37,deezer_sing38=deezer_sing38,
+                           deezer_sing39=deezer_sing39, deezer_sing40=deezer_sing40,deezer_sing41=deezer_sing41,
+                           deezer_sing42=deezer_sing42, deezer_sing43=deezer_sing43,deezer_sing44=deezer_sing44,
+                           deezer_sing45=deezer_sing45, deezer_sing46=deezer_sing46,deezer_sing47=deezer_sing47,
+                           deezer_sing48=deezer_sing48, deezer_sing49=deezer_sing49, deezer_sing50=deezer_sing50
+                           ,deezer_link1=deezer_link1, deezer_link2=deezer_link2,
+                           deezer_link3=deezer_link3, deezer_link4=deezer_link4, deezer_link5=deezer_link5,
+                           deezer_link6=deezer_link6, deezer_link7=deezer_link7, deezer_link8=deezer_link8,
+                           deezer_link9=deezer_link9, deezer_link10=deezer_link10, deezer_link11=deezer_link11,
+                           deezer_link12=deezer_link12, deezer_link13=deezer_link13, deezer_link14=deezer_link14,
+                           deezer_link15=deezer_link15, deezer_link16=deezer_link16, deezer_link17=deezer_link17,
+                           deezer_link18=deezer_link18, deezer_link19=deezer_link19, deezer_link20=deezer_link20,
+                           deezer_link21=deezer_link21, deezer_link22=deezer_link22, deezer_link23=deezer_link23,
+                           deezer_link24=deezer_link24, deezer_link25=deezer_link25, deezer_link26=deezer_link26,
+                           deezer_link27=deezer_link27, deezer_link28=deezer_link28, deezer_link29=deezer_link29,
+                           deezer_link30=deezer_link30, deezer_link31=deezer_link31, deezer_link32=deezer_link32,
+                           deezer_link33=deezer_link33, deezer_link34=deezer_link34, deezer_link35=deezer_link35,
+                           deezer_link36=deezer_link36, deezer_link37=deezer_link37, deezer_link38=deezer_link38,
+                           deezer_link39=deezer_link39, deezer_link40=deezer_link40, deezer_link41=deezer_link41,
+                           deezer_link42=deezer_link42, deezer_link43=deezer_link43, deezer_link44=deezer_link44,
+                           deezer_link45=deezer_link45, deezer_link46=deezer_link46, deezer_link47=deezer_link47,
+                           deezer_link48=deezer_link48, deezer_link49=deezer_link49, deezer_link50=deezer_link50)
+
 
 
 @app.route('/filter')
