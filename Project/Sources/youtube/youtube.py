@@ -5,14 +5,15 @@ mongo = pymongo.MongoClient()
 
 charts_db = mongo["charts"]
 songs_col = charts_db["youtube"]
-default = "https://music.youtube.com/watch?v=NbB6qMA2lts&list="
+default = "https://music.youtube.com/watch?v="
 
 ytmusic = YTMusic('headers_auth.json')
 YTMusic = YTMusic()
-charts = YTMusic.get_charts(country='UA') #это и так готовые функции, их не надо оборачивать
+charts = YTMusic.get_charts(country='ZZ') #это и так готовые функции, их не надо оборачивать
 
 num = 0
 data = charts['videos']
+print(data)
 pesni = data['items']
 counter = 0
 for track in pesni:
