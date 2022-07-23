@@ -1,9 +1,6 @@
 from flask import Flask, render_template
 import pymongo
 import os
-from Sources.spotify import spotify as sp
-from Sources.youtube import youtube as yt
-from Sources.yandex import yandex as ya
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
 
@@ -254,6 +251,46 @@ def index():
     youtube_pic39 = youtube.find_one({"logo-38": {"$exists": "true"}})['logo-38']
     youtube_pic40 = youtube.find_one({"logo-39": {"$exists": "true"}})['logo-39']
 
+    youtube_link1 = youtube.find_one({"link-0": {"$exists": "true"}})['link-0']
+    youtube_link2 = youtube.find_one({"link-1": {"$exists": "true"}})['link-1']
+    youtube_link3 = youtube.find_one({"link-2": {"$exists": "true"}})['link-2']
+    youtube_link4 = youtube.find_one({"link-3": {"$exists": "true"}})['link-3']
+    youtube_link5 = youtube.find_one({"link-4": {"$exists": "true"}})['link-4']
+    youtube_link6 = youtube.find_one({"link-5": {"$exists": "true"}})['link-5']
+    youtube_link7 = youtube.find_one({"link-6": {"$exists": "true"}})['link-6']
+    youtube_link8 = youtube.find_one({"link-7": {"$exists": "true"}})['link-7']
+    youtube_link9 = youtube.find_one({"link-8": {"$exists": "true"}})['link-8']
+    youtube_link10 = youtube.find_one({"link-9": {"$exists": "true"}})['link-9']
+    youtube_link11 = youtube.find_one({"link-10": {"$exists": "true"}})['link-10']
+    youtube_link12 = youtube.find_one({"link-11": {"$exists": "true"}})['link-11']
+    youtube_link13 = youtube.find_one({"link-12": {"$exists": "true"}})['link-12']
+    youtube_link14 = youtube.find_one({"link-13": {"$exists": "true"}})['link-13']
+    youtube_link15 = youtube.find_one({"link-14": {"$exists": "true"}})['link-14']
+    youtube_link16 = youtube.find_one({"link-15": {"$exists": "true"}})['link-15']
+    youtube_link17 = youtube.find_one({"link-16": {"$exists": "true"}})['link-16']
+    youtube_link18 = youtube.find_one({"link-17": {"$exists": "true"}})['link-17']
+    youtube_link19 = youtube.find_one({"link-18": {"$exists": "true"}})['link-18']
+    youtube_link20 = youtube.find_one({"link-19": {"$exists": "true"}})['link-19']
+    youtube_link21 = youtube.find_one({"link-20": {"$exists": "true"}})['link-20']
+    youtube_link22 = youtube.find_one({"link-21": {"$exists": "true"}})['link-21']
+    youtube_link23 = youtube.find_one({"link-22": {"$exists": "true"}})['link-22']
+    youtube_link24 = youtube.find_one({"link-23": {"$exists": "true"}})['link-23']
+    youtube_link25 = youtube.find_one({"link-24": {"$exists": "true"}})['link-24']
+    youtube_link26 = youtube.find_one({"link-25": {"$exists": "true"}})['link-25']
+    youtube_link27 = youtube.find_one({"link-26": {"$exists": "true"}})['link-26']
+    youtube_link28 = youtube.find_one({"link-27": {"$exists": "true"}})['link-27']
+    youtube_link29 = youtube.find_one({"link-28": {"$exists": "true"}})['link-28']
+    youtube_link30 = youtube.find_one({"link-29": {"$exists": "true"}})['link-29']
+    youtube_link31 = youtube.find_one({"link-30": {"$exists": "true"}})['link-30']
+    youtube_link32 = youtube.find_one({"link-31": {"$exists": "true"}})['link-31']
+    youtube_link33 = youtube.find_one({"link-32": {"$exists": "true"}})['link-32']
+    youtube_link34 = youtube.find_one({"link-33": {"$exists": "true"}})['link-33']
+    youtube_link35 = youtube.find_one({"link-34": {"$exists": "true"}})['link-34']
+    youtube_link36 = youtube.find_one({"link-35": {"$exists": "true"}})['link-35']
+    youtube_link37 = youtube.find_one({"link-36": {"$exists": "true"}})['link-36']
+    youtube_link38 = youtube.find_one({"link-37": {"$exists": "true"}})['link-37']
+    youtube_link39 = youtube.find_one({"link-38": {"$exists": "true"}})['link-38']
+    youtube_link40 = youtube.find_one({"link-39": {"$exists": "true"}})['link-39']
 
     yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
     yandex2 = yandex.find_one({"song-1": {"$exists": "true"}})['song-1']
@@ -582,6 +619,20 @@ def index():
                            youtube_pic32=youtube_pic32, youtube_pic33=youtube_pic33, youtube_pic34=youtube_pic34,
                            youtube_pic35=youtube_pic35, youtube_pic36=youtube_pic36, youtube_pic37=youtube_pic37,
                            youtube_pic38=youtube_pic38, youtube_pic39=youtube_pic39, youtube_pic40=youtube_pic40,
+                           youtube_link1=youtube_link1,
+                           youtube_link2=youtube_link2, youtube_link3=youtube_link3, youtube_link4=youtube_link4,
+                           youtube_link5=youtube_link5, youtube_link6=youtube_link6, youtube_link7=youtube_link7,
+                           youtube_link8=youtube_link8, youtube_link9=youtube_link9, youtube_link10=youtube_link10,
+                           youtube_link11=youtube_link11, youtube_link12=youtube_link12, youtube_link13=youtube_link13,
+                           youtube_link14=youtube_link14, youtube_link15=youtube_link15, youtube_link16=youtube_link16,
+                           youtube_link17=youtube_link17, youtube_link18=youtube_link18, youtube_link19=youtube_link19,
+                           youtube_link20=youtube_link20, youtube_link21=youtube_link21, youtube_link22=youtube_link22,
+                           youtube_link23=youtube_link23, youtube_link24=youtube_link24, youtube_link25=youtube_link25,
+                           youtube_link26=youtube_link26, youtube_link27=youtube_link27, youtube_link28=youtube_link28,
+                           youtube_link29=youtube_link29, youtube_link30=youtube_link30, youtube_link31=youtube_link31,
+                           youtube_link32=youtube_link32, youtube_link33=youtube_link33, youtube_link34=youtube_link34,
+                           youtube_link35=youtube_link35, youtube_link36=youtube_link36, youtube_link37=youtube_link37,
+                           youtube_link38=youtube_link38, youtube_link39=youtube_link39, youtube_link40=youtube_link40,
 
                            yandex1 = yandex1, yandex2 = yandex2, yandex3 = yandex3, yandex4 = yandex4,
                            yandex5 = yandex5, yandex6 = yandex6, yandex7 = yandex7, yandex8 = yandex8,
