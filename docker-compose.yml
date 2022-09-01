@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  charts:
+    container_name: "charts"
+    command: "python3 app.py"
+    restart: always
+    build:
+      context: '.'
+      dockerfile: ./Dockerfile
+    ports:
+      - "5000:5000"
+#    volumes:
+#      - ./logs:/usr/src/pilaru/logs
+    depends_on:
+      mongo:
+        condition: service_started
