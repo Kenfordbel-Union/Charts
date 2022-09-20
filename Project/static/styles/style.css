@@ -42,7 +42,7 @@
     top: -50px;
 }
 .container .normal_size .grid_list .list{
-    height: 818px;
+    height: 800px;
     width: 97%;
     border-radius: 60px;
     border-width: 0px 7px 7px 7px;
@@ -171,6 +171,34 @@
     left: 14px;
     top: 14px;
   }
+  .bottom_layer{
+    position: absolute;
+    width: 380px;
+    height: 75px;
+    left: 160px;
+    top: 1488px;
+    
+    border-width: 7px 7px 0px 7px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-radius: 60px 60px 0px 0px;
+  }
+  .bottom_inst{
+    position: absolute;
+    top: 13px;
+    left: 60px;
+  }
+  .bottom_telegram{
+    position: absolute;
+    top: 13px;
+    left: 165px;
+  }
+  .bottom_linkedin{
+    position: absolute;
+    top: 13px;
+    left: 270px;
+  }
+
   /* .button_play{
     width: 30px;
     height: 35px;
