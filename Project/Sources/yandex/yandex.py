@@ -1,7 +1,7 @@
 import os
 from yandex_music import Client
 import pymongo
-CHART_ID = 'world'
+CHART_ID = 'ukraine'
 TOKEN = os.environ.get('AQAAAABiu4_vAAgJ512cuW5RwU8HsyJ7W0gZEls')
 
 mongo = pymongo.MongoClient()
