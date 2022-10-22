@@ -1,4 +1,6 @@
 import os
+
+import yandex_music
 from yandex_music import Client
 import pymongo
 CHART_ID = 'ukraine'
