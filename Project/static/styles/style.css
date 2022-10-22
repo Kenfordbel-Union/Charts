@@ -1,3 +1,5 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css);
+
 .html, body {
     margin: 0;
     padding: 0;
@@ -42,7 +44,7 @@
     top: -50px;
 }
 .container .normal_size .grid_list .list{
-    height: 818px;
+    height: 800px;
     width: 97%;
     border-radius: 60px;
     border-width: 0px 7px 7px 7px;
@@ -171,11 +173,99 @@
     left: 14px;
     top: 14px;
   }
+  .bottom_layer{
+    position: absolute;
+    width: 380px;
+    height: 75px;
+    left: 160px;
+    top: 1488px;
+    
+    border-width: 7px 7px 0px 7px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-radius: 60px 60px 0px 0px;
+  }
+  .bottom_inst{
+    position: absolute;
+    top: 13px;
+    left: 60px;
+  }
+  .bottom_telegram{
+    position: absolute;
+    top: 13px;
+    left: 165px;
+  }
+  .bottom_linkedin{
+    position: absolute;
+    top: 13px;
+    left: 270px;
+  }
+
   /* .button_play{
     width: 30px;
     height: 35px;
     flex: auto;
   } */
+
+ul {
+    position: relative;
+    display: flex;
+    width: 50px;
+}
+ul li {
+    position: relative;
+    list-style: none;
+    margin: 0 20px;
+    cursor: pointer;
+    width: 50px;
+    left: -25px;
+}
+ul li a {
+    text-decoration: none;
+}
+ul li a .fa-brands {
+    font-size: 3em;
+    color: rgb(255, 254, 254);
+}
+ul li a::before {
+    font-family: "FontAwesome";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3em;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+ul li:nth-child(1) a::before {
+    content: "\f2c6";
+    color: #2da1da;
+    border-bottom: 4px solid #2da1da;
+}
+ul li:nth-child(2) a::before {
+    content: "\f16d";
+    background-image: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 4px solid #dc2743;
+    right: 1%;
+    width: 102%;
+}
+
+ul li:nth-child(3) a::before {
+    content: "\f099";
+    color: #1da1f2;
+    border-bottom: 4px solid #1da1f2;
+}
+ul li:nth-child(4) a::before {
+    content: "\f167";
+    color: red;
+    border-bottom: 4px solid red;
+}
+ul li:hover a::before {
+    height: 100%;
+}
 
 
 
