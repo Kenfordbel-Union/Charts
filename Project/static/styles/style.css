@@ -3,11 +3,25 @@
 .html, body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(180deg, #EAAFCB 0%, #9DBAE6 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+
+    background: linear-gradient(90deg, #d446ff, #e73c7e, #23a6d5, #fae311);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	transform: translate3d(0, 0, 0);
+
     height: 1570px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 @font-face {
     font-family: 'GFS Neohellenic1';
@@ -24,7 +38,7 @@
     height: 1570px;
     background-image: url('background.png');
     background-size: 100%;
-
+    z-index: 100;
 }
 .container .normal_size{
     width: 1600px;
