@@ -554,4 +554,4 @@ def filter():
     return render_template('filter.html')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=True) #потом поставить False
+    app.run(host="0.0.0.0",debug=True, port=80) #потом поставить False
