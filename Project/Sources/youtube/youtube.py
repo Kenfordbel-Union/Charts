@@ -4,7 +4,7 @@ import pymongo
 mongo = pymongo.MongoClient()
 
 charts_db = mongo["charts"]
-songs_col = charts_db["youtube"]
+youtube = charts_db["youtube"]
 default = "https://music.youtube.com/watch?v="
 
 ytmusic = YTMusic('headers_auth.json')
@@ -30,9 +30,9 @@ for track in pesni:
     listless = ', '.join(list)
     song_for_db = {f"song-{num}":f"{title} - {listless}"}
 
-    db_insert_songs = songs_col.insert_one(song_for_db)
+    db_insert_songs = youtube.insert_one(song_for_db)
 
-    result = songs_col.update_one(
+    result = youtube.update_one(
         {f"song-{num}": f"{title} - {listless}"},
         {
             "$set": {
