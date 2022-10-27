@@ -8,7 +8,7 @@
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 	transform: translate3d(0, 0, 0);
-  height: 1570px;
+  height: auto;
 }
 
 @keyframes gradient {
@@ -306,4 +306,19 @@ ul li:nth-child(4) a::before {
 }
 ul li:hover a::before {
     height: 100%;
+}
+.login_form{
+  align-items: center;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-top: 100px;
+}
+.login_form .form{
+  align-items: center;
+  position: relative;
+  margin: auto;
+  margin-top: 80%;
+  margin-left: 30%;
 }
