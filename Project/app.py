@@ -1,20 +1,25 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request, g, abort, flash, redirect, url_for, session
+from flask_session import Session
 import pymongo
 import os
+from werkzeug.security import generate_password_hash, check_password_hash
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
-
+#DBs
 spotify = mydb["spotify"]
 yandex = mydb["yandex"]
 youtube = mydb["youtube"]
 deezer = mydb["deezer"]
-
+users = mydb["users"]
+#app
 app = Flask(__name__)
+app.config['SESSION_TYPE'] = 'filesystem'
+app.secret_key = 'super secret key'
+
 
 @app.route('/')
 def index():
     logo = os.path.join(r'Project/static/images/logo.png')
-
     spotify1 = spotify.find_one({"song-0": {"$exists": "true"}})['song-0']
     spotify2 = spotify.find_one({"song-1": {"$exists": "true"}})['song-1']
     spotify3 = spotify.find_one({"song-2": {"$exists": "true"}})['song-2']
@@ -549,9 +554,40 @@ def index():
 
     return render_template('index.html', **locals())
 
+
 @app.route('/filter')
 def filter():
     return render_template('filter.html')
 
+
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        login_user = users.find_one({'name': request.form['username']})
+        if login_user:
+            print(login_user['password'])
+            print(check_password_hash(request.form['pass'], login_user['password']))
+            if check_password_hash(login_user['password'], request.form['pass']):
+                session['username'] = request.form['username']
+                return redirect(url_for('index'))
+            return 'Invalid username/password combination'
+        return 'Invalid username/password combination'
+    return render_template('login.html')
+
+
+@app.route('/register', methods=["POST", "GET"])
+def register():
+    if request.method == "POST":
+        existing_user = users.find_one({'name': request.form['username']})
+        if existing_user is None:
+            hashpass = generate_password_hash(request.form['psw'])
+            users.insert_one({'name' : request.form['username'], 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+        return 'That username already exist!'
+    return render_template('register.html')
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True, port=80) #потом поставить False
+
