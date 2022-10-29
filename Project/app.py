@@ -20,6 +20,7 @@ app.secret_key = 'super secret key'
 @app.route('/')
 def index():
     if session:
+        username = session['username']
         logo = os.path.join(r'Project/static/images/logo.png')
         spotify1 = spotify.find_one({"song-0": {"$exists": "true"}})['song-0']
         spotify2 = spotify.find_one({"song-1": {"$exists": "true"}})['song-1']
