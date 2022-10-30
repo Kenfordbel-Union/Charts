@@ -7,7 +7,18 @@ charts_db = mongo["charts"]
 youtube = charts_db["youtube"]
 default = "https://music.youtube.com/watch?v="
 
-ytmusic = YTMusic('headers_auth.json')
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+    "Accept": "*/*",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Content-Type": "application/json",
+    "X-Goog-AuthUser": "0",
+    "x-origin": "https://music.youtube.com",
+    "Cookie" : "VISITOR_INFO1_LIVE=3fKzDp-ZVBE; CONSENT=YES+BY.ru+201910; LOGIN_INFO=AFmmF2swRQIgRc7JW3KzLT46-NULPlkoo7KBVVNb9OrNd2yGlBX_PAMCIQDlF37bO3apI3jdI8J0VMI1FTbHmbmWzHCp_DtuFQ4Y9Q:QUQ3MjNmeGhFRTF4MW5HMWlPeF84SG9mYnNIdENWMktyQUR1cjJDYzY4SWR3czVETGt0UnhndU1OVER4c2NFZm00NFpXUUYyTVlpVlExY1FneGxUWFZEWEZOZEF2eUc5Wi0wODcwMGZqYkZBZ01UcEhqT2dSeGxtMVhiSGhZQU8xWFV5MHZRNUFRSVJycW9wNFM4Q1g5UUEtREFtdF9meFpzR0MyTk40ZDhXcEZEZWFtclU4R1ZKNkRlYWdTd0M4aHZmU2dVQVk5TXJJ; PREF=cvdm=grid&gl=BY&tz=Europe.Minsk&al=ru&f5=30030&f4=4000000; HSID=AVCBEdq8Fkpcn7lbq; SSID=ATzQExEjdTnfz9Bgu; APISID=I1-LtYjaFGRf0TWs/AsjHlouaQOSi8oDPe; SAPISID=pIPVGm8h53Q71yVO/AVPxvEkjI93wCjama; __Secure-1PAPISID=pIPVGm8h53Q71yVO/AVPxvEkjI93wCjama; __Secure-3PAPISID=pIPVGm8h53Q71yVO/AVPxvEkjI93wCjama; _gcl_au=1.1.1937999735.1657831280; SID=MQgx35KYAIwpRQfG-54qX0hAdisXipVCOT7-Ylyw4xOGWoZ5naxXcrc-rVvosdnHNpCNLA.; __Secure-1PSID=MQgx35KYAIwpRQfG-54qX0hAdisXipVCOT7-Ylyw4xOGWoZ5y8GmvcRs4utpFPOfT4Z6Zg.; __Secure-3PSID=MQgx35KYAIwpRQfG-54qX0hAdisXipVCOT7-Ylyw4xOGWoZ5h6zo9SC8SuXZbEwvA9dqGQ.; YSC=XIHH4-wE6dM; SIDCC=AJi4QfEon_XI8SZ8xwsPNHtGNjJXNwClkLyLIFtk3lBwTndBxThQBu-PYqK1ob7TY2Q8zWmklzUq; __Secure-1PSIDCC=AJi4QfH_hTNxzQtz_pycYuqKTaxxPo55zdzVLyNjtdERkPGYplcvT5_4gbT4eUKrwVtLJiPU8w; __Secure-3PSIDCC=AJi4QfFapfD8aNCi1JNVEv0HJXOZjdAse7zx6UMf3VbovjGlxynoA26h3VPNMyklsh3KqG8k0vVC"
+}
+
+ytmusic = headers
 YTMusic = YTMusic()
 charts = YTMusic.get_charts(country='ZZ') #это и так готовые функции, их не надо оборачивать
 
