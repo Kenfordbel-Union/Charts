@@ -14,16 +14,16 @@
 </head>
 <body id="mainbody">    
 <div class="container">
-    <div class="menu">
+    <nav class="menu">
         <ul>
             <li>News</li>
-            <li>Charts▾</li>
+            <li >Charts▾</li>
             <li>About us</li>
         </ul>
         <div style="text-align: right; padding-top: 10px; padding-right: 160px;">
             <p>{{ username }}</p>
         </div>
-    </div>
+    </nav>
     <img class="img" src="{{ url_for('static', filename='images/logo2.png') }}" alt='ooops image'/>
     <div class="normal_size">
         <div class="grid_list">
@@ -32,8 +32,8 @@
                 <img class="bottom_logo" src="{{ url_for('static', filename='images/listen_on_spotify.png') }}" alt='ooops image'/>
                 <div class="main_zone">
                     <div class="inside">
-                        <a href="{{ spotify_sing1 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic1 }}" class="pictures">
+                        <a href="{{ spotify_links[0] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[0] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -41,14 +41,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>1. {{ spotify1 }}</span>
+                                <span>1. {{ spotify_data[0] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing2 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic2 }}" class="pictures">
+                        <a href="{{ spotify_links[1] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[1] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -56,14 +56,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>2. {{ spotify2 }}</span>
+                                <span>2. {{ spotify_data[1] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing3 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic3 }}" class="pictures">
+                        <a href="{{ spotify_links[2] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[2] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -71,14 +71,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>3. {{ spotify3 }}</span>
+                                <span>3. {{ spotify_data[2] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing4 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic4 }}" class="pictures">
+                        <a href="{{ spotify_links[3] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[3] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -86,14 +86,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>4. {{ spotify4 }}</span>
+                                <span>4. {{ spotify_data[3] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing5 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic5 }}" class="pictures">
+                        <a href="{{ spotify_links[4] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[4] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -101,14 +101,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>5. {{ spotify5 }}</span>
+                                <span>5. {{ spotify_data[4] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing6 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic6 }}" class="pictures">
+                        <a href="{{ spotify_links[5] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[5] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -116,14 +116,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>6. {{ spotify6 }}</span>
+                                <span>6. {{ spotify_data[5] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing7 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic7 }}" class="pictures">
+                        <a href="{{ spotify_links[6] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[6] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -131,14 +131,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>7. {{ spotify7 }}</span>
+                                <span>7. {{ spotify_data[6] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing8 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic8 }}" class="pictures">
+                        <a href="{{ spotify_links[7] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[7] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -146,14 +146,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>8. {{ spotify8 }}</span>
+                                <span>8. {{ spotify_data[7] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing9 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic9 }}" class="pictures">
+                        <a href="{{ spotify_links[8] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[8] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -161,14 +161,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>9. {{ spotify9 }}</span>
+                                <span>9. {{ spotify_data[8] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing10 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic10 }}" class="pictures">
+                        <a href="{{ spotify_links[9] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[9] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -176,14 +176,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>10. {{ spotify10 }}</span>
+                                <span>10. {{ spotify_data[9] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing11 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic11 }}" class="pictures">
+                        <a href="{{ spotify_links[10] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[10] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -191,14 +191,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>11. {{ spotify11 }}</span>
+                                <span>11. {{ spotify_data[10] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing12 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic12 }}" class="pictures">
+                        <a href="{{ spotify_links[11] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[11] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -206,14 +206,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>12. {{ spotify12 }}</span>
+                                <span>12. {{ spotify_data[11] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing13 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic13 }}" class="pictures">
+                        <a href="{{ spotify_links[12] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[12] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -221,14 +221,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>13. {{ spotify13 }}</span>
+                                <span>13. {{ spotify_data[12] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing14 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic14 }}" class="pictures">
+                        <a href="{{ spotify_links[13] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[13] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -236,14 +236,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>14. {{ spotify14 }}</span>
+                                <span>14. {{ spotify_data[13] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing15 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic15 }}" class="pictures">
+                        <a href="{{ spotify_links14 }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[14] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -251,14 +251,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>15. {{ spotify15 }}</span>
+                                <span>15. {{ spotify_data[4] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing16 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic16 }}" class="pictures">
+                        <a href="{{ spotify_links[15] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[15] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -266,14 +266,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>16. {{ spotify16 }}</span>
+                                <span>16. {{ spotify_data[15] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing17 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic17 }}" class="pictures">
+                        <a href="{{ spotify_links[16] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[16] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -281,14 +281,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>17. {{ spotify17 }}</span>
+                                <span>17. {{ spotify_data[16] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing18 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic18 }}" class="pictures">
+                        <a href="{{ spotify_links[17] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[17] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -296,14 +296,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>18. {{ spotify18 }}</span>
+                                <span>18. {{ spotify_data[17] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing19 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic19 }}" class="pictures">
+                        <a href="{{ spotify_links[18] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[18] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -311,14 +311,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>19. {{ spotify19 }}</span>
+                                <span>19. {{ spotify_data[18] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing20 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic20 }}" class="pictures">
+                        <a href="{{ spotify_links[19] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[19] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -326,14 +326,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>20. {{ spotify20 }}</span>
+                                <span>20. {{ spotify_data[19] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing21 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic21 }}" class="pictures">
+                        <a href="{{ spotify_links[20] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[20] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -341,14 +341,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>21. {{ spotify21 }}</span>
+                                <span>21. {{ spotify_data[20] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing22 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic22 }}" class="pictures">
+                        <a href="{{ spotify_links[21] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[21] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -356,14 +356,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>22. {{ spotify22 }}</span>
+                                <span>22. {{ spotify_data[21] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing23 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic23 }}" class="pictures">
+                        <a href="{{ spotify_links[22] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[22] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -371,14 +371,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>23. {{ spotify23 }}</span>
+                                <span>23. {{ spotify_data[22] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing24 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic24 }}" class="pictures">
+                        <a href="{{ spotify_links[23] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[23] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -386,14 +386,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>24. {{ spotify24 }}</span>
+                                <span>24. {{ spotify_data[23] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing25 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic25 }}" class="pictures">
+                        <a href="{{ spotify_links[24] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[24] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -401,14 +401,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>25. {{ spotify25 }}</span>
+                                <span>25. {{ spotify_data[24] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing26 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic26 }}" class="pictures">
+                        <a href="{{ spotify_links[25] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[25] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -416,14 +416,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>26. {{ spotify26 }}</span>
+                                <span>26. {{ spotify_data[25] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing27 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic27 }}" class="pictures">
+                        <a href="{{ spotify_links[26] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[26] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -431,14 +431,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>27. {{ spotify27 }}</span>
+                                <span>27. {{ spotify_data[26] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing28 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic28 }}" class="pictures">
+                        <a href="{{ spotify_links[27] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[27] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -446,14 +446,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>28. {{ spotify28 }}</span>
+                                <span>28. {{ spotify_data[27] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing29 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic29 }}" class="pictures">
+                        <a href="{{ spotify_links[28] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[28] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -461,14 +461,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>29. {{ spotify29 }}</span>
+                                <span>29. {{ spotify_data[28] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing30 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic30 }}" class="pictures">
+                        <a href="{{ spotify_links[29] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[29] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -476,14 +476,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>30. {{ spotify30 }}</span>
+                                <span>30. {{ spotify_data[29] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing31 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic31 }}" class="pictures">
+                        <a href="{{ spotify_links[30] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[30] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -491,14 +491,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>31. {{ spotify31 }}</span>
+                                <span>31. {{ spotify_data[30] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing32 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic32 }}" class="pictures">
+                        <a href="{{ spotify_links[31] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[31] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -506,14 +506,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>32. {{ spotify32 }}</span>
+                                <span>32. {{ spotify_data[31] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing33 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic33 }}" class="pictures">
+                        <a href="{{ spotify_links[32] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[32] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -521,14 +521,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>33. {{ spotify33 }}</span>
+                                <span>33. {{ spotify_data[32] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing34 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic34 }}" class="pictures">
+                        <a href="{{ spotify_links[33] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[33] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -536,14 +536,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>34. {{ spotify34 }}</span>
+                                <span>34. {{ spotify_data[33] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing35 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic35 }}" class="pictures">
+                        <a href="{{ spotify_links[34] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[34] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -551,14 +551,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>35. {{ spotify35 }}</span>
+                                <span>35. {{ spotify_data[34] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing36 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic36 }}" class="pictures">
+                        <a href="{{ spotify_links[35] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[35] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -566,14 +566,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>36. {{ spotify36 }}</span>
+                                <span>36. {{ spotify_data[35] }}</span>
                             </div>
                         </div>
                     <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                 </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing37 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic37 }}" class="pictures">
+                        <a href="{{ spotify_links[36] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[36] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -581,14 +581,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>37. {{ spotify37 }}</span>
+                                <span>37. {{ spotify_data[36] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing38 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic38 }}" class="pictures">
+                        <a href="{{ spotify_links[37] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[37] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -596,14 +596,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>38. {{ spotify38 }}</span>
+                                <span>38. {{ spotify_data[37] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing39 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic39 }}" class="pictures">
+                        <a href="{{ spotify_links[38] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[38] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -611,14 +611,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>39. {{ spotify39 }}</span>
+                                <span>39. {{ spotify_data[38] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing40 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic40 }}" class="pictures">
+                        <a href="{{ spotify_links[39] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[39] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -626,14 +626,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>40. {{ spotify40 }}</span>
+                                <span>40. {{ spotify_data[39] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing41 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic41 }}" class="pictures">
+                        <a href="{{ spotify_links[40] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[40] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -641,14 +641,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>41. {{ spotify41 }}</span>
+                                <span>41. {{ spotify_data[40] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing42 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic42 }}" class="pictures">
+                        <a href="{{ spotify_links[41] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[41] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -656,14 +656,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>42. {{ spotify42 }}</span>
+                                <span>42. {{ spotify_data[41] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing43 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic43 }}" class="pictures">
+                        <a href="{{ spotify_links[42] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[42] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -671,14 +671,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>43. {{ spotify43 }}</span>
+                                <span>43. {{ spotify_data[42] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing44 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic44 }}" class="pictures">
+                        <a href="{{ spotify_links[43] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[43] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -686,14 +686,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>44. {{ spotify44 }}</span>
+                                <span>44. {{ spotify_data[43] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing45 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic45 }}" class="pictures">
+                        <a href="{{ spotify_links[44] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[44] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -701,14 +701,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>45. {{ spotify45 }}</span>
+                                <span>45. {{ spotify_data[44] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing46 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic46 }}" class="pictures">
+                        <a href="{{ spotify_links[45] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[45] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -716,14 +716,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>46. {{ spotify46 }}</span>
+                                <span>46. {{ spotify_data[45] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing47 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic47 }}" class="pictures">
+                        <a href="{{ spotify_links[46] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[46] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -731,14 +731,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>47. {{ spotify47 }}</span>
+                                <span>47. {{ spotify_data[46] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing48 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic48 }}" class="pictures">
+                        <a href="{{ spotify_links[47] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[47] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -746,14 +746,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>48. {{ spotify48 }}</span>
+                                <span>48. {{ spotify_data[47] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing49 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic49 }}" class="pictures">
+                        <a href="{{ spotify_links[48] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[48] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -761,14 +761,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>49. {{ spotify49 }}</span>
+                                <span>49. {{ spotify_data[48] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ spotify_sing50 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ spotify_pic50 }}" class="pictures">
+                        <a href="{{ spotify_links[49] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ spotify_pics[49] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -776,7 +776,7 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>50. {{ spotify50 }}</span>
+                                <span>50. {{ spotify_data[49] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
@@ -788,8 +788,8 @@
                 <img class="bottom_logo" src="{{ url_for('static', filename='images/listen_on_youtube.png') }}" alt='ooops image'/>
                 <div class="main_zone">
                     <div class="inside">
-                        <a href="{{ youtube_link1 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic1 }}" class="pictures">
+                        <a href="{{ yt_links[0] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[0] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -797,14 +797,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>1. {{ youtube1 }}</span>
+                                <span>1. {{ yt_data[0] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link2 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic2 }}" class="pictures">
+                        <a href="{{ yt_links[1] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[1] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -812,14 +812,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>2. {{ youtube2 }}</span>
+                                <span>2. {{ yt_data[1] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link3 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic3 }}" class="pictures">
+                        <a href="{{ yt_links[2] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[2] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -827,14 +827,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>3. {{ youtube3 }}</span>
+                                <span>3. {{ yt_data[2] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link4 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic4 }}" class="pictures">
+                        <a href="{{ yt_links[3] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[3] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -842,14 +842,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>4. {{ youtube4 }}</span>
+                                <span>4. {{ yt_data[3] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link5 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic5 }}" class="pictures">
+                        <a href="{{ yt_links[4] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[4] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -857,14 +857,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>5. {{ youtube5 }}</span>
+                                <span>5. {{ yt_data[4] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link6 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic6 }}" class="pictures">
+                        <a href="{{ yt_links[5] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[5] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -872,14 +872,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>6. {{ youtube6 }}</span>
+                                <span>6. {{ yt_data[5] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link7 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic7 }}" class="pictures">
+                        <a href="{{ yt_links[6] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[6] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -887,14 +887,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>7. {{ youtube7 }}</span>
+                                <span>7. {{ yt_data[6] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link8 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic8 }}" class="pictures">
+                        <a href="{{ yt_links[7] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[7] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -902,14 +902,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>8. {{ youtube8 }}</span>
+                                <span>8. {{ yt_data[7] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link9 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic9 }}" class="pictures">
+                        <a href="{{ yt_links[8] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[8] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -917,14 +917,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>9. {{ youtube9 }}</span>
+                                <span>9. {{ yt_data[8] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link10 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic10 }}" class="pictures">
+                        <a href="{{ yt_links[9] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[9] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -932,14 +932,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>10. {{ youtube10 }}</span>
+                                <span>10. {{ yt_data[9] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link11 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic11 }}" class="pictures">
+                        <a href="{{ yt_links[10] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[10] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -947,14 +947,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>11. {{ youtube11 }}</span>
+                                <span>11. {{ yt_data[10] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link12 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic12 }}" class="pictures">
+                        <a href="{{ yt_links[11] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[11] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -962,14 +962,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>12. {{ youtube12 }}</span>
+                                <span>12. {{ yt_data[11] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link13 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic13 }}" class="pictures">
+                        <a href="{{ yt_links[12] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[12] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -977,14 +977,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>13. {{ youtube13 }}</span>
+                                <span>13. {{ yt_data[12] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link14 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic14 }}" class="pictures">
+                        <a href="{{ yt_links[13] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[13] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -992,14 +992,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>14. {{ youtube14 }}</span>
+                                <span>14. {{ yt_data[13] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link15 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic15 }}" class="pictures">
+                        <a href="{{ yt_links14 }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[14] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1007,14 +1007,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>15. {{ youtube15 }}</span>
+                                <span>15. {{ yt_data[4] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link16 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic16 }}" class="pictures">
+                        <a href="{{ yt_links[15] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[15] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1022,14 +1022,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>16. {{ youtube16 }}</span>
+                                <span>16. {{ yt_data[15] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link17 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic17 }}" class="pictures">
+                        <a href="{{ yt_links[16] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[16] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1037,14 +1037,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>17. {{ youtube17 }}</span>
+                                <span>17. {{ yt_data[16] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link18 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic18 }}" class="pictures">
+                        <a href="{{ yt_links[17] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[17] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1052,14 +1052,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>18. {{ youtube18 }}</span>
+                                <span>18. {{ yt_data[17] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link19 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic19 }}" class="pictures">
+                        <a href="{{ yt_links[18] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[18] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1067,14 +1067,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>19. {{ youtube19 }}</span>
+                                <span>19. {{ yt_data[18] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link20 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic20 }}" class="pictures">
+                        <a href="{{ yt_links[19] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[19] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1082,14 +1082,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>20. {{ youtube20 }}</span>
+                                <span>20. {{ yt_data[19] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link21 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic21 }}" class="pictures">
+                        <a href="{{ yt_links[20] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[20] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1097,14 +1097,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>21. {{ youtube21 }}</span>
+                                <span>21. {{ yt_data[20] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link22 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic22 }}" class="pictures">
+                        <a href="{{ yt_links[21] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[21] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1112,14 +1112,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>22. {{ youtube22 }}</span>
+                                <span>22. {{ yt_data[21] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link23 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic23 }}" class="pictures">
+                        <a href="{{ yt_links[22] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[22] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1127,14 +1127,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>23. {{ youtube23 }}</span>
+                                <span>23. {{ yt_data[22] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link24 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic24 }}" class="pictures">
+                        <a href="{{ yt_links[23] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[23] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1142,14 +1142,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>24. {{ youtube24 }}</span>
+                                <span>24. {{ yt_data[23] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link25 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic25 }}" class="pictures">
+                        <a href="{{ yt_links[24] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[24] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1157,14 +1157,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>25. {{ youtube25 }}</span>
+                                <span>25. {{ yt_data[24] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link26 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic26 }}" class="pictures">
+                        <a href="{{ yt_links[25] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[25] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1172,14 +1172,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>26. {{ youtube26 }}</span>
+                                <span>26. {{ yt_data[25] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link27 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic27 }}" class="pictures">
+                        <a href="{{ yt_links[26] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[26] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1187,14 +1187,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>27. {{ youtube27 }}</span>
+                                <span>27. {{ yt_data[26] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link28 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic28 }}" class="pictures">
+                        <a href="{{ yt_links[27] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[27] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1202,14 +1202,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>28. {{ youtube28 }}</span>
+                                <span>28. {{ yt_data[27] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link29 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic29 }}" class="pictures">
+                        <a href="{{ yt_links[28] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[28] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1217,14 +1217,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>29. {{ youtube29 }}</span>
+                                <span>29. {{ yt_data[28] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link30 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic30 }}" class="pictures">
+                        <a href="{{ yt_links[29] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[29] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1232,14 +1232,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>30. {{ youtube30 }}</span>
+                                <span>30. {{ yt_data[29] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link31 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic31 }}" class="pictures">
+                        <a href="{{ yt_links[30] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[30] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1247,14 +1247,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>31. {{ youtube31 }}</span>
+                                <span>31. {{ yt_data[30] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link32 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic32 }}" class="pictures">
+                        <a href="{{ yt_links[31] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[31] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1262,14 +1262,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>32. {{ youtube32 }}</span>
+                                <span>32. {{ yt_data[31] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link33 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic33 }}" class="pictures">
+                        <a href="{{ yt_links[32] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[32] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1277,14 +1277,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>33. {{ youtube33 }}</span>
+                                <span>33. {{ yt_data[32] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link34 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic34 }}" class="pictures">
+                        <a href="{{ yt_links[33] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[33] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1292,14 +1292,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>34. {{ youtube34 }}</span>
+                                <span>34. {{ yt_data[33] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link35 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic35 }}" class="pictures">
+                        <a href="{{ yt_links[34] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[34] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1307,14 +1307,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>35. {{ youtube35 }}</span>
+                                <span>35. {{ yt_data[34] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link36 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic36 }}" class="pictures">
+                        <a href="{{ yt_links[35] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[35] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1322,14 +1322,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>36. {{ youtube36 }}</span>
+                                <span>36. {{ yt_data[35] }}</span>
                             </div>
                         </div>
                     <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                 </div>
                     <div class="inside">
-                        <a href="{{ youtube_link37 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic37 }}" class="pictures">
+                        <a href="{{ yt_links[36] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[36] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1337,14 +1337,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>37. {{ youtube37 }}</span>
+                                <span>37. {{ yt_data[36] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link38 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic38 }}" class="pictures">
+                        <a href="{{ yt_links[37] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[37] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1352,14 +1352,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>38. {{ youtube38 }}</span>
+                                <span>38. {{ yt_data[37] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link39 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic39 }}" class="pictures">
+                        <a href="{{ yt_links[38] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[38] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1367,14 +1367,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>39. {{ youtube39 }}</span>
+                                <span>39. {{ yt_data[38] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ youtube_link40 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ youtube_pic40 }}" class="pictures">
+                        <a href="{{ yt_links[39] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ yt_pics[39] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1382,21 +1382,20 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>40. {{ youtube40 }}</span>
+                                <span>40. {{ yt_data[39] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                 </div>
-
             </div>    
             <div class="list">
                 <img class="svg_logo" src="{{ url_for('static', filename='images/dezeer.svg') }}" alt='ooops image'/>
                 <img class="bottom_logo" src="{{ url_for('static', filename='images/listen_on_deezer.png') }}" alt='ooops image'/>
                 <div class="main_zone">
                     <div class="inside">
-                        <a href="{{ deezer_sing1 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic1 }}" class="pictures">
+                        <a href="{{ deezer_links[0] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[0] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1404,14 +1403,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>1. {{ deezer1 }}</span>
+                                <span>1. {{ deezer_data[0] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing2 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic2 }}" class="pictures">
+                        <a href="{{ deezer_links[1] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[1] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1419,14 +1418,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>2. {{ deezer2 }}</span>
+                                <span>2. {{ deezer_data[1] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing3 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic3 }}" class="pictures">
+                        <a href="{{ deezer_links[2] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[2] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1434,14 +1433,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>3. {{ deezer3 }}</span>
+                                <span>3. {{ deezer_data[2] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing4 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic4 }}" class="pictures">
+                        <a href="{{ deezer_links[3] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[3] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1449,14 +1448,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>4. {{ deezer4 }}</span>
+                                <span>4. {{ deezer_data[3] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing5 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic5 }}" class="pictures">
+                        <a href="{{ deezer_links[4] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[4] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1464,14 +1463,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>5. {{ deezer5 }}</span>
+                                <span>5. {{ deezer_data[4] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing6 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic6 }}" class="pictures">
+                        <a href="{{ deezer_links[5] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[5] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1479,14 +1478,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>6. {{ deezer6 }}</span>
+                                <span>6. {{ deezer_data[5] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing7 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic7 }}" class="pictures">
+                        <a href="{{ deezer_links[6] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[6] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1494,14 +1493,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>7. {{ deezer7 }}</span>
+                                <span>7. {{ deezer_data[6] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing8 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic8 }}" class="pictures">
+                        <a href="{{ deezer_links[7] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[7] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1509,14 +1508,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>8. {{ deezer8 }}</span>
+                                <span>8. {{ deezer_data[7] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing9 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic9 }}" class="pictures">
+                        <a href="{{ deezer_links[8] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[8] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1524,14 +1523,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>9. {{ deezer9 }}</span>
+                                <span>9. {{ deezer_data[8] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing10 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic10 }}" class="pictures">
+                        <a href="{{ deezer_links[9] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[9] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1539,14 +1538,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>10. {{ deezer10 }}</span>
+                                <span>10. {{ deezer_data[9] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing11 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic11 }}" class="pictures">
+                        <a href="{{ deezer_links[10] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[10] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1554,14 +1553,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>11. {{ deezer11 }}</span>
+                                <span>11. {{ deezer_data[10] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing12 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic12 }}" class="pictures">
+                        <a href="{{ deezer_links[11] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[11] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1569,14 +1568,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>12. {{ deezer12 }}</span>
+                                <span>12. {{ deezer_data[11] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing13 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic13 }}" class="pictures">
+                        <a href="{{ deezer_links[12] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[12] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1584,14 +1583,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>13. {{ deezer13 }}</span>
+                                <span>13. {{ deezer_data[12] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing14 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic14 }}" class="pictures">
+                        <a href="{{ deezer_links[13] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[13] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1599,14 +1598,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>14. {{ deezer14 }}</span>
+                                <span>14. {{ deezer_data[13] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing15 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic15 }}" class="pictures">
+                        <a href="{{ deezer_links14 }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[14] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1614,14 +1613,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>15. {{ deezer15 }}</span>
+                                <span>15. {{ deezer_data[4] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing16 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic16 }}" class="pictures">
+                        <a href="{{ deezer_links[15] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[15] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1629,14 +1628,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>16. {{ deezer16 }}</span>
+                                <span>16. {{ deezer_data[15] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing17 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic17 }}" class="pictures">
+                        <a href="{{ deezer_links[16] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[16] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1644,14 +1643,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>17. {{ deezer17 }}</span>
+                                <span>17. {{ deezer_data[16] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing18 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic18 }}" class="pictures">
+                        <a href="{{ deezer_links[17] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[17] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1659,14 +1658,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>18. {{ deezer18 }}</span>
+                                <span>18. {{ deezer_data[17] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing19 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic19 }}" class="pictures">
+                        <a href="{{ deezer_links[18] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[18] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1674,14 +1673,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>19. {{ deezer19 }}</span>
+                                <span>19. {{ deezer_data[18] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing20 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic20 }}" class="pictures">
+                        <a href="{{ deezer_links[19] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[19] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1689,14 +1688,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>20. {{ deezer20 }}</span>
+                                <span>20. {{ deezer_data[19] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing21 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic21 }}" class="pictures">
+                        <a href="{{ deezer_links[20] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[20] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1704,14 +1703,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>21. {{ deezer21 }}</span>
+                                <span>21. {{ deezer_data[20] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing22 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic22 }}" class="pictures">
+                        <a href="{{ deezer_links[21] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[21] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1719,14 +1718,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>22. {{ deezer22 }}</span>
+                                <span>22. {{ deezer_data[21] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing23 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic23 }}" class="pictures">
+                        <a href="{{ deezer_links[22] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[22] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1734,14 +1733,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>23. {{ deezer23 }}</span>
+                                <span>23. {{ deezer_data[22] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing24 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic24 }}" class="pictures">
+                        <a href="{{ deezer_links[23] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[23] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1749,14 +1748,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>24. {{ deezer24 }}</span>
+                                <span>24. {{ deezer_data[23] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing25 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic25 }}" class="pictures">
+                        <a href="{{ deezer_links[24] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[24] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1764,14 +1763,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>25. {{ deezer25 }}</span>
+                                <span>25. {{ deezer_data[24] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing26 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic26 }}" class="pictures">
+                        <a href="{{ deezer_links[25] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[25] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1779,14 +1778,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>26. {{ deezer26 }}</span>
+                                <span>26. {{ deezer_data[25] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing27 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic27 }}" class="pictures">
+                        <a href="{{ deezer_links[26] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[26] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1794,14 +1793,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>27. {{ deezer27 }}</span>
+                                <span>27. {{ deezer_data[26] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing28 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic28 }}" class="pictures">
+                        <a href="{{ deezer_links[27] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[27] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1809,14 +1808,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>28. {{ deezer28 }}</span>
+                                <span>28. {{ deezer_data[27] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing29 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic29 }}" class="pictures">
+                        <a href="{{ deezer_links[28] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[28] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1824,14 +1823,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>29. {{ deezer29 }}</span>
+                                <span>29. {{ deezer_data[28] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing30 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic30 }}" class="pictures">
+                        <a href="{{ deezer_links[29] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[29] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1839,14 +1838,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>30. {{ deezer30 }}</span>
+                                <span>30. {{ deezer_data[29] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing31 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic31 }}" class="pictures">
+                        <a href="{{ deezer_links[30] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[30] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1854,14 +1853,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>31. {{ deezer31 }}</span>
+                                <span>31. {{ deezer_data[30] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing32 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic32 }}" class="pictures">
+                        <a href="{{ deezer_links[31] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[31] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1869,14 +1868,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>32. {{ deezer32 }}</span>
+                                <span>32. {{ deezer_data[31] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing33 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic33 }}" class="pictures">
+                        <a href="{{ deezer_links[32] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[32] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1884,14 +1883,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>33. {{ deezer33 }}</span>
+                                <span>33. {{ deezer_data[32] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing34 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic34 }}" class="pictures">
+                        <a href="{{ deezer_links[33] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[33] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1899,14 +1898,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>34. {{ deezer34 }}</span>
+                                <span>34. {{ deezer_data[33] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing35 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic35 }}" class="pictures">
+                        <a href="{{ deezer_links[34] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[34] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1914,14 +1913,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>35. {{ deezer35 }}</span>
+                                <span>35. {{ deezer_data[34] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing36 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic36 }}" class="pictures">
+                        <a href="{{ deezer_links[35] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[35] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1929,14 +1928,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>36. {{ deezer36 }}</span>
+                                <span>36. {{ deezer_data[35] }}</span>
                             </div>
                         </div>
                     <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                 </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing37 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic37 }}" class="pictures">
+                        <a href="{{ deezer_links[36] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[36] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1944,14 +1943,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>37. {{ deezer37 }}</span>
+                                <span>37. {{ deezer_data[36] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing38 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic38 }}" class="pictures">
+                        <a href="{{ deezer_links[37] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[37] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1959,14 +1958,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>38. {{ deezer38 }}</span>
+                                <span>38. {{ deezer_data[37] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing39 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic39 }}" class="pictures">
+                        <a href="{{ deezer_links[38] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[38] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1974,14 +1973,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>39. {{ deezer39 }}</span>
+                                <span>39. {{ deezer_data[38] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing40 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic40 }}" class="pictures">
+                        <a href="{{ deezer_links[39] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[39] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -1989,14 +1988,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>40. {{ deezer40 }}</span>
+                                <span>40. {{ deezer_data[39] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing41 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic41 }}" class="pictures">
+                        <a href="{{ deezer_links[40] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[40] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2004,14 +2003,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>41. {{ deezer41 }}</span>
+                                <span>41. {{ deezer_data[40] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing42 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic42 }}" class="pictures">
+                        <a href="{{ deezer_links[41] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[41] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2019,14 +2018,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>42. {{ deezer42 }}</span>
+                                <span>42. {{ deezer_data[41] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing43 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic43 }}" class="pictures">
+                        <a href="{{ deezer_links[42] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[42] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2034,14 +2033,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>43. {{ deezer43 }}</span>
+                                <span>43. {{ deezer_data[42] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing44 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic44 }}" class="pictures">
+                        <a href="{{ deezer_links[43] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[43] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2049,14 +2048,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>44. {{ deezer44 }}</span>
+                                <span>44. {{ deezer_data[43] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing45 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic45 }}" class="pictures">
+                        <a href="{{ deezer_links[44] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[44] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2064,14 +2063,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>45. {{ deezer45 }}</span>
+                                <span>45. {{ deezer_data[44] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing46 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic46 }}" class="pictures">
+                        <a href="{{ deezer_links[45] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[45] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2079,14 +2078,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>46. {{ deezer46 }}</span>
+                                <span>46. {{ deezer_data[45] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing47 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic47 }}" class="pictures">
+                        <a href="{{ deezer_links[46] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[46] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2094,14 +2093,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>47. {{ deezer47 }}</span>
+                                <span>47. {{ deezer_data[46] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing48 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic48 }}" class="pictures">
+                        <a href="{{ deezer_links[47] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[47] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2109,14 +2108,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>48. {{ deezer48 }}</span>
+                                <span>48. {{ deezer_data[47] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing49 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic49 }}" class="pictures">
+                        <a href="{{ deezer_links[48] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[48] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2124,14 +2123,14 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>49. {{ deezer49 }}</span>
+                                <span>49. {{ deezer_data[48] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ deezer_sing50 }}" target="_blank" rel="noopener noreferrer">
-                            <div><img src="{{ deezer_pic50 }}" class="pictures">
+                        <a href="{{ deezer_links[49] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ deezer_pics[49] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
                                 </div>
@@ -2139,7 +2138,7 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>50. {{ deezer50 }}</span>
+                                <span>50. {{ deezer_data[49] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
