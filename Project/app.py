@@ -1,5 +1,4 @@
 from flask import Flask, render_template,request, g, abort, flash, redirect, url_for, session
-from flask_login import LoginManager
 import pymongo
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
