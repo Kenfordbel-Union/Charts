@@ -20,6 +20,7 @@ app.secret_key = 'super secret key'
 def index():
     if session:
         if 'username' in session:
+            region = "Wordwide"
             username = session['username']
             logo = os.path.join(r'Project/static/images/logo.png')
     # Spotify names/pics/links
@@ -54,6 +55,57 @@ def index():
                 calc_deezer = calc_deezer + 1
 
         #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
+
+            return render_template('index.html', **locals())
+        else:
+            return redirect(url_for('login'))
+
+@app.route('/regions/ukraine')
+def ukraine():
+    if session:
+        if 'username' in session:
+            region = "Ukrainian"
+            username = session['username']
+            logo = os.path.join(r'Project/static/images/logo.png')
+            # Spotify names/pics/links
+            spotify_data = {}
+            spotify_pics = {}
+            spotify_links = {}
+            calc_spotify = 0
+            # YT names/pics/links
+            yt_data = {}
+            yt_pics = {}
+            yt_links = {}
+            calc_yt = 0
+            # YT names/pics/links
+            deezer_data = {}
+            deezer_pics = {}
+            deezer_links = {}
+            calc_deezer = 0
+            for i in range(50):
+                spotify_data[calc_spotify] = spotify.find_one({f"uasong-{calc_spotify}": {"$exists": "true"}})[
+                    f'uasong-{calc_spotify}']
+                spotify_pics[calc_spotify] = spotify.find_one({f"ualogo-{calc_spotify}": {"$exists": "true"}})[
+                    f'ualogo-{calc_spotify}']
+                spotify_links[calc_spotify] = spotify.find_one({f"uasing-{calc_spotify}": {"$exists": "true"}})[
+                    f'uasing-{calc_spotify}']
+                calc_spotify = calc_spotify + 1
+            for i in range(40):
+                yt_data[calc_yt] = youtube.find_one({f"uasong-{calc_yt}": {"$exists": "true"}})[f'uasong-{calc_yt}']
+                yt_pics[calc_yt] = youtube.find_one({f"ualogo-{calc_yt}": {"$exists": "true"}})[f'ualogo-{calc_yt}']
+                yt_links[calc_yt] = youtube.find_one({f"ualink-{calc_yt}": {"$exists": "true"}})[
+                    f'ualink-{calc_yt}']
+                calc_yt = calc_yt + 1
+            for i in range(50):
+                deezer_data[calc_deezer] = deezer.find_one({f"uasong-{calc_deezer}": {"$exists": "true"}})[
+                    f'uasong-{calc_deezer}']
+                deezer_pics[calc_deezer] = deezer.find_one({f"ualogo-{calc_deezer}": {"$exists": "true"}})[
+                    f'ualogo-{calc_deezer}']
+                deezer_links[calc_deezer] = deezer.find_one({f"uasing-{calc_deezer}": {"$exists": "true"}})[
+                    f'uasing-{calc_deezer}']
+                calc_deezer = calc_deezer + 1
+            #
+            # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
 
             return render_template('index.html', **locals())
         else:

@@ -20,13 +20,19 @@ headers = {
 
 ytmusic = headers
 YTMusic = YTMusic()
+
 charts = YTMusic.get_charts(country='ZZ') #это и так готовые функции, их не надо оборачивать
+chartsua = YTMusic.get_charts(country='UA')
+
+
+data = charts['videos']
+dataua = chartsua['videos']
+
+pesni = data['items']
+pesniua = dataua['items']
 
 num = 0
-data = charts['videos']
-print(data)
-pesni = data['items']
-counter = 0
+numuk = 0
 for track in pesni:
     title = track['title']
     video_id = track['videoId']
@@ -54,5 +60,33 @@ for track in pesni:
         }
     )
     num = num + 1
+
+for track in pesniua:
+    title = track['title']
+    video_id = track['videoId']
+    artists = track['artists']
+    image_path = track['thumbnails'][0]
+    image = image_path['url']
+    list = []
+    for i in artists:
+        artist_count = len(artists) - 1
+        name = i['name']
+        list.append(name)
+    listless = ', '.join(list)
+    song_for_db = {f"uasong-{numuk}":f"{title} - {listless}"}
+
+    db_insert_songs = youtube.insert_one(song_for_db)
+
+    result = youtube.update_one(
+        {f"uasong-{numuk}": f"{title} - {listless}"},
+        {
+            "$set": {
+                f"ualogo-{numuk}": f"{image}",
+                f"ualink-{numuk}": f"{default + video_id}"
+            },
+            "$currentDate": {"lastModified": True}
+        }
+    )
+    numuk = numuk + 1
 
 
