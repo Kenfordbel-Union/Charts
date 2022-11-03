@@ -58,6 +58,8 @@ def index():
             return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
+    else:
+        return redirect(url_for('login'))
 
 @app.route('/regions/ukraine')
 def ukraine():
