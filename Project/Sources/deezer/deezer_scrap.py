@@ -8,6 +8,9 @@ songs_col = charts_db["deezer"]
 
 global_charts = 3155776842
 ua_charts = 1362526495
+usa_charts = 1313621735
+spain_charts = 1116190041
+france_charts = 1109890291
 
 def scrap_deezer(chart_id, id):
     client = deezer.Client()
@@ -55,3 +58,6 @@ def scrap_deezer(chart_id, id):
 
 scrap_deezer(global_charts, "")
 scrap_deezer(ua_charts, "ua")
+scrap_deezer(usa_charts, "usa")
+scrap_deezer(spain_charts, "spa")
+scrap_deezer(france_charts, "fra")

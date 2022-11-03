@@ -11,6 +11,9 @@ songs_col = charts_db["spotify"]
 
 worldwide = "37i9dQZEVXbNG2KDcFcKOF"
 ukraine = "37i9dQZEVXbNcoJZ65xktI"
+usa = "37i9dQZF1DX0kbJZpiYdZl"
+spain = "37i9dQZEVXbMfVLvbaC3bj"
+france = "1B8UQSO6ecpMHFCoR5VNj7"
 
 def collect_spotify_charts(playlist_id, id):
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
@@ -58,4 +61,10 @@ def collect_spotify_charts(playlist_id, id):
 collect_spotify_charts(worldwide, "")
 
 collect_spotify_charts(ukraine, "ua")
+
+collect_spotify_charts(usa, "usa")
+
+collect_spotify_charts(spain, "spa")
+
+collect_spotify_charts(france, "fra")
 

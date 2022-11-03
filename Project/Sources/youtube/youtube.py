@@ -23,16 +23,28 @@ YTMusic = YTMusic()
 
 charts = YTMusic.get_charts(country='ZZ') #это и так готовые функции, их не надо оборачивать
 chartsua = YTMusic.get_charts(country='UA')
+chartsusa = YTMusic.get_charts(country='US')
+chartsspa = YTMusic.get_charts(country='ES')
+chartsfra = YTMusic.get_charts(country='FR')
 
 
 data = charts['videos']
 dataua = chartsua['videos']
+datausa = chartsusa['videos']
+dataspa = chartsspa['videos']
+datafra = chartsfra['videos']
 
 pesni = data['items']
 pesniua = dataua['items']
+pesniusa = datausa['items']
+pesnispa = dataspa['items']
+pesnifra = datafra['items']
 
 num = 0
-numuk = 0
+numua = 0
+numusa = 0
+numspa = 0
+numfra = 0
 for track in pesni:
     title = track['title']
     video_id = track['videoId']
@@ -73,20 +85,104 @@ for track in pesniua:
         name = i['name']
         list.append(name)
     listless = ', '.join(list)
-    song_for_db = {f"uasong-{numuk}":f"{title} - {listless}"}
+    song_for_db = {f"uasong-{numua}":f"{title} - {listless}"}
 
     db_insert_songs = youtube.insert_one(song_for_db)
 
     result = youtube.update_one(
-        {f"uasong-{numuk}": f"{title} - {listless}"},
+        {f"uasong-{numua}": f"{title} - {listless}"},
         {
             "$set": {
-                f"ualogo-{numuk}": f"{image}",
-                f"ualink-{numuk}": f"{default + video_id}"
+                f"ualogo-{numua}": f"{image}",
+                f"ualink-{numua}": f"{default + video_id}"
             },
             "$currentDate": {"lastModified": True}
         }
     )
-    numuk = numuk + 1
+    numua = numua + 1
+
+for track in pesniusa:
+    title = track['title']
+    video_id = track['videoId']
+    artists = track['artists']
+    image_path = track['thumbnails'][0]
+    image = image_path['url']
+    list = []
+    for i in artists:
+        artist_count = len(artists) - 1
+        name = i['name']
+        list.append(name)
+    listless = ', '.join(list)
+    song_for_db = {f"usasong-{numusa}":f"{title} - {listless}"}
+
+    db_insert_songs = youtube.insert_one(song_for_db)
+
+    result = youtube.update_one(
+        {f"usasong-{numusa}": f"{title} - {listless}"},
+        {
+            "$set": {
+                f"usalogo-{numusa}": f"{image}",
+                f"usalink-{numusa}": f"{default + video_id}"
+            },
+            "$currentDate": {"lastModified": True}
+        }
+    )
+    numusa = numusa + 1
+
+for track in pesnispa:
+    title = track['title']
+    video_id = track['videoId']
+    artists = track['artists']
+    image_path = track['thumbnails'][0]
+    image = image_path['url']
+    list = []
+    for i in artists:
+        artist_count = len(artists) - 1
+        name = i['name']
+        list.append(name)
+    listless = ', '.join(list)
+    song_for_db = {f"spasong-{numspa}":f"{title} - {listless}"}
+
+    db_insert_songs = youtube.insert_one(song_for_db)
+
+    result = youtube.update_one(
+        {f"spasong-{numspa}": f"{title} - {listless}"},
+        {
+            "$set": {
+                f"spalogo-{numspa}": f"{image}",
+                f"spalink-{numspa}": f"{default + video_id}"
+            },
+            "$currentDate": {"lastModified": True}
+        }
+    )
+    numspa = numspa + 1
+
+for track in pesnifra:
+    title = track['title']
+    video_id = track['videoId']
+    artists = track['artists']
+    image_path = track['thumbnails'][0]
+    image = image_path['url']
+    list = []
+    for i in artists:
+        artist_count = len(artists) - 1
+        name = i['name']
+        list.append(name)
+    listless = ', '.join(list)
+    song_for_db = {f"frasong-{numfra}":f"{title} - {listless}"}
+
+    db_insert_songs = youtube.insert_one(song_for_db)
+
+    result = youtube.update_one(
+        {f"frasong-{numfra}": f"{title} - {listless}"},
+        {
+            "$set": {
+                f"fralogo-{numfra}": f"{image}",
+                f"fralink-{numfra}": f"{default + video_id}"
+            },
+            "$currentDate": {"lastModified": True}
+        }
+    )
+    numfra = numfra + 1
 
 

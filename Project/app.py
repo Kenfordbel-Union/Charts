@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request, g, abort, flash, redirect, url_for, session
-from flask_session import Session
+from flask_login import LoginManager
 import pymongo
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -103,6 +103,162 @@ def ukraine():
                     f'ualogo-{calc_deezer}']
                 deezer_links[calc_deezer] = deezer.find_one({f"uasing-{calc_deezer}": {"$exists": "true"}})[
                     f'uasing-{calc_deezer}']
+                calc_deezer = calc_deezer + 1
+            #
+            # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
+
+            return render_template('index.html', **locals())
+        else:
+            return redirect(url_for('login'))
+
+
+@app.route('/regions/usa')
+def usa():
+    if session:
+        if 'username' in session:
+            region = "USA"
+            username = session['username']
+            logo = os.path.join(r'Project/static/images/logo.png')
+            # Spotify names/pics/links
+            spotify_data = {}
+            spotify_pics = {}
+            spotify_links = {}
+            calc_spotify = 0
+            # YT names/pics/links
+            yt_data = {}
+            yt_pics = {}
+            yt_links = {}
+            calc_yt = 0
+            # YT names/pics/links
+            deezer_data = {}
+            deezer_pics = {}
+            deezer_links = {}
+            calc_deezer = 0
+            for i in range(50):
+                spotify_data[calc_spotify] = spotify.find_one({f"usasong-{calc_spotify}": {"$exists": "true"}})[
+                    f'usasong-{calc_spotify}']
+                spotify_pics[calc_spotify] = spotify.find_one({f"usalogo-{calc_spotify}": {"$exists": "true"}})[
+                    f'usalogo-{calc_spotify}']
+                spotify_links[calc_spotify] = spotify.find_one({f"usasing-{calc_spotify}": {"$exists": "true"}})[
+                    f'usasing-{calc_spotify}']
+                calc_spotify = calc_spotify + 1
+            for i in range(40):
+                yt_data[calc_yt] = youtube.find_one({f"usasong-{calc_yt}": {"$exists": "true"}})[f'usasong-{calc_yt}']
+                yt_pics[calc_yt] = youtube.find_one({f"usalogo-{calc_yt}": {"$exists": "true"}})[f'usalogo-{calc_yt}']
+                yt_links[calc_yt] = youtube.find_one({f"usalink-{calc_yt}": {"$exists": "true"}})[
+                    f'usalink-{calc_yt}']
+                calc_yt = calc_yt + 1
+            for i in range(50):
+                deezer_data[calc_deezer] = deezer.find_one({f"usasong-{calc_deezer}": {"$exists": "true"}})[
+                    f'usasong-{calc_deezer}']
+                deezer_pics[calc_deezer] = deezer.find_one({f"usalogo-{calc_deezer}": {"$exists": "true"}})[
+                    f'usalogo-{calc_deezer}']
+                deezer_links[calc_deezer] = deezer.find_one({f"usasing-{calc_deezer}": {"$exists": "true"}})[
+                    f'usasing-{calc_deezer}']
+                calc_deezer = calc_deezer + 1
+            #
+            # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
+
+            return render_template('index.html', **locals())
+        else:
+            return redirect(url_for('login'))
+
+
+@app.route('/regions/spain')
+def spain():
+    if session:
+        if 'username' in session:
+            region = "Spanish"
+            username = session['username']
+            logo = os.path.join(r'Project/static/images/logo.png')
+            # Spotify names/pics/links
+            spotify_data = {}
+            spotify_pics = {}
+            spotify_links = {}
+            calc_spotify = 0
+            # YT names/pics/links
+            yt_data = {}
+            yt_pics = {}
+            yt_links = {}
+            calc_yt = 0
+            # YT names/pics/links
+            deezer_data = {}
+            deezer_pics = {}
+            deezer_links = {}
+            calc_deezer = 0
+            for i in range(50):
+                spotify_data[calc_spotify] = spotify.find_one({f"spasong-{calc_spotify}": {"$exists": "true"}})[
+                    f'spasong-{calc_spotify}']
+                spotify_pics[calc_spotify] = spotify.find_one({f"spalogo-{calc_spotify}": {"$exists": "true"}})[
+                    f'spalogo-{calc_spotify}']
+                spotify_links[calc_spotify] = spotify.find_one({f"spasing-{calc_spotify}": {"$exists": "true"}})[
+                    f'spasing-{calc_spotify}']
+                calc_spotify = calc_spotify + 1
+            for i in range(40):
+                yt_data[calc_yt] = youtube.find_one({f"spasong-{calc_yt}": {"$exists": "true"}})[f'spasong-{calc_yt}']
+                yt_pics[calc_yt] = youtube.find_one({f"spalogo-{calc_yt}": {"$exists": "true"}})[f'spalogo-{calc_yt}']
+                yt_links[calc_yt] = youtube.find_one({f"spalink-{calc_yt}": {"$exists": "true"}})[
+                    f'spalink-{calc_yt}']
+                calc_yt = calc_yt + 1
+            for i in range(50):
+                deezer_data[calc_deezer] = deezer.find_one({f"spasong-{calc_deezer}": {"$exists": "true"}})[
+                    f'spasong-{calc_deezer}']
+                deezer_pics[calc_deezer] = deezer.find_one({f"spalogo-{calc_deezer}": {"$exists": "true"}})[
+                    f'spalogo-{calc_deezer}']
+                deezer_links[calc_deezer] = deezer.find_one({f"spasing-{calc_deezer}": {"$exists": "true"}})[
+                    f'spasing-{calc_deezer}']
+                calc_deezer = calc_deezer + 1
+            #
+            # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
+
+            return render_template('index.html', **locals())
+        else:
+            return redirect(url_for('login'))
+
+
+@app.route('/regions/france')
+def france():
+    if session:
+        if 'username' in session:
+            region = "French"
+            username = session['username']
+            logo = os.path.join(r'Project/static/images/logo.png')
+            # Spotify names/pics/links
+            spotify_data = {}
+            spotify_pics = {}
+            spotify_links = {}
+            calc_spotify = 0
+            # YT names/pics/links
+            yt_data = {}
+            yt_pics = {}
+            yt_links = {}
+            calc_yt = 0
+            # YT names/pics/links
+            deezer_data = {}
+            deezer_pics = {}
+            deezer_links = {}
+            calc_deezer = 0
+            for i in range(50):
+                spotify_data[calc_spotify] = spotify.find_one({f"frasong-{calc_spotify}": {"$exists": "true"}})[
+                    f'frasong-{calc_spotify}']
+                spotify_pics[calc_spotify] = spotify.find_one({f"fralogo-{calc_spotify}": {"$exists": "true"}})[
+                    f'fralogo-{calc_spotify}']
+                spotify_links[calc_spotify] = spotify.find_one({f"frasing-{calc_spotify}": {"$exists": "true"}})[
+                    f'frasing-{calc_spotify}']
+                calc_spotify = calc_spotify + 1
+            for i in range(40):
+                yt_data[calc_yt] = youtube.find_one({f"frasong-{calc_yt}": {"$exists": "true"}})[f'frasong-{calc_yt}']
+                yt_pics[calc_yt] = youtube.find_one({f"fralogo-{calc_yt}": {"$exists": "true"}})[f'fralogo-{calc_yt}']
+                yt_links[calc_yt] = youtube.find_one({f"fralink-{calc_yt}": {"$exists": "true"}})[
+                    f'fralink-{calc_yt}']
+                calc_yt = calc_yt + 1
+            for i in range(50):
+                deezer_data[calc_deezer] = deezer.find_one({f"frasong-{calc_deezer}": {"$exists": "true"}})[
+                    f'frasong-{calc_deezer}']
+                deezer_pics[calc_deezer] = deezer.find_one({f"fralogo-{calc_deezer}": {"$exists": "true"}})[
+                    f'fralogo-{calc_deezer}']
+                deezer_links[calc_deezer] = deezer.find_one({f"frasing-{calc_deezer}": {"$exists": "true"}})[
+                    f'frasing-{calc_deezer}']
                 calc_deezer = calc_deezer + 1
             #
             # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
