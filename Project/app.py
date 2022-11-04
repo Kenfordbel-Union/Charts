@@ -282,22 +282,71 @@ def france():
         else:
             return redirect(url_for('login'))
 
-@app.route('/song/<songid>')
+@app.route('/song/<songid>',  methods=["GET", "POST"])
 def song(songid):
+    print(request.method, request.form.get('like'), request.form.get('dislike'))
     regions = ["uaurl", "url", "fraurl", "spaurl", "usaurl"]
-    for j in regions:
-        calc = 0
-        for i in range(50):
-            a = spotify.find_one({f"{j}-{calc}": songid})
-            print(a)
-            if a != None:
-                del a['_id']
-                del a['lastModified']
-                name = list(a.values())[0]
-                logo = list(a.values())[1]
-                sing = list(a.values())[2]
-                return render_template('song.html', name=name, logo=logo, sing=sing)
-            calc = calc + 1
+    if request.method == "GET":
+        for j in regions:
+            calc = 0
+            for i in range(50):
+                a = spotify.find_one({f"{j}-{calc}": songid})
+                if a != None:
+                    del a['_id']
+                    del a['lastModified']
+                    name = list(a.values())[0]
+                    likes = list(a.values())[1]
+                    logo = list(a.values())[2]
+                    sing = list(a.values())[3]
+                    print(likes)
+                    return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes)
+                calc = calc + 1
+    if request.method == "POST" and request.form.get('like') == 'Like':
+        for j in regions:
+            calc = 0
+            for i in range(50):
+                b = spotify.find_one({f"{j}-{calc}": songid})
+                if b != None:
+                    del b['_id']
+                    del b['lastModified']
+                    name = list(b.values())[0]
+                    likes = list(b.values())[1]
+                    logo = list(b.values())[2]
+                    sing = list(b.values())[3]
+                    like = spotify.update_one(
+                        {f"{j}-{calc}": songid},
+                        {
+                            "$inc": {
+                                f"likes": +1
+                            }
+                        }
+                    )
+                    likes = int(likes) + 1
+                    return redirect(f"/song/{songid}")
+                calc = calc + 1
+    if request.method == "POST" and request.form.get('dislike') == 'Dislike':
+        for j in regions:
+            calc = 0
+            for i in range(50):
+                b = spotify.find_one({f"{j}-{calc}": songid})
+                if b != None:
+                    del b['_id']
+                    del b['lastModified']
+                    name = list(b.values())[0]
+                    likes = list(b.values())[1]
+                    logo = list(b.values())[2]
+                    sing = list(b.values())[3]
+                    like = spotify.update_one(
+                        {f"{j}-{calc}": songid},
+                        {
+                            "$inc": {
+                                f"likes": -1
+                            }
+                        }
+                    )
+                    likes = int(likes) - 1
+                    return redirect(f"/song/{songid}")
+                calc = calc + 1
 @app.route('/filter')
 def filter():
     return render_template('filter.html')

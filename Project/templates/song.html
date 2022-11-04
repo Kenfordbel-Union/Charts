@@ -50,13 +50,18 @@
         </rect>
     </svg>
     <div style="z-index: 100; padding: 50px; background-color: rgba(255, 255, 255, 0.514); border-radius: 60px; text-align: center;display:contents;  align-items: center; background-image: url('static/images/name_of_pic')">
-        <img src="{{ logo }}" alt="oops image" style="border-radius: 40px; z-index: 101; ">
-        <h1 style="margin-top: -550px; margin-left: 20px; z-index: 101;">{{ name }}</h1>
-        <audio controls style="margin-top: -400px;">
+        <img src="{{ logo }}" alt="oops image" style="border-radius: 40px; z-index: 101; margin-top: -100px;">
+        <h1 style="margin-top: -650px; margin-left: 20px; z-index: 101;">{{ name }}</h1>
+        <audio controls style="margin-top: -500px;">
             <source src="{{ sing }}" type="audio/ogg">
             <source src="{{ sing }}" type="audio/mpeg">
             Your browser does not support the audio tag.
-          </audio>
+        </audio>
+        <form method="post" style="z-index: 101; margin-top: -350px;">
+            <input type="submit" value="Like" name="like" style="background: #43d432; color:white;  border-color: #43d432; border-radius: 30px; height: 50px; width: 90px;"/>
+            <input type="submit" value="Dislike" name="dislike" style="background: red; color:white;  border-color: red; border-radius: 30px; height: 50px; width: 90px;"/>
+        </form>
+        <h2 style="margin-top: -250px; margin-left: 20px; z-index: 101;">{{ likes }}❤️</h2>
     </div>
 </body>
 
