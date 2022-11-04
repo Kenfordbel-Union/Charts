@@ -1,3 +1,5 @@
+import uuid
+
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import pymongo
@@ -41,6 +43,7 @@ def collect_spotify_charts(playlist_id, id):
                     "$set": {
                         f"{id}logo-{num}": f"{finally_logo}",
                         f"{id}sing-{num}": f"/filter",
+                        f"{id}url-{num}": str(uuid.uuid4())
                     },
                     "$currentDate": {"lastModified": True}
                 }
@@ -53,6 +56,7 @@ def collect_spotify_charts(playlist_id, id):
                     "$set": {
                         f"{id}logo-{num}": f"{finally_logo}",
                         f"{id}sing-{num}": f"{urls}",
+                        f"{id}url-{num}": str(uuid.uuid4())
                     },
                     "$currentDate": {"lastModified": True}
                 }

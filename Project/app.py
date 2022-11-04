@@ -26,6 +26,7 @@ def index():
             spotify_data = {}
             spotify_pics = {}
             spotify_links = {}
+            spotify_urls = {}
             calc_spotify = 0
     # YT names/pics/links
             yt_data = {}
@@ -41,6 +42,8 @@ def index():
                 spotify_data[calc_spotify] = spotify.find_one({f"song-{calc_spotify}":{"$exists": "true"}})[f'song-{calc_spotify}']
                 spotify_pics[calc_spotify] = spotify.find_one({f"logo-{calc_spotify}": {"$exists": "true"}})[f'logo-{calc_spotify}']
                 spotify_links[calc_spotify] = spotify.find_one({f"sing-{calc_spotify}": {"$exists": "true"}})[f'sing-{calc_spotify}']
+                spotify_urls[calc_spotify] = spotify.find_one({f"url-{calc_spotify}": {"$exists": "true"}})[
+                    f'url-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
             for i in range(40):
                 yt_data[calc_yt] = youtube.find_one({f"song-{calc_yt}": {"$exists": "true"}})[f'song-{calc_yt}']
@@ -54,7 +57,6 @@ def index():
                 calc_deezer = calc_deezer + 1
 
         #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
-
             return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
@@ -72,6 +74,7 @@ def ukraine():
             spotify_data = {}
             spotify_pics = {}
             spotify_links = {}
+            spotify_urls = {}
             calc_spotify = 0
             # YT names/pics/links
             yt_data = {}
@@ -90,6 +93,8 @@ def ukraine():
                     f'ualogo-{calc_spotify}']
                 spotify_links[calc_spotify] = spotify.find_one({f"uasing-{calc_spotify}": {"$exists": "true"}})[
                     f'uasing-{calc_spotify}']
+                spotify_urls[calc_spotify] = spotify.find_one({f"uaurl-{calc_spotify}": {"$exists": "true"}})[
+                    f'uaurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
             for i in range(40):
                 yt_data[calc_yt] = youtube.find_one({f"uasong-{calc_yt}": {"$exists": "true"}})[f'uasong-{calc_yt}']
@@ -124,6 +129,7 @@ def usa():
             spotify_data = {}
             spotify_pics = {}
             spotify_links = {}
+            spotify_urls = {}
             calc_spotify = 0
             # YT names/pics/links
             yt_data = {}
@@ -142,6 +148,8 @@ def usa():
                     f'usalogo-{calc_spotify}']
                 spotify_links[calc_spotify] = spotify.find_one({f"usasing-{calc_spotify}": {"$exists": "true"}})[
                     f'usasing-{calc_spotify}']
+                spotify_urls[calc_spotify] = spotify.find_one({f"usaurl-{calc_spotify}": {"$exists": "true"}})[
+                    f'usaurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
             for i in range(40):
                 yt_data[calc_yt] = youtube.find_one({f"usasong-{calc_yt}": {"$exists": "true"}})[f'usasong-{calc_yt}']
@@ -176,6 +184,7 @@ def spain():
             spotify_data = {}
             spotify_pics = {}
             spotify_links = {}
+            spotify_urls = {}
             calc_spotify = 0
             # YT names/pics/links
             yt_data = {}
@@ -194,6 +203,8 @@ def spain():
                     f'spalogo-{calc_spotify}']
                 spotify_links[calc_spotify] = spotify.find_one({f"spasing-{calc_spotify}": {"$exists": "true"}})[
                     f'spasing-{calc_spotify}']
+                spotify_urls[calc_spotify] = spotify.find_one({f"spaurl-{calc_spotify}": {"$exists": "true"}})[
+                    f'spaurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
             for i in range(40):
                 yt_data[calc_yt] = youtube.find_one({f"spasong-{calc_yt}": {"$exists": "true"}})[f'spasong-{calc_yt}']
@@ -228,6 +239,7 @@ def france():
             spotify_data = {}
             spotify_pics = {}
             spotify_links = {}
+            spotify_urls = {}
             calc_spotify = 0
             # YT names/pics/links
             yt_data = {}
@@ -246,6 +258,8 @@ def france():
                     f'fralogo-{calc_spotify}']
                 spotify_links[calc_spotify] = spotify.find_one({f"frasing-{calc_spotify}": {"$exists": "true"}})[
                     f'frasing-{calc_spotify}']
+                spotify_urls[calc_spotify] = spotify.find_one({f"fraurl-{calc_spotify}": {"$exists": "true"}})[
+                    f'fraurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
             for i in range(40):
                 yt_data[calc_yt] = youtube.find_one({f"frasong-{calc_yt}": {"$exists": "true"}})[f'frasong-{calc_yt}']
@@ -268,7 +282,22 @@ def france():
         else:
             return redirect(url_for('login'))
 
-
+@app.route('/song/<songid>')
+def song(songid):
+    regions = ["uaurl", "url", "fraurl", "spaurl", "usaurl"]
+    for j in regions:
+        calc = 0
+        for i in range(50):
+            a = spotify.find_one({f"{j}-{calc}": songid})
+            print(a)
+            if a != None:
+                del a['_id']
+                del a['lastModified']
+                name = list(a.values())[0]
+                logo = list(a.values())[1]
+                sing = list(a.values())[2]
+                return render_template('song.html', name=name, logo=logo, sing=sing)
+            calc = calc + 1
 @app.route('/filter')
 def filter():
     return render_template('filter.html')
