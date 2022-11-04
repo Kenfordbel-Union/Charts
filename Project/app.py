@@ -37,6 +37,7 @@ def index():
             deezer_data = {}
             deezer_pics = {}
             deezer_links = {}
+            deezer_urls = {}
             calc_deezer = 0
             for i in range(50):
                 spotify_data[calc_spotify] = spotify.find_one({f"song-{calc_spotify}":{"$exists": "true"}})[f'song-{calc_spotify}']
@@ -54,8 +55,9 @@ def index():
                 deezer_data[calc_deezer] = deezer.find_one({f"song-{calc_deezer}": {"$exists": "true"}})[f'song-{calc_deezer}']
                 deezer_pics[calc_deezer] = deezer.find_one({f"logo-{calc_deezer}": {"$exists": "true"}})[f'logo-{calc_deezer}']
                 deezer_links[calc_deezer] = deezer.find_one({f"sing-{calc_deezer}": {"$exists": "true"}})[f'sing-{calc_deezer}']
+                deezer_urls[calc_deezer] = deezer.find_one({f"url-{calc_deezer}": {"$exists": "true"}})[f'url-{calc_deezer}']
                 calc_deezer = calc_deezer + 1
-
+            print(deezer_urls)
         #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
             return render_template('index.html', **locals())
         else:
@@ -291,6 +293,7 @@ def song(songid):
             calc = 0
             for i in range(50):
                 a = spotify.find_one({f"{j}-{calc}": songid})
+                c = deezer.find_one({f"{j}-{calc}": songid})
                 if a != None:
                     del a['_id']
                     del a['lastModified']
@@ -300,12 +303,22 @@ def song(songid):
                     sing = list(a.values())[3]
                     print(likes)
                     return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes)
+                elif c != None:
+                    del c['_id']
+                    del c['lastModified']
+                    name = list(c.values())[0]
+                    likes = list(c.values())[1]
+                    logo = list(c.values())[2]
+                    sing = list(c.values())[3]
+                    print(likes)
+                    return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes)
                 calc = calc + 1
     if request.method == "POST" and request.form.get('like') == 'Like':
         for j in regions:
             calc = 0
             for i in range(50):
                 b = spotify.find_one({f"{j}-{calc}": songid})
+                d = deezer.find_one({f"{j}-{calc}": songid})
                 if b != None:
                     del b['_id']
                     del b['lastModified']
@@ -313,7 +326,24 @@ def song(songid):
                     likes = list(b.values())[1]
                     logo = list(b.values())[2]
                     sing = list(b.values())[3]
-                    like = spotify.update_one(
+                    like = deezer.update_one(
+                        {f"{j}-{calc}": songid},
+                        {
+                            "$inc": {
+                                f"likes": +1
+                            }
+                        }
+                    )
+                    likes = int(likes) + 1
+                    return redirect(f"/song/{songid}")
+                elif d != None:
+                    del d['_id']
+                    del d['lastModified']
+                    name = list(d.values())[0]
+                    likes = list(d.values())[1]
+                    logo = list(d.values())[2]
+                    sing = list(d.values())[3]
+                    like = deezer.update_one(
                         {f"{j}-{calc}": songid},
                         {
                             "$inc": {
@@ -329,6 +359,7 @@ def song(songid):
             calc = 0
             for i in range(50):
                 b = spotify.find_one({f"{j}-{calc}": songid})
+                d = deezer.find_one({f"{j}-{calc}": songid})
                 if b != None:
                     del b['_id']
                     del b['lastModified']
@@ -336,7 +367,24 @@ def song(songid):
                     likes = list(b.values())[1]
                     logo = list(b.values())[2]
                     sing = list(b.values())[3]
-                    like = spotify.update_one(
+                    like = deezer.update_one(
+                        {f"{j}-{calc}": songid},
+                        {
+                            "$inc": {
+                                f"likes": -1
+                            }
+                        }
+                    )
+                    likes = int(likes) - 1
+                    return redirect(f"/song/{songid}")
+                if d != None:
+                    del d['_id']
+                    del d['lastModified']
+                    name = list(d.values())[0]
+                    likes = list(d.values())[1]
+                    logo = list(d.values())[2]
+                    sing = list(d.values())[3]
+                    like = deezer.update_one(
                         {f"{j}-{calc}": songid},
                         {
                             "$inc": {

@@ -1,5 +1,6 @@
 import deezer
 import pymongo
+import uuid
 
 mongo = pymongo.MongoClient()
 
@@ -33,8 +34,8 @@ def scrap_deezer(chart_id, id):
                     {
                         "$set": {
                             f"{id}logo-{num}": f"{image}",
-                            f"{id}link-{num}": f"{song_link}",
                             f"{id}sing-{num}": f"/filter",
+                            f"{id}url-{num}": str(uuid.uuid4()),
                         },
                         "$currentDate": {"lastModified": True}
                     }
@@ -46,8 +47,9 @@ def scrap_deezer(chart_id, id):
                     {
                         "$set": {
                             f"{id}logo-{num}": f"{image}",
-                            f"{id}link-{num}": f"{song_link}",
                             f"{id}sing-{num}": f"{sing_preview_link}",
+                            f"{id}url-{num}": str(uuid.uuid4()),
+                            "likes": 0
                         },
                         "$currentDate": {"lastModified": True}
                     }
