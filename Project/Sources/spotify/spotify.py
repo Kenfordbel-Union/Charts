@@ -72,5 +72,5 @@ collect_spotify_charts(usa, "usa")
 
 collect_spotify_charts(spain, "spa")
 
-collect_spotify_charts(france, "fra")
+collect_spotify_charts(france, "sfra")
 

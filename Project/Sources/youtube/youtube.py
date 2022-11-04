@@ -1,5 +1,6 @@
 from ytmusicapi import YTMusic
 import pymongo
+import uuid
 
 mongo = pymongo.MongoClient()
 
@@ -66,7 +67,9 @@ for track in pesni:
         {
             "$set": {
                 f"logo-{num}": f"{image}",
-                f"link-{num}": f"{default + video_id}"
+                f"sing-{num}": f"{default + video_id}",
+                f"url-{num}": str(uuid.uuid4()),
+                "likes": 0
             },
             "$currentDate": {"lastModified": True}
         }
@@ -94,7 +97,9 @@ for track in pesniua:
         {
             "$set": {
                 f"ualogo-{numua}": f"{image}",
-                f"ualink-{numua}": f"{default + video_id}"
+                f"uasing-{numua}": f"{default + video_id}",
+                f"uaurl-{numua}": str(uuid.uuid4()),
+                "likes": 0
             },
             "$currentDate": {"lastModified": True}
         }
@@ -122,7 +127,9 @@ for track in pesniusa:
         {
             "$set": {
                 f"usalogo-{numusa}": f"{image}",
-                f"usalink-{numusa}": f"{default + video_id}"
+                f"usasing-{numusa}": f"{default + video_id}",
+                f"usaurl-{numusa}": str(uuid.uuid4()),
+                "likes": 0
             },
             "$currentDate": {"lastModified": True}
         }
@@ -150,7 +157,9 @@ for track in pesnispa:
         {
             "$set": {
                 f"spalogo-{numspa}": f"{image}",
-                f"spalink-{numspa}": f"{default + video_id}"
+                f"spasing-{numspa}": f"{default + video_id}",
+                f"spaurl-{numspa}": str(uuid.uuid4()),
+                "likes": 0
             },
             "$currentDate": {"lastModified": True}
         }
@@ -169,16 +178,18 @@ for track in pesnifra:
         name = i['name']
         list.append(name)
     listless = ', '.join(list)
-    song_for_db = {f"frasong-{numfra}":f"{title} - {listless}"}
+    song_for_db = {f"sfrasong-{numfra}":f"{title} - {listless}"}
 
     db_insert_songs = youtube.insert_one(song_for_db)
 
     result = youtube.update_one(
-        {f"frasong-{numfra}": f"{title} - {listless}"},
+        {f"sfrasong-{numfra}": f"{title} - {listless}"},
         {
             "$set": {
-                f"fralogo-{numfra}": f"{image}",
-                f"fralink-{numfra}": f"{default + video_id}"
+                f"sfralogo-{numfra}": f"{image}",
+                f"sfrasing-{numfra}": f"{default + video_id}",
+                f"sfraurl-{numfra}": str(uuid.uuid4()),
+                "likes": 0
             },
             "$currentDate": {"lastModified": True}
         }
