@@ -44,7 +44,8 @@ def collect_spotify_charts(playlist_id, id):
                         f"{id}logo-{num}": f"{finally_logo}",
                         f"{id}sing-{num}": f"/filter",
                         f"{id}url-{num}": str(uuid.uuid4()),
-                        "likes": 0
+                        "likes": 0,
+                        "xcomments": []
                     },
                     "$currentDate": {"lastModified": True}
                 }
@@ -58,7 +59,8 @@ def collect_spotify_charts(playlist_id, id):
                         f"{id}logo-{num}": f"{finally_logo}",
                         f"{id}sing-{num}": f"{urls}",
                         f"{id}url-{num}": str(uuid.uuid4()),
-                        "likes": 0
+                        "likes": 0,
+                        "xcomments": []
                     },
                     "$currentDate": {"lastModified": True}
                 }

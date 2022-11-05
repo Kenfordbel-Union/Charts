@@ -1,3 +1,5 @@
+import pprint
+
 from flask import Flask, render_template,request, g, abort, flash, redirect, url_for, session
 import pymongo
 import os
@@ -330,8 +332,9 @@ def song(songid):
                     likes = list(a.values())[1]
                     logo = list(a.values())[2]
                     sing = list(a.values())[3]
+                    comments = list(a.values())[5]
                     print(likes)
-                    return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes)
+                    return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes, variable=comments)
                 elif c != None:
                     del c['_id']
                     del c['lastModified']
@@ -464,6 +467,25 @@ def song(songid):
                         {
                             "$inc": {
                                 f"likes": -1
+                            }
+                        }
+                    )
+                    return redirect(f"/song/{songid}")
+                calc = calc + 1
+    if request.method == "POST" and request.form.get('submit') == 'submit':
+        for j in regions:
+            calc = 0
+            for i in range(50):
+                b = spotify.find_one({f"{j}-{calc}": songid})
+                d = deezer.find_one({f"{j}-{calc}": songid})
+                yt = youtube.find_one({f"{j}-{calc}": songid})
+                if b != None:
+                    print('tyt')
+                    comments = spotify.update_one(
+                        {f"{j}-{calc}": songid},
+                        {
+                            "$push": {
+                                f"xcomments": f"{session['username']} - {request.form['comment']}"
                             }
                         }
                     )

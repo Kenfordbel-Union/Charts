@@ -84,7 +84,7 @@
     padding-top: 0px;
     top: -50px;
 }
-.container .normal_size .grid_list .list{
+.list{
     height: 800px;
     width: 97%;
     border-radius: 60px;
@@ -101,7 +101,7 @@
     left: 75px;
 }
 
-.container .normal_size .grid_list .list .main_zone{
+.list .main_zone{
     width: 100%;
     box-sizing: border-box;
     overflow-y: auto;
@@ -112,7 +112,7 @@
     max-height: 522px;
 
 }
-.container .normal_size .grid_list .list .main_zone .inside{
+.inside{
     background-color: linear-gradient(180deg, #EAAFCB 37.5%, #9DBAE6 100%);
     display: flex;
     width: 93%;
@@ -331,7 +331,23 @@ ul li {
   text-align: center;
   color: #bad52300;
 }
+.inside_song{
+  background-color: linear-gradient(180deg, #EAAFCB 37.5%, #9DBAE6 100%);
+  display: flex;
+  width: 93%;
+  background: #ffffff;
+  border-radius: 30px;
+  font-size: large;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
 
+.inside_song h3{
+  margin-left: 10px;
+  word-wrap: break-word;
+}
 
 
 
