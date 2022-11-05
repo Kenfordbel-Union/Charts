@@ -69,7 +69,8 @@ for track in pesni:
                 f"logo-{num}": f"{image}",
                 f"sing-{num}": f"{default + video_id}",
                 f"url-{num}": str(uuid.uuid4()),
-                "likes": 0
+                "likes": 0,
+                "xcomments": []
             },
             "$currentDate": {"lastModified": True}
         }
@@ -99,7 +100,8 @@ for track in pesniua:
                 f"ualogo-{numua}": f"{image}",
                 f"uasing-{numua}": f"{default + video_id}",
                 f"uaurl-{numua}": str(uuid.uuid4()),
-                "likes": 0
+                "likes": 0,
+                "xcomments": []
             },
             "$currentDate": {"lastModified": True}
         }
@@ -129,7 +131,8 @@ for track in pesniusa:
                 f"usalogo-{numusa}": f"{image}",
                 f"usasing-{numusa}": f"{default + video_id}",
                 f"usaurl-{numusa}": str(uuid.uuid4()),
-                "likes": 0
+                "likes": 0,
+                "xcomments": []
             },
             "$currentDate": {"lastModified": True}
         }
@@ -159,7 +162,8 @@ for track in pesnispa:
                 f"spalogo-{numspa}": f"{image}",
                 f"spasing-{numspa}": f"{default + video_id}",
                 f"spaurl-{numspa}": str(uuid.uuid4()),
-                "likes": 0
+                "likes": 0,
+                "xcomments": []
             },
             "$currentDate": {"lastModified": True}
         }
@@ -189,7 +193,8 @@ for track in pesnifra:
                 f"sfralogo-{numfra}": f"{image}",
                 f"sfrasing-{numfra}": f"{default + video_id}",
                 f"sfraurl-{numfra}": str(uuid.uuid4()),
-                "likes": 0
+                "likes": 0,
+                "xcomments": []
             },
             "$currentDate": {"lastModified": True}
         }

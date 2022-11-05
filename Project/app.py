@@ -353,7 +353,8 @@ def song(songid):
                     sing = list(yt.values())[3]
                     sing = sing.replace("music", "www")
                     sing = sing.replace("watch?v=", "embed/")
-                    return render_template('song_yt.html', name=name, sing=sing, likes=likes)
+                    comments = list(yt.values())[5]
+                    return render_template('song_yt.html', name=name, sing=sing, likes=likes, variable=comments)
                 calc = calc + 1
     if request.method == "POST" and request.form.get('like') == 'Like':
         for j in regions:
@@ -492,6 +493,16 @@ def song(songid):
                     return redirect(f"/song/{songid}")
                 if d != None:
                     comments = deezer.update_one(
+                        {f"{j}-{calc}": songid},
+                        {
+                            "$push": {
+                                f"xcomments": f"{session['username']} - {request.form['comment']}"
+                            }
+                        }
+                    )
+                    return redirect(f"/song/{songid}")
+                if yt != None:
+                    comments = youtube.update_one(
                         {f"{j}-{calc}": songid},
                         {
                             "$push": {
