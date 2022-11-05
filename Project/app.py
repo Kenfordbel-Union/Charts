@@ -342,8 +342,9 @@ def song(songid):
                     likes = list(c.values())[1]
                     logo = list(c.values())[2]
                     sing = list(c.values())[3]
+                    comments = list(c.values())[5]
                     print(likes)
-                    return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes)
+                    return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes, variable=comments)
                 elif yt != None:
                     del yt['_id']
                     del yt['lastModified']
@@ -480,8 +481,17 @@ def song(songid):
                 d = deezer.find_one({f"{j}-{calc}": songid})
                 yt = youtube.find_one({f"{j}-{calc}": songid})
                 if b != None:
-                    print('tyt')
                     comments = spotify.update_one(
+                        {f"{j}-{calc}": songid},
+                        {
+                            "$push": {
+                                f"xcomments": f"{session['username']} - {request.form['comment']}"
+                            }
+                        }
+                    )
+                    return redirect(f"/song/{songid}")
+                if d != None:
+                    comments = deezer.update_one(
                         {f"{j}-{calc}": songid},
                         {
                             "$push": {

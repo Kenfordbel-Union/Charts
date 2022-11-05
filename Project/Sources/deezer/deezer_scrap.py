@@ -49,7 +49,8 @@ def scrap_deezer(chart_id, id):
                             f"{id}logo-{num}": f"{image}",
                             f"{id}sing-{num}": f"{sing_preview_link}",
                             f"{id}url-{num}": str(uuid.uuid4()),
-                            "likes": 0
+                            "likes": 0,
+                            "xcomments": []
                         },
                         "$currentDate": {"lastModified": True}
                     }
