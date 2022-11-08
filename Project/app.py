@@ -11,6 +11,7 @@ spotify = mydb["spotify"]
 yandex = mydb["yandex"]
 youtube = mydb["youtube"]
 deezer = mydb["deezer"]
+general_chart = mydb["general"]
 users = mydb["users"]
 #app
 app = Flask(__name__)
@@ -61,7 +62,6 @@ def index():
                 deezer_links[calc_deezer] = deezer.find_one({f"sing-{calc_deezer}": {"$exists": "true"}})[f'sing-{calc_deezer}']
                 deezer_urls[calc_deezer] = deezer.find_one({f"url-{calc_deezer}": {"$exists": "true"}})[f'url-{calc_deezer}']
                 calc_deezer = calc_deezer + 1
-            print(deezer_urls)
         #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
             return render_template('index.html', **locals())
         else:
@@ -313,6 +313,29 @@ def france():
             return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
+
+@app.route('/general')
+def general():
+    general_names = {}
+    general_pics = {}
+    general_links = {}
+    general_urls = {}
+    calc = 0
+    username = session['username']
+    region = "Worldwide general"
+    for i in general_chart.find():
+        name = list(i.values())[1]
+        general_names[calc] = name
+        pic = list(i.values())[4]
+        general_pics[calc] = pic
+        sing = list(i.values())[5]
+        general_links[calc] = sing
+        url = list(i.values())[6]
+        general_urls[calc] = url
+        calc += 1
+    print(general_links)
+
+    return render_template('general.html', **locals())
 
 @app.route('/song/<songid>',  methods=["GET", "POST"])
 def song(songid):

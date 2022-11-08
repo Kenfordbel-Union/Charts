@@ -57,7 +57,7 @@
   margin: 0;
   padding: 0;
   top: 40px;
-  left: 25%;
+  left: 20%;
 }
 .container .menu li {
   float: left;
@@ -125,7 +125,7 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    min-height: 80px;
+    
 
 }
 .container .normal_size .grid_list .list .main_zone .inside .pictures {

@@ -16,13 +16,15 @@
 <div class="container">
     <div class="menu">
         <ul style="text-decoration: none">
+            <li><a style="text-decoration: none"  href="/">Global</a></li>
+            <li><a style="text-decoration: none"  href="/general">General</a></li>
             <li><a style="text-decoration: none"  href="/regions/ukraine">Ukraine</a></li>
             <li><a style="text-decoration: none"  href="/regions/usa">USA</a></li>
-            <li><a style="text-decoration: none"  href="/">Global</a></li>
             <li><a style="text-decoration: none"  href="/regions/spain">Spain</a></li>
             <li><a style="text-decoration: none"  href="/regions/france">France</a></li>
+            
         </ul>
-        <div style="text-align: right; padding-top: 10px; padding-right: 10px;">
+        <div style="text-align: right; padding-top: 15px; padding-right: 10px;">
             <p>Hello, <span style="color: red;"><a href="/profile">{{ username }}</a></span>!<br> Enjoy {{ region }} charts🤘</p>
         </div>
     </div>
@@ -1000,7 +1002,7 @@
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
                     </div>
                     <div class="inside">
-                        <a href="{{ yt_links14 }}" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ yt_urls[14] }}" target="_blank" rel="noopener noreferrer">
                             <div><img src="{{ yt_pics[14] }}" class="pictures">
                                 <div class="play_background">
                                     <div class="button_play"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow"></div>
@@ -1009,7 +1011,7 @@
                         </a>
                         <div class="song_name">
                             <div class="marquee">
-                                <span>15. {{ yt_data[4] }}</span>
+                                <span>15. {{ yt_data[14] }}</span>
                             </div>
                         </div>
                         <div class="waves" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves"></div>
