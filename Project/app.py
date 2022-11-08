@@ -322,7 +322,7 @@ def general():
     general_urls = {}
     calc = 0
     username = session['username']
-    region = "Worldwide general"
+    region = "General"
     for i in general_chart.find():
         name = list(i.values())[1]
         general_names[calc] = name
