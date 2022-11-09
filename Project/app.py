@@ -1,6 +1,6 @@
 import pprint
 
-from flask import Flask, render_template,request, g, abort, flash, redirect, url_for, session
+from flask import Flask, render_template, request, g, abort, flash, redirect, url_for, session
 import pymongo
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -18,8 +18,12 @@ app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
 app.secret_key = 'super secret key'
 
+
+
 @app.route('/')
 def index():
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
     if session:
         if 'username' in session:
             region = "Wordwide"
@@ -63,7 +67,12 @@ def index():
                 deezer_urls[calc_deezer] = deezer.find_one({f"url-{calc_deezer}": {"$exists": "true"}})[f'url-{calc_deezer}']
                 calc_deezer = calc_deezer + 1
         #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
-            return render_template('index.html', **locals())
+            if "iphone" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            elif "android" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            else:
+                return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
     else:
@@ -72,6 +81,8 @@ def index():
 
 @app.route('/regions/ukraine')
 def ukraine():
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
     if session:
         if 'username' in session:
             region = "Ukrainian"
@@ -126,13 +137,20 @@ def ukraine():
             #
             # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
 
-            return render_template('index.html', **locals())
+            if "iphone" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            elif "android" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            else:
+                return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
 
 
 @app.route('/regions/usa')
 def usa():
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
     if session:
         if 'username' in session:
             region = "USA"
@@ -187,13 +205,20 @@ def usa():
             #
             # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
 
-            return render_template('index.html', **locals())
+            if "iphone" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            elif "android" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            else:
+                return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
 
 
 @app.route('/regions/spain')
 def spain():
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
     if session:
         if 'username' in session:
             region = "Spanish"
@@ -248,13 +273,20 @@ def spain():
             #
             # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
 
-            return render_template('index.html', **locals())
+            if "iphone" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            elif "android" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            else:
+                return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
 
 
 @app.route('/regions/france')
 def france():
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
     if session:
         if 'username' in session:
             region = "French"
@@ -310,7 +342,12 @@ def france():
             #
             # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
 
-            return render_template('index.html', **locals())
+            if "iphone" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            elif "android" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            else:
+                return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
 
@@ -339,6 +376,8 @@ def general():
 
 @app.route('/song/<songid>',  methods=["GET", "POST"])
 def song(songid):
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
     print(request.method, request.form.get('like'), request.form.get('dislike'))
     regions = ["uaurl", "url", "sfraurl", "spaurl", "usaurl"]
     if request.method == "GET":
@@ -356,8 +395,13 @@ def song(songid):
                     logo = list(a.values())[2]
                     sing = list(a.values())[3]
                     comments = list(a.values())[5]
-                    print(likes)
-                    return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes, variable=comments)
+                    if "iphone" in user_agent:
+                        return render_template('song_mobile.html', name=name, logo=logo, sing=sing, likes=likes, variable=comments)
+                    elif "android" in user_agent:
+                        return render_template('song_mobile.html', name=name, logo=logo, sing=sing, likes=likes, variable=comments)
+                    else:
+                        return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes, variable=comments)
+
                 elif c != None:
                     del c['_id']
                     del c['lastModified']
@@ -367,7 +411,15 @@ def song(songid):
                     sing = list(c.values())[3]
                     comments = list(c.values())[5]
                     print(likes)
-                    return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes, variable=comments)
+                    if "iphone" in user_agent:
+                        return render_template('song_mobile.html', name=name, logo=logo, sing=sing, likes=likes,
+                                               variable=comments)
+                    elif "android" in user_agent:
+                        return render_template('song_mobile.html', name=name, logo=logo, sing=sing, likes=likes,
+                                               variable=comments)
+                    else:
+                        return render_template('song.html', name=name, logo=logo, sing=sing, likes=likes,
+                                               variable=comments)
                 elif yt != None:
                     del yt['_id']
                     del yt['lastModified']
@@ -377,7 +429,12 @@ def song(songid):
                     sing = sing.replace("music", "www")
                     sing = sing.replace("watch?v=", "embed/")
                     comments = list(yt.values())[5]
-                    return render_template('song_yt.html', name=name, sing=sing, likes=likes, variable=comments)
+                    if "iphone" in user_agent:
+                        return render_template('song_yt_mobile.html', name=name, sing=sing, likes=likes, variable=comments)
+                    elif "android" in user_agent:
+                        return render_template('song_yt_mobile.html', name=name, sing=sing, likes=likes, variable=comments)
+                    else:
+                        return render_template('song_yt.html', name=name, sing=sing, likes=likes, variable=comments)
                 calc = calc + 1
     if request.method == "POST" and request.form.get('like') == 'Like':
         for j in regions:

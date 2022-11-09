@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap" rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Iceberg" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon_2.ico') }}">
+    <title>DiFFCharts | Login</title>
+</head>
+<body style="font-family: 'Iceberg', sans-serif; width: 100%; height: 100%; display: grid; grid: 100vh/1fr; place-items: center; overflow: visible;">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;">
+        <defs>
+            <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#ff0" />
+                <stop offset="100%" stop-color="#ff00" />
+            </radialGradient>
+            <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#0ff" />
+                <stop offset="100%" stop-color="#0ff0" />
+            </radialGradient>
+            <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#f0f" />
+                <stop offset="100%" stop-color="#f0f0" />
+            </radialGradient>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
+            <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s"
+                repeatCount="indefinite" />
+        </rect>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
+            <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s"
+                repeatCount="indefinite" />
+        </rect>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
+            <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s"
+                repeatCount="indefinite" />
+        </rect>
+    </svg>
+
+
+    <div style=" z-index: 200; padding: 50px; background-color: rgba(255, 255, 255, 0.514); border-radius: 60px; text-align: center;display:contents;  align-items: center; background-image: url('static/images/name_of_pic');">
+        <iframe width="350" height="200" style="margin-top: -500px; margin-left: -15px; z-index: 101; border-color: #42d43200; border-radius: 30px;" src="{{ sing }}">
+        </iframe>
+            <div style=" z-index: 200; width: 350px; height: 40px; margin-top: -1000px;">
+            <h1 style=" margin-left: -10px;">{{ name }}</h1>
+        </div>
+        <form method="post" style="margin-top: -820px; margin-left: -10px; z-index: 200;">
+            <input type="submit" value="Like" name="like" style="background: #43d432; color:white;  border-color: #43d432; border-radius: 30px; height: 50px; width: 90px;"/>
+            <input type="submit" value="Dislike" name="dislike" style="background: red; color:white;  border-color: red; border-radius: 30px; height: 50px; width: 90px;"/>
+        </form>
+        <h2 style="margin-top: -700px; margin-left: -5px; z-index: 200;">{{ likes }}❤️</h2>
+    </div>
+    <div style="width: 300px; height: 300px; z-index: 200;">
+        <div class="list" style="height: 600px; padding-top: 10px; margin-top: -350px; margin-left: -10px; border-color: #8b8b8ba4;">
+            <div class="main_zone" style="width: 100%; height: 490px; padding-top: 20px; margin-top: 20px;">
+                {% if variable[15] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[8] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[9] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[10] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[11] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[12] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[13] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[14] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[15] }}</h3>
+                </div>  
+                {% elif variable[14] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[8] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[9] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[10] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[11] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[12] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[13] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[14] }}</h3>
+                </div>  
+                {% elif variable[13] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[8] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[9] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[10] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[11] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[12] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[13] }}</h3>
+                </div>  
+                {% elif variable[12] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[8] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[9] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[10] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[11] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[12] }}</h3>
+                </div>
+                {% elif variable[11] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[8] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[9] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[10] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[11] }}</h3>
+                </div> 
+                {% elif variable[10] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[8] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[9] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[10] }}</h3>
+                </div>  
+                {% elif variable[9] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[8] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[9] }}</h3>
+                </div>  
+                {% elif variable[8] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[8] }}</h3>
+                </div> 
+                {% elif variable[7] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[7] }}</h3>
+                </div> 
+                {% elif variable[6] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[6] }}</h3>
+                </div>
+                {% elif variable[5] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[5] }}</h3>
+                </div> 
+                {% elif variable[4] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[4] }}</h3>
+                </div> 
+                {% elif variable[3] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[3] }}</h3>
+                </div>
+                {% elif variable[2] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[2] }}</h3>
+                </div> 
+                {% elif variable[1] is defined %}
+                <div class="inside_song">
+                    <h3>{{ variable[0] }}</h3>
+                </div>  
+                <div class="inside_song">
+                    <h3>{{ variable[1] }}</h3>
+                </div>  
+                {% elif variable[0] is defined %}
+                <div class="inside_song">
+                    <h3 style="word-break: break-all;">{{ variable[0] }}</h3>
+                </div>
+                {% else %}
+                <div class="inside_song">
+                    <h3>No comments here</h3>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <form method="post" style="margin-top: -70px; margin-left: 35px;">
+            <input type="text" id="comment" name="comment" style="border-radius: 15px; height: 30px; border-color: rgb(151, 151, 151);">
+            <input type="submit" name="submit" value="submit" style="border-radius: 15px; height: 40px; border-color: #42d43200; background-color: #494949e8;">
+        </form>
+    </div>
+</body>
+</html>

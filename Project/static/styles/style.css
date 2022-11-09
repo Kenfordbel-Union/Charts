@@ -67,14 +67,14 @@
   height: 59px;
 }
 
-.container .normal_size{
+.normal_size{
     width: 1600px;
     height: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.container .normal_size .grid_list{
+.grid_list{
     display: grid;
     position: relative;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -101,7 +101,7 @@
     left: 75px;
 }
 
-.list .main_zone{
+.main_zone{
     width: 100%;
     box-sizing: border-box;
     overflow-y: auto;
@@ -110,7 +110,6 @@
     justify-content: flex-start;
     margin-top: -110px;
     max-height: 522px;
-
 }
 .inside{
     background-color: linear-gradient(180deg, #EAAFCB 37.5%, #9DBAE6 100%);
@@ -125,10 +124,8 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    
-
 }
-.container .normal_size .grid_list .list .main_zone .inside .pictures {
+.inside .pictures {
     height: 70px;
     width: 70px;
     margin-top: 5px;
@@ -137,7 +134,7 @@
     border-radius: 10px;
 }
    
-.container .normal_size .grid_list .list .main_zone .inside .song_name{
+.inside .song_name{
     position: relative;
     margin-left: 8px;
     margin-top: 10px;
@@ -147,7 +144,7 @@
     padding-bottom: 5px;
     font-size: larger;
 } 
-.container .normal_size .grid_list .list .main_zone .inside .waves{
+.inside .waves{
     position: absolute;
     bottom: 2px;
     right: 5px;
@@ -188,7 +185,11 @@
     height: 200px;
     margin-left: 100px;
     margin-top: -35px;
-
+  }
+  .svg_logo_mobile{
+    width: 130px;
+    height: 130px;
+    margin-left: 80px;
   }
   .shadow{
     position: relative;
@@ -349,6 +350,92 @@ ul li {
   word-wrap: break-word;
 }
 
+.card {
+  background-color: #fff;
+  width: 1200px;
+  min-height: 200px;
+  display: flex;
+  overflow-x: auto;
+}
+.card--content {
+  width: 700px;
+  height: 640px;
+  margin: 5px;
+  border-radius: 60px;
+  border-width: 0px 3px 3px 3px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  z-index: 102;
+}
 
+
+
+
+.main_zone_mobile{
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: -30px;
+  max-height: 500px;
+}
+.inside_mobile{
+  background-color: linear-gradient(180deg, #EAAFCB 37.5%, #9DBAE6 100%);
+  display: flex;
+  width: 93%;
+  height: 80px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-size: large;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.inside_mobile .pictures_mobile {
+  height: 70px;
+  width: 70px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border-radius: 10px;
+}
+
+.play_background_mobile{
+  background: #201f1f4d;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 22px;
+  top: 22px;
+  border-radius: 20px;
+}
+.play_background_mobile .play_arrow_mobile{
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  left: 14px;
+  top: 14px;
+}
+.inside_mobile .song_name_mobile{
+  position: relative;
+  margin-left: 8px;
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  font-size: larger;
+} 
+.inside_mobile .waves_mobile{
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+  width: 160px;
+  height: 40px;
+}
 
       

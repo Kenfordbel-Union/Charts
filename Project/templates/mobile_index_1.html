@@ -1,0 +1,3077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap" rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Iceberg" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon_2.ico') }}">
+    <title>DiFFCharts</title>
+</head>
+<body style="font-family: 'Iceberg', sans-serif; width: 100%; height: 100%;">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh;">
+        <defs>
+            <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#ff0" />
+                <stop offset="100%" stop-color="#ff00" />
+            </radialGradient>
+            <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#0ff" />
+                <stop offset="100%" stop-color="#0ff0" />
+            </radialGradient>
+            <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#f0f" />
+                <stop offset="100%" stop-color="#f0f0" />
+            </radialGradient>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
+            <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s"
+                repeatCount="indefinite" />
+        </rect>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
+            <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s"
+                repeatCount="indefinite" />
+        </rect>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
+            <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s"
+                repeatCount="indefinite" />
+        </rect>
+    </svg>
+    <section class="card">
+        <div class="card--content" style="background: linear-gradient(144deg, rgba(13,181,0,0.5914740896358543) 2%, rgba(24,0,0,0.6587009803921569) 44%, rgba(255,255,255,0.4430147058823529) 100%);">
+            <div><img class="svg_logo_mobile" src="{{ url_for('static', filename='images/spotify.svg') }}" alt='ooops image'/></div>
+            <div class="main_zone_mobile">
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[0] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[0] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>1. {{ spotify_data[0] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[1] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[1] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>2. {{ spotify_data[1] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[2] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[2] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>3. {{ spotify_data[2] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[3] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[3] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>4. {{ spotify_data[3] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[4] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[4] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>5. {{ spotify_data[4] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[5] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[5] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>6. {{ spotify_data[5] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[6] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[6] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>7. {{ spotify_data[6] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[7] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[7] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>8. {{ spotify_data[7] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[8] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[8] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>9. {{ spotify_data[8] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[9] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[9] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>10. {{ spotify_data[9] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[10] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[10] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>11. {{ spotify_data[10] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[11] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[11] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>12. {{ spotify_data[11] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[12] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[12] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>13. {{ spotify_data[12] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[13] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[13] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>14. {{ spotify_data[13] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[14] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[14] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>15. {{ spotify_data[14] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[15] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[15] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>16. {{ spotify_data[15] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[16] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[16] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>17. {{ spotify_data[16] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[17] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[17] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>18. {{ spotify_data[17] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[18] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[18] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>19. {{ spotify_data[18] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[19] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[19] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>20. {{ spotify_data[19] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[20] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[20] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>21. {{ spotify_data[20] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[21] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[21] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>22. {{ spotify_data[21] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[22] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[22] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>23. {{ spotify_data[22] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[23] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[23] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>24. {{ spotify_data[23] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[24] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[24] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>25. {{ spotify_data[24] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[25] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[25] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>26. {{ spotify_data[25] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[26] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[26] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>27. {{ spotify_data[26] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[27] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[27] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>28. {{ spotify_data[27] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[28] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[28] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>29. {{ spotify_data[28] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[29] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[29] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>30. {{ spotify_data[29] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[30] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[30] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>31. {{ spotify_data[30] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[31] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[31] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>32. {{ spotify_data[31] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[32] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[32] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>33. {{ spotify_data[32] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[33] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[33] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>34. {{ spotify_data[33] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[34] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[34] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>35. {{ spotify_data[34] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[35] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[35] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>36. {{ spotify_data[35] }}</span>
+                        </div>
+                    </div>
+                <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+            </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[36] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[36] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>37. {{ spotify_data[36] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[37] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[37] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>38. {{ spotify_data[37] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[38] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[38] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>39. {{ spotify_data[38] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[39] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[39] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>40. {{ spotify_data[39] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[40] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[40] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>41. {{ spotify_data[40] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[41] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[41] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>42. {{ spotify_data[41] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[42] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[42] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>43. {{ spotify_data[42] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[43] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[43] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>44. {{ spotify_data[43] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[44] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[44] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>45. {{ spotify_data[44] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[45] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[45] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>46. {{ spotify_data[45] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[46] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[46] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>47. {{ spotify_data[46] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[47] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[47] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>48. {{ spotify_data[47] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[48] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[48] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>49. {{ spotify_data[48] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[49] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[49] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>50. {{ spotify_data[49] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card--content" style="background: linear-gradient(144deg, rgba(0,0,0,0.5914740896358543) 2%, rgba(255,0,0,0.6587009803921569) 44%, rgba(255,255,255,0.4430147058823529) 100%);">
+            <div><img class="svg_logo_mobile" src="{{ url_for('static', filename='images/youtube.svg') }}" alt='ooops image'/></div>
+            <div class="main_zone_mobile">
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[0] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[0] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>1. {{ yt_data[0] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[1] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[1] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>2. {{ yt_data[1] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[2] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[2] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>3. {{ yt_data[2] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[3] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[3] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>4. {{ yt_data[3] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[4] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[4] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>5. {{ yt_data[4] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[5] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[5] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>6. {{ yt_data[5] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[6] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[6] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>7. {{ yt_data[6] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[7] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[7] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>8. {{ yt_data[7] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[8] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[8] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>9. {{ yt_data[8] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[9] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[9] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>10. {{ yt_data[9] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[10] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[10] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>11. {{ yt_data[10] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[11] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[11] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>12. {{ yt_data[11] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[12] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[12] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>13. {{ yt_data[12] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[13] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[13] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>14. {{ yt_data[13] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[14] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[14] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>15. {{ yt_data[14] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[15] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[15] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>16. {{ yt_data[15] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[16] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[16] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>17. {{ yt_data[16] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[17] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[17] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>18. {{ yt_data[17] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[18] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[18] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>19. {{ yt_data[18] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[19] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[19] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>20. {{ yt_data[19] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[20] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[20] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>21. {{ yt_data[20] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[21] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[21] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>22. {{ yt_data[21] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[22] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[22] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>23. {{ yt_data[22] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[23] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[23] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>24. {{ yt_data[23] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[24] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[24] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>25. {{ yt_data[24] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[25] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[25] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>26. {{ yt_data[25] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[26] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[26] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>27. {{ yt_data[26] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[27] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[27] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>28. {{ yt_data[27] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[28] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[28] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>29. {{ yt_data[28] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[29] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[29] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>30. {{ yt_data[29] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[30] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[30] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>31. {{ yt_data[30] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[31] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[31] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>32. {{ yt_data[31] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[32] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[32] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>33. {{ yt_data[32] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[33] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[33] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>34. {{ yt_data[33] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[34] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[34] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>35. {{ yt_data[34] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[35] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[35] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>36. {{ yt_data[35] }}</span>
+                        </div>
+                    </div>
+                <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+            </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[36] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[36] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>37. {{ yt_data[36] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[37] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[37] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>38. {{ yt_data[37] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[38] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[38] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>39. {{ yt_data[38] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[39] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[39] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>40. {{ yt_data[39] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[40] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[40] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>41. {{ yt_data[40] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[41] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[41] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>42. {{ yt_data[41] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[42] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[42] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>43. {{ yt_data[42] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[43] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[43] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>44. {{ yt_data[43] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[44] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[44] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>45. {{ yt_data[44] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[45] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[45] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>46. {{ yt_data[45] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[46] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[46] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>47. {{ yt_data[46] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[47] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[47] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>48. {{ yt_data[47] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[48] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[48] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>49. {{ yt_data[48] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ yt_urls[49] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ yt_pics[49] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>50. {{ yt_data[49] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card--content" style="background: linear-gradient(144deg, rgba(255,0,0,0.5914740896358543) 2%, rgba(255,244,0,0.6587009803921569) 44%, rgba(255,76,227,0.4430147058823529) 100%);;">
+            <img class="svg_logo_mobile" src="{{ url_for('static', filename='images/dezeer.svg') }}" alt='ooops image'/>
+            <div class="main_zone_mobile">
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[0] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[0] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>1. {{ deezer_data[0] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[1] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[1] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>2. {{ deezer_data[1] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[2] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[2] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>3. {{ deezer_data[2] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[3] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[3] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>4. {{ deezer_data[3] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[4] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[4] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>5. {{ deezer_data[4] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[5] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[5] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>6. {{ deezer_data[5] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[6] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[6] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>7. {{ deezer_data[6] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[7] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[7] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>8. {{ deezer_data[7] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[8] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[8] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>9. {{ deezer_data[8] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[9] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[9] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>10. {{ deezer_data[9] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[10] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[10] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>11. {{ deezer_data[10] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[11] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[11] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>12. {{ deezer_data[11] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[12] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[12] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>13. {{ deezer_data[12] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[13] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[13] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>14. {{ deezer_data[13] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[14] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[14] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>15. {{ deezer_data[14] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[15] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[15] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>16. {{ deezer_data[15] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[16] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[16] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>17. {{ deezer_data[16] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[17] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[17] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>18. {{ deezer_data[17] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[18] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[18] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>19. {{ deezer_data[18] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[19] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[19] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>20. {{ deezer_data[19] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[20] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[20] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>21. {{ deezer_data[20] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[21] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[21] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>22. {{ deezer_data[21] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[22] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[22] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>23. {{ deezer_data[22] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[23] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[23] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>24. {{ deezer_data[23] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[24] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[24] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>25. {{ deezer_data[24] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[25] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[25] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>26. {{ deezer_data[25] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[26] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[26] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>27. {{ deezer_data[26] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[27] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[27] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>28. {{ deezer_data[27] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[28] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[28] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>29. {{ deezer_data[28] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[29] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[29] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>30. {{ deezer_data[29] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[30] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[30] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>31. {{ deezer_data[30] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[31] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[31] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>32. {{ deezer_data[31] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[32] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[32] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>33. {{ deezer_data[32] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[33] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[33] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>34. {{ deezer_data[33] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[34] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[34] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>35. {{ deezer_data[34] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[35] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[35] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>36. {{ deezer_data[35] }}</span>
+                        </div>
+                    </div>
+                <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+            </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[36] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[36] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>37. {{ deezer_data[36] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[37] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[37] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>38. {{ deezer_data[37] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[38] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[38] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>39. {{ deezer_data[38] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[39] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[39] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>40. {{ deezer_data[39] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[40] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[40] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>41. {{ deezer_data[40] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[41] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[41] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>42. {{ deezer_data[41] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[42] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[42] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>43. {{ deezer_data[42] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[43] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[43] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>44. {{ deezer_data[43] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[44] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[44] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>45. {{ deezer_data[44] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[45] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[45] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>46. {{ deezer_data[45] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[46] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[46] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>47. {{ deezer_data[46] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[47] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[47] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>48. {{ deezer_data[47] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[48] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[48] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>49. {{ deezer_data[48] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ deezer_urls[49] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ deezer_pics[49] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>50. {{ deezer_data[49] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card--content" style="background: linear-gradient(144deg, rgba(255,255,255,0.5886729691876751) 2%, rgba(240,0,0,0.6587009803921569) 62%, rgba(0,0,0,0.4430147058823529) 100%);">
+            <img class="svg_logo_mobile" src="{{ url_for('static', filename='images/yandex.svg') }}" alt='ooops image'/>
+            <div class="main_zone_mobile">
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[0] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[0] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>1. {{ spotify_data[0] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[1] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[1] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>2. {{ spotify_data[1] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[2] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[2] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>3. {{ spotify_data[2] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[3] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[3] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>4. {{ spotify_data[3] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[4] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[4] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>5. {{ spotify_data[4] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[5] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[5] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>6. {{ spotify_data[5] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[6] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[6] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>7. {{ spotify_data[6] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[7] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[7] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>8. {{ spotify_data[7] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[8] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[8] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>9. {{ spotify_data[8] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[9] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[9] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>10. {{ spotify_data[9] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[10] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[10] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>11. {{ spotify_data[10] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[11] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[11] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>12. {{ spotify_data[11] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[12] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[12] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>13. {{ spotify_data[12] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[13] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[13] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>14. {{ spotify_data[13] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[14] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[14] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>15. {{ spotify_data[14] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[15] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[15] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>16. {{ spotify_data[15] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[16] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[16] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>17. {{ spotify_data[16] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[17] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[17] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>18. {{ spotify_data[17] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[18] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[18] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>19. {{ spotify_data[18] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[19] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[19] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>20. {{ spotify_data[19] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[20] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[20] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>21. {{ spotify_data[20] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[21] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[21] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>22. {{ spotify_data[21] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[22] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[22] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>23. {{ spotify_data[22] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[23] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[23] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>24. {{ spotify_data[23] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[24] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[24] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>25. {{ spotify_data[24] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[25] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[25] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>26. {{ spotify_data[25] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[26] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[26] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>27. {{ spotify_data[26] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[27] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[27] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>28. {{ spotify_data[27] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[28] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[28] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>29. {{ spotify_data[28] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[29] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[29] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>30. {{ spotify_data[29] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[30] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[30] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>31. {{ spotify_data[30] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[31] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[31] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>32. {{ spotify_data[31] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[32] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[32] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>33. {{ spotify_data[32] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[33] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[33] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>34. {{ spotify_data[33] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[34] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[34] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>35. {{ spotify_data[34] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[35] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[35] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>36. {{ spotify_data[35] }}</span>
+                        </div>
+                    </div>
+                <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+            </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[36] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[36] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>37. {{ spotify_data[36] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[37] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[37] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>38. {{ spotify_data[37] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[38] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[38] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>39. {{ spotify_data[38] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[39] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[39] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>40. {{ spotify_data[39] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[40] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[40] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>41. {{ spotify_data[40] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[41] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[41] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>42. {{ spotify_data[41] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[42] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[42] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>43. {{ spotify_data[42] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[43] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[43] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>44. {{ spotify_data[43] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[44] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[44] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>45. {{ spotify_data[44] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[45] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[45] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>46. {{ spotify_data[45] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[46] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[46] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>47. {{ spotify_data[46] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[47] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[47] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>48. {{ spotify_data[47] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[48] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[48] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>49. {{ spotify_data[48] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+                <div class="inside_mobile">
+                    <a href="/song/{{ spotify_urls[49] }}" target="_blank" rel="noopener noreferrer">
+                        <div><img src="{{ spotify_pics[49] }}" class="pictures_mobile">
+                            <div class="play_background_mobile">
+                                <div class="button_play_mobile"><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="song_name_mobile">
+                        <div class="marquee">
+                            <span>50. {{ spotify_data[49] }}</span>
+                        </div>
+                    </div>
+                    <div class="waves_mobile" ><img src="{{ url_for('static', filename='images/waves.png') }}" class="waves_mobile"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+
+</html>
