@@ -24,6 +24,10 @@ app.secret_key = 'super secret key'
 def index():
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.lower()
+    referer = request.headers.get('Referer')
+    if referer != None:
+        referer = str(referer.split('/'))
+        referer = referer.split()[3]
     if session:
         if 'username' in session:
             region = "Wordwide"
@@ -67,16 +71,26 @@ def index():
                 deezer_urls[calc_deezer] = deezer.find_one({f"url-{calc_deezer}": {"$exists": "true"}})[f'url-{calc_deezer}']
                 calc_deezer = calc_deezer + 1
         #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
-            if "iphone" in user_agent:
-                return render_template('mobile_index_1.html', **locals())
-            elif "android" in user_agent:
-                return render_template('mobile_index_1.html', **locals())
+            if "iphone" in user_agent or "android" in user_agent:
+                if referer != None:
+                    if 'mobile' not in referer:
+                        return redirect(url_for('mobile_regions'))
+                    else:
+                        return render_template('mobile_index_1.html', **locals())
+                else:
+                    return redirect(url_for('mobile_regions'))
             else:
                 return render_template('index.html', **locals())
         else:
             return redirect(url_for('login'))
     else:
         return redirect(url_for('login'))
+
+
+@app.route('/mobile_regions')
+def mobile_regions():
+    username = session['username']
+    return render_template('mobile_regions.html', username=username)
 
 
 @app.route('/regions/ukraine')
