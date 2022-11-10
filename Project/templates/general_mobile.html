@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap" rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Iceberg" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon_2.ico') }}">
+    <title>DiFFCharts | Login</title>
+</head>
+<body style="font-family: 'Iceberg', sans-serif; width: 100%; height: 100%; display: grid; grid: 100vh/1fr; place-items: center; overflow: visible;">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;">
+        <defs>
+            <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#ff0" />
+                <stop offset="100%" stop-color="#ff00" />
+            </radialGradient>
+            <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#0ff" />
+                <stop offset="100%" stop-color="#0ff0" />
+            </radialGradient>
+            <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+                <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#f0f" />
+                <stop offset="100%" stop-color="#f0f0" />
+            </radialGradient>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
+            <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s"
+                repeatCount="indefinite" />
+        </rect>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
+            <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s"
+                repeatCount="indefinite" />
+        </rect>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
+            <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s"
+                repeatCount="indefinite" />
+        </rect>
+    </svg>
+    <div style="width: 90%; height: 100%; z-index: 200;">
+        <div class="list" style="height: 600px; padding-top: 10px; margin-top: 15px; margin-left: -10px; border-color: #ffffffa4;">
+            <h1 style="margin-left: 115px; color: white; text-shadow: 0 0 1px black;">General</h1>
+            <div class="main_zone_mobile" style="width: 100%; height: 490px; padding-top: 20px; margin-top: -10px;">
+                {% if general_urls[49] is defined %}
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[0] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[0] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px; color: black;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">1. {{ general_names[0] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[1] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[1] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">2. {{ general_names[1] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[2] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[2] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">3. {{ general_names[2] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[3] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[3] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">4. {{ general_names[3] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[4] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[4] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">5. {{ general_names[4] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[5] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[5] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">6. {{ general_names[5] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[6] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[6] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">7. {{ general_names[6] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[7] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[7] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">8. {{ general_names[7] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[8] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[8] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">9. {{ general_names[8] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[9] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[9] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">10. {{ general_names[9] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[10] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[10] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">11. {{ general_names[10] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[11] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[11] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">12. {{ general_names[1] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[12] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[12] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">13. {{ general_names[12] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[13] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[13] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">14. {{ general_names[13] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[14] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[14] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">15. {{ general_names[14] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[15] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[15] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">16. {{ general_names[15] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[16] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[16] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">17. {{ general_names[16] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[17] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[17] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">18. {{ general_names[17] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[18] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[18] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">19. {{ general_names[18] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[19] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[19] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">20. {{ general_names[19] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[20] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[20] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">21. {{ general_names[20] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[21] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[21] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">22. {{ general_names[21] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[22] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[22] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">23. {{ general_names[22] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[23] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[23] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">24. {{ general_names[23] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[24] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[24] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">25. {{ general_names[24] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[25] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[25] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">26. {{ general_names[25] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[26] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[26] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">27. {{ general_names[26] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[27] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[27] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">28. {{ general_names[27] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[28] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[28] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">29. {{ general_names[28] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[29] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[29] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">30. {{ general_names[29] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[30] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[30] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">31. {{ general_names[30] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[31] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[31] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">32. {{ general_names[31] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[32] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[32] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">33. {{ general_names[32] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[33] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[33] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">34. {{ general_names[33] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[34] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[34] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">35. {{ general_names[34] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[35] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[35] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">36. {{ general_names[35] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[36] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[36] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">37. {{ general_names[36] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[37] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[37] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">38. {{ general_names[37] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[38] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[38] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">39. {{ general_names[38] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[39] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[39] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">40. {{ general_names[39] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[40] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[40] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">41. {{ general_names[40] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[41] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[41] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">42. {{ general_names[41] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[42] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[42] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">43. {{ general_names[42] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[43] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[43] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">44. {{ general_names[43] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[44] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[44] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">45. {{ general_names[44] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[45] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[45] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">46. {{ general_names[45] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[46] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[46] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">47. {{ general_names[46] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[47] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[47] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">48. {{ general_names[47] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[48] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[48] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">49. {{ general_names[48] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[49] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[49] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">50. {{ general_names[49] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% elif general_urls[44] is defined %}
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[0] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[0] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">1. {{ general_names[0] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[1] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[1] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">2. {{ general_names[1] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[2] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[2] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">3. {{ general_names[2] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[3] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[3] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">4. {{ general_names[3] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[4] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[4] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">5. {{ general_names[4] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[5] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[5] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">6. {{ general_names[5] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[6] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[6] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">7. {{ general_names[6] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[7] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[7] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">8. {{ general_names[7] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[8] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[8] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">9. {{ general_names[8] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[9] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[9] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">10. {{ general_names[9] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[10] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[10] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">11. {{ general_names[10] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[11] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[11] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">12. {{ general_names[1] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[12] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[12] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">13. {{ general_names[12] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[13] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[13] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">14. {{ general_names[13] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[14] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[14] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">15. {{ general_names[14] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[15] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[15] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">16. {{ general_names[15] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[16] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[16] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">17. {{ general_names[16] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[17] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[17] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">18. {{ general_names[17] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[18] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[18] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">19. {{ general_names[18] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[19] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[19] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">20. {{ general_names[19] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[20] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[20] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">21. {{ general_names[20] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[21] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[21] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">22. {{ general_names[21] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[22] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[22] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">23. {{ general_names[22] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[23] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[23] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">24. {{ general_names[23] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[24] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[24] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">25. {{ general_names[24] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[25] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[25] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">26. {{ general_names[25] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[26] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[26] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">27. {{ general_names[26] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[27] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[27] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">28. {{ general_names[27] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[28] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[28] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">29. {{ general_names[28] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[29] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[29] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">30. {{ general_names[29] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[30] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[30] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">31. {{ general_names[30] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[31] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[31] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">32. {{ general_names[31] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[32] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[32] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">33. {{ general_names[32] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[33] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[33] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">34. {{ general_names[33] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[34] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[34] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">35. {{ general_names[34] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[35] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[35] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">36. {{ general_names[35] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[36] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[36] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">37. {{ general_names[36] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[37] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[37] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">38. {{ general_names[37] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[38] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[38] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">39. {{ general_names[38] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[39] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[39] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">40. {{ general_names[39] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[40] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[40] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">41. {{ general_names[40] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[41] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[41] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">42. {{ general_names[41] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[42] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[42] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">43. {{ general_names[42] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[43] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[43] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">44. {{ general_names[43] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[44] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[44] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">45. {{ general_names[44] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% elif general_urls[39] %}
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[0] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[0] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">1. {{ general_names[0] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[1] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[1] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">2. {{ general_names[1] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[2] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[2] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">3. {{ general_names[2] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[3] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[3] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">4. {{ general_names[3] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[4] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[4] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">5. {{ general_names[4] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[5] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[5] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">6. {{ general_names[5] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[6] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[6] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">7. {{ general_names[6] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[7] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[7] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">8. {{ general_names[7] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[8] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[8] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">9. {{ general_names[8] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[9] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[9] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">10. {{ general_names[9] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[10] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[10] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">11. {{ general_names[10] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[11] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[11] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">12. {{ general_names[1] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[12] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[12] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">13. {{ general_names[12] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[13] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[13] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">14. {{ general_names[13] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[14] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[14] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">15. {{ general_names[14] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[15] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[15] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">16. {{ general_names[15] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[16] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[16] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">17. {{ general_names[16] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[17] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[17] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">18. {{ general_names[17] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[18] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[18] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">19. {{ general_names[18] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[19] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[19] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">20. {{ general_names[19] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[20] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[20] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">21. {{ general_names[20] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[21] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[21] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">22. {{ general_names[21] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[22] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[22] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">23. {{ general_names[22] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[23] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[23] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">24. {{ general_names[23] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[24] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[24] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">25. {{ general_names[24] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[25] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[25] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">26. {{ general_names[25] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[26] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[26] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">27. {{ general_names[26] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[27] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[27] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">28. {{ general_names[27] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[28] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[28] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">29. {{ general_names[28] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[29] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[29] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">30. {{ general_names[29] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[30] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[30] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">31. {{ general_names[30] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[31] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[31] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">32. {{ general_names[31] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[32] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[32] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">33. {{ general_names[32] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[33] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[33] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">34. {{ general_names[33] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[34] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[34] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">35. {{ general_names[34] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[35] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[35] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">36. {{ general_names[35] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[36] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[36] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">37. {{ general_names[36] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[37] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[37] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">38. {{ general_names[37] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[38] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[38] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">39. {{ general_names[38] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inside_mobile" style="padding-top: 20px; padding-bottom: 20px; height: 30px;">
+                        <a href="/song/{{ general_urls[39] }}" target="_blank" rel="noopener noreferrer">
+                            <div><img src="{{ general_pics[39] }}" class="pictures_mobile" style="height: 50px; width: 50px; margin-top: -9px; margin-left: 11px;">
+                                <div class="play_background_mobile" style="margin-top: -4px; margin-left: -4px;">
+                                    <div><img src="{{ url_for('static', filename='images/play_arrow.png') }}" class="play_arrow_mobile" sty></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="song_name_mobile" style="height: 70px;">
+                            <div style="width: 100%;height: 50px;overflow: hidden;line-height: 20px;position: relative;float: left;">
+                                <span style="position: absolute; white-space: nowrap; transform: translateX(0); transition: 5s; max-width: 100%; max-height: 100%; color: black; font-family:'GFS Neohellenic'; font-size: 30px;">40. {{ general_names[39] }}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

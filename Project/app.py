@@ -367,6 +367,8 @@ def france():
 
 @app.route('/general')
 def general():
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
     general_names = {}
     general_pics = {}
     general_links = {}
@@ -385,8 +387,12 @@ def general():
         general_urls[calc] = url
         calc += 1
     print(general_links)
-
-    return render_template('general.html', **locals())
+    if "iphone" in user_agent:
+        return render_template('general_mobile.html', **locals())
+    elif "android" in user_agent:
+        return render_template('general_mobile.html', **locals())
+    else:
+        return render_template('general.html', **locals())
 
 @app.route('/song/<songid>',  methods=["GET", "POST"])
 def song(songid):
