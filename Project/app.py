@@ -380,9 +380,9 @@ def general():
         print(list(i.values()))
         name = list(i.values())[1]
         general_names[calc] = name
-        pic = list(i.values())[4]
+        pic = list(i.values())[5]
         general_pics[calc] = pic
-        sing = list(i.values())[5]
+        sing = list(i.values())[6]
         general_links[calc] = sing
         url = list(i.values())[7]
         general_urls[calc] = url
