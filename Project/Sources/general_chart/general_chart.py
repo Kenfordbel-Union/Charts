@@ -15,6 +15,7 @@ def scrap_data(service, service2, region):
         for g in service2.find():
             if region+str(calc) in i and region+str(calc) in g:
                 sortted = sorted(i[region+str(calc)].split())
+                print(sortted)
                 sortted2 = sorted(g[region + str(calc)].split())
                 sortted = sortted[-3:]
                 sortted2 = sortted2[-3:]
@@ -26,7 +27,6 @@ def scrap_data(service, service2, region):
                         general_list.append(check_case)
                         general_col.insert_one(i)
                         calc += 1
-                        print(sortted)
                     else:
                         calc += 1
                 if len(sortted2) >= 3:
@@ -35,7 +35,6 @@ def scrap_data(service, service2, region):
                         general_list.append(check_case2)
                         general_col.insert_one(g)
                         calc2 += 1
-                        print(sortted2)
                     else:
                         calc2 += 1
                 if len(sortted) <= 2:
@@ -44,7 +43,6 @@ def scrap_data(service, service2, region):
                         general_list.append(check_case)
                         general_col.insert_one(i)
                         calc += 1
-                        print(sortted)
                     else:
                         calc += 1
                 if len(sortted2) <= 2:
@@ -53,13 +51,11 @@ def scrap_data(service, service2, region):
                         general_list.append(check_case2)
                         general_col.insert_one(g)
                         calc2 += 1
-                        print(sortted2)
                     else:
                         calc2 += 1
                 else:
                     calc += 1
                     calc2 += 1
-    print(len(general_list))
 
 
 

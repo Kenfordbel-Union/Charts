@@ -35,60 +35,6 @@ def pos_checker(song_id, num, id):
     else:
         return "🆕 "
 
-
-
-def collect_spotify_charts_second(playlist_id, id):
-    client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
-    sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-    data = sp.playlist_items(playlist_id, fields=None, limit=100, offset=0, market=None, additional_types=('track', ))
-    data = data['items']
-    num = 0
-    for song in data:
-        track_info = song['track']
-        img = track_info['album']
-        images = img['images']
-        small_logo = images[1]
-        finally_logo = small_logo['url']
-        artist = track_info['artists']
-        artist_name = artist[0]['name']
-        track = track_info['name']
-        track_with_artist = f"{track} - {artist_name}"
-        song_for_db = {f"{id}song-{num}":f"{track} - {artist_name}"}
-        db_insert_songs = songs_col2.insert_one(song_for_db)
-        urls = track_info['preview_url']
-        if urls == None:
-            result = songs_col2.update_one(
-                {f"{id}song-{num}": f"{track} - {artist_name}"},
-                {
-                    "$set": {
-                        f"{id}logo-{num}": f"{finally_logo}",
-                        f"{id}sing-{num}": f"/filter",
-                        f"{id}url-{num}": str(uuid.uuid4()),
-                        "likes": 0,
-                        "xcomments": [],
-                        "song_id": f"{track} - {artist_name}"
-                    },
-                    "$currentDate": {"lastModified": True}
-                }
-            )
-            num = num+1
-        else:
-            result = songs_col2.update_one(
-                {f"{id}song-{num}": f"{track} - {artist_name}"},
-                {
-                    "$set": {
-                        f"{id}logo-{num}": f"{finally_logo}",
-                        f"{id}sing-{num}": f"{urls}",
-                        f"{id}url-{num}": str(uuid.uuid4()),
-                        "likes": 0,
-                        "xcomments": [],
-                        "song_id": f"{track} - {artist_name}"
-                    },
-                    "$currentDate": {"lastModified": True}
-                }
-            )
-            num = num + 1
-
 def collect_spotify_charts(playlist_id, id):
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
     sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
@@ -118,7 +64,7 @@ def collect_spotify_charts(playlist_id, id):
                         f"{id}url-{num}": str(uuid.uuid4()),
                         "likes": 0,
                         "xcomments": [],
-                        "song_id": f"{track} - {artist_name}"
+                        "_song_id": f"{track} - {artist_name}"
                     },
                     "$currentDate": {"lastModified": True}
                 }
@@ -134,7 +80,7 @@ def collect_spotify_charts(playlist_id, id):
                         f"{id}url-{num}": str(uuid.uuid4()),
                         "likes": 0,
                         "xcomments": [],
-                        "song_id": f"{track} - {artist_name}"
+                        "_song_id": f"{track} - {artist_name}"
                     },
                     "$currentDate": {"lastModified": True}
                 }

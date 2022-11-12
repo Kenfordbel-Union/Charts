@@ -377,13 +377,14 @@ def general():
     username = session['username']
     region = "General"
     for i in general_chart.find():
+        print(list(i.values()))
         name = list(i.values())[1]
         general_names[calc] = name
         pic = list(i.values())[4]
         general_pics[calc] = pic
         sing = list(i.values())[5]
         general_links[calc] = sing
-        url = list(i.values())[6]
+        url = list(i.values())[7]
         general_urls[calc] = url
         calc += 1
     print(general_links)
@@ -411,10 +412,10 @@ def song(songid):
                     del a['_id']
                     del a['lastModified']
                     name = list(a.values())[0]
-                    likes = list(a.values())[1]
-                    logo = list(a.values())[2]
-                    sing = list(a.values())[3]
-                    comments = list(a.values())[5]
+                    likes = list(a.values())[2]
+                    logo = list(a.values())[3]
+                    sing = list(a.values())[4]
+                    comments = list(a.values())[6]
                     if "iphone" in user_agent:
                         return render_template('song_mobile.html', name=name, logo=logo, sing=sing, likes=likes, variable=comments)
                     elif "android" in user_agent:
@@ -426,10 +427,10 @@ def song(songid):
                     del c['_id']
                     del c['lastModified']
                     name = list(c.values())[0]
-                    likes = list(c.values())[1]
-                    logo = list(c.values())[2]
-                    sing = list(c.values())[3]
-                    comments = list(c.values())[5]
+                    likes = list(c.values())[2]
+                    logo = list(c.values())[3]
+                    sing = list(c.values())[4]
+                    comments = list(c.values())[6]
                     print(likes)
                     if "iphone" in user_agent:
                         return render_template('song_mobile.html', name=name, logo=logo, sing=sing, likes=likes,
@@ -467,9 +468,9 @@ def song(songid):
                     del b['_id']
                     del b['lastModified']
                     name = list(b.values())[0]
-                    likes = list(b.values())[1]
-                    logo = list(b.values())[2]
-                    sing = list(b.values())[3]
+                    likes = list(b.values())[2]
+                    logo = list(b.values())[3]
+                    sing = list(b.values())[4]
                     like = spotify.update_one(
                         {f"{j}-{calc}": songid},
                         {
@@ -484,9 +485,9 @@ def song(songid):
                     del d['_id']
                     del d['lastModified']
                     name = list(d.values())[0]
-                    likes = list(d.values())[1]
-                    logo = list(d.values())[2]
-                    sing = list(d.values())[3]
+                    likes = list(d.values())[2]
+                    logo = list(d.values())[3]
+                    sing = list(d.values())[4]
                     like = deezer.update_one(
                         {f"{j}-{calc}": songid},
                         {
@@ -526,9 +527,9 @@ def song(songid):
                     del b['_id']
                     del b['lastModified']
                     name = list(b.values())[0]
-                    likes = list(b.values())[1]
-                    logo = list(b.values())[2]
-                    sing = list(b.values())[3]
+                    likes = list(b.values())[2]
+                    logo = list(b.values())[3]
+                    sing = list(b.values())[4]
                     like = spotify.update_one(
                         {f"{j}-{calc}": songid},
                         {
@@ -543,9 +544,9 @@ def song(songid):
                     del d['_id']
                     del d['lastModified']
                     name = list(d.values())[0]
-                    likes = list(d.values())[1]
-                    logo = list(d.values())[2]
-                    sing = list(d.values())[3]
+                    likes = list(d.values())[2]
+                    logo = list(d.values())[3]
+                    sing = list(d.values())[4]
                     like = deezer.update_one(
                         {f"{j}-{calc}": songid},
                         {
