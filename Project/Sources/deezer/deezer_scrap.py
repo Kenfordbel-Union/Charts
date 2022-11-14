@@ -15,7 +15,7 @@ spain_charts = 1116190041
 france_charts = 1109890291
 
 def pos_checker(song_id, num, id):
-    a = songs_col2.find_one({"song_id": song_id})
+    a = songs_col2.find_one({"_song_id": song_id})
     if a != None:
         a = list(a)
         sing_num = sorted(a)

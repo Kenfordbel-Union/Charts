@@ -19,7 +19,7 @@ spain = "37i9dQZEVXbMfVLvbaC3bj"
 france = "1B8UQSO6ecpMHFCoR5VNj7"
 
 def pos_checker(song_id, num, id):
-    a = songs_col2.find_one({"song_id": song_id})
+    a = songs_col2.find_one({"_song_id": song_id})
     if a != None:
         a = list(a)
         sing_num = sorted(a)
