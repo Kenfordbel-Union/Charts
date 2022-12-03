@@ -13,6 +13,7 @@ ua_charts = 1362526495
 usa_charts = 1313621735
 spain_charts = 1116190041
 france_charts = 1109890291
+belarus_chart = 1116189381
 
 def pos_checker(song_id, num, id):
     a = songs_col2.find_one({"_song_id": song_id})
@@ -91,3 +92,4 @@ scrap_deezer(ua_charts, "ua")
 scrap_deezer(usa_charts, "usa")
 scrap_deezer(spain_charts, "spa")
 scrap_deezer(france_charts, "sfra")
+scrap_deezer(belarus_chart, "sbel")

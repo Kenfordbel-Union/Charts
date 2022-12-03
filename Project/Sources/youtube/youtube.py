@@ -27,6 +27,7 @@ chartsua = YTMusic.get_charts(country='UA')
 chartsusa = YTMusic.get_charts(country='US')
 chartsspa = YTMusic.get_charts(country='ES')
 chartsfra = YTMusic.get_charts(country='FR')
+chartsbel = YTMusic.get_charts(country='RU')
 
 
 data = charts['videos']
@@ -34,18 +35,22 @@ dataua = chartsua['videos']
 datausa = chartsusa['videos']
 dataspa = chartsspa['videos']
 datafra = chartsfra['videos']
+databel = chartsbel['videos']
 
 pesni = data['items']
 pesniua = dataua['items']
 pesniusa = datausa['items']
 pesnispa = dataspa['items']
 pesnifra = datafra['items']
+pesnibel = databel['items']
 
 num = 0
 numua = 0
 numusa = 0
 numspa = 0
 numfra = 0
+numbel = 0
+
 for track in pesni:
     title = track['title']
     video_id = track['videoId']
@@ -200,5 +205,36 @@ for track in pesnifra:
         }
     )
     numfra = numfra + 1
+
+for track in pesnibel:
+    title = track['title']
+    video_id = track['videoId']
+    artists = track['artists']
+    image_path = track['thumbnails'][0]
+    image = image_path['url']
+    list = []
+    for i in artists:
+        artist_count = len(artists) - 1
+        name = i['name']
+        list.append(name)
+    listless = ', '.join(list)
+    song_for_db = {f"sbelsong-{numbel}":f"{title} - {listless}"}
+
+    db_insert_songs = youtube.insert_one(song_for_db)
+
+    result = youtube.update_one(
+        {f"sbelsong-{numbel}": f"{title} - {listless}"},
+        {
+            "$set": {
+                f"sbellogo-{numbel}": f"{image}",
+                f"sbelsing-{numbel}": f"{default + video_id}",
+                f"sbelurl-{numbel}": str(uuid.uuid4()),
+                "likes": 0,
+                "xcomments": []
+            },
+            "$currentDate": {"lastModified": True}
+        }
+    )
+    numbel = numbel + 1
 
 

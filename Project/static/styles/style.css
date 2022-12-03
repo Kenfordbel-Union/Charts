@@ -57,7 +57,7 @@
   margin: 0;
   padding: 0;
   top: 40px;
-  left: 20%;
+  left: 13%;
 }
 .container .menu li {
   float: left;
@@ -291,8 +291,8 @@ ul li {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border-bottom: 4px solid #dc2743;
-    right: 1%;
-    width: 102%;
+    right: 0%;
+    width: 100%;
 }
 
 #bot2:nth-child(3) a::before {
@@ -462,4 +462,3 @@ ul li {
   width: 133px;
   height: 59px;
 }
-      

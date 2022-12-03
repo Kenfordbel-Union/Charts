@@ -161,6 +161,72 @@ def ukraine():
             return redirect(url_for('login'))
 
 
+@app.route('/regions/belarus')
+def belarus():
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.lower()
+    if session:
+        if 'username' in session:
+            region = "Belarusian"
+            username = session['username']
+            logo = os.path.join(r'Project/static/images/logo.png')
+            # Spotify names/pics/links
+            spotify_data = {}
+            spotify_pics = {}
+            spotify_links = {}
+            spotify_urls = {}
+            calc_spotify = 0
+            # YT names/pics/links
+            yt_data = {}
+            yt_pics = {}
+            yt_links = {}
+            yt_urls = {}
+            calc_yt = 0
+            # YT names/pics/links
+            deezer_data = {}
+            deezer_pics = {}
+            deezer_links = {}
+            deezer_urls = {}
+            calc_deezer = 0
+            for i in range(50):
+                spotify_data[calc_spotify] = spotify.find_one({f"sbelsong-{calc_spotify}": {"$exists": "true"}})[
+                    f'sbelsong-{calc_spotify}']
+                spotify_pics[calc_spotify] = spotify.find_one({f"sbellogo-{calc_spotify}": {"$exists": "true"}})[
+                    f'sbellogo-{calc_spotify}']
+                spotify_links[calc_spotify] = spotify.find_one({f"sbelsing-{calc_spotify}": {"$exists": "true"}})[
+                    f'sbelsing-{calc_spotify}']
+                spotify_urls[calc_spotify] = spotify.find_one({f"sbelurl-{calc_spotify}": {"$exists": "true"}})[
+                    f'sbelurl-{calc_spotify}']
+                calc_spotify = calc_spotify + 1
+            for i in range(40):
+                yt_data[calc_yt] = youtube.find_one({f"sbelsong-{calc_yt}": {"$exists": "true"}})[f'sbelsong-{calc_yt}']
+                yt_pics[calc_yt] = youtube.find_one({f"sbellogo-{calc_yt}": {"$exists": "true"}})[f'sbellogo-{calc_yt}']
+                yt_links[calc_yt] = youtube.find_one({f"sbelsing-{calc_yt}": {"$exists": "true"}})[f'sbelsing-{calc_yt}']
+                yt_urls[calc_yt] = youtube.find_one({f"sbelurl-{calc_yt}": {"$exists": "true"}})[f'sbelurl-{calc_yt}']
+                calc_yt = calc_yt + 1
+            for i in range(50):
+                deezer_data[calc_deezer] = deezer.find_one({f"sbelsong-{calc_deezer}": {"$exists": "true"}})[
+                    f'sbelsong-{calc_deezer}']
+                deezer_pics[calc_deezer] = deezer.find_one({f"sbellogo-{calc_deezer}": {"$exists": "true"}})[
+                    f'sbellogo-{calc_deezer}']
+                deezer_links[calc_deezer] = deezer.find_one({f"sbelsing-{calc_deezer}": {"$exists": "true"}})[
+                    f'sbelsing-{calc_deezer}']
+                deezer_urls[calc_deezer] = deezer.find_one({f"sbelurl-{calc_deezer}": {"$exists": "true"}})[
+                    f'sbelurl-{calc_deezer}']
+                calc_deezer = calc_deezer + 1
+            #
+            # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
+
+            if "iphone" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            elif "android" in user_agent:
+                return render_template('mobile_index_1.html', **locals())
+            else:
+                return render_template('index.html', **locals())
+        else:
+            return redirect(url_for('login'))
+
+
 @app.route('/regions/usa')
 def usa():
     user_agent = request.headers.get('User-Agent')

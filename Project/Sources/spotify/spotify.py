@@ -17,6 +17,7 @@ ukraine = "37i9dQZEVXbNcoJZ65xktI"
 usa = "37i9dQZF1DX0kbJZpiYdZl"
 spain = "37i9dQZEVXbMfVLvbaC3bj"
 france = "1B8UQSO6ecpMHFCoR5VNj7"
+belarus = "37i9dQZEVXbIYfjSLbWr4V"
 
 def pos_checker(song_id, num, id):
     a = songs_col2.find_one({"_song_id": song_id})
@@ -97,4 +98,5 @@ collect_spotify_charts(ukraine, "ua")
 collect_spotify_charts(usa, "usa")
 collect_spotify_charts(spain, "spa")
 collect_spotify_charts(france, "sfra")
+collect_spotify_charts(belarus, "sbel")
 

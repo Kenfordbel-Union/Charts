@@ -1,3 +1,10 @@
+from jinja2 import Template
+
+template = Template('Hello {{ username }}')
+print(template.render(username='Maxim'))
+
+
+
 import pymongo
 mongo = pymongo.MongoClient()
 songs_db = mongo["charts"]
