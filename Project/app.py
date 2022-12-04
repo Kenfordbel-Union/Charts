@@ -466,7 +466,7 @@ def song(songid):
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.lower()
     print(request.method, request.form.get('like'), request.form.get('dislike'))
-    regions = ["uaurl", "url", "sfraurl", "spaurl", "usaurl"]
+    regions = ["uaurl", "url", "sfraurl", "spaurl", "usaurl", "sbelurl"]
     if request.method == "GET":
         for j in regions:
             calc = 0
