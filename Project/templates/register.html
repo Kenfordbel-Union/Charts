@@ -50,12 +50,18 @@
         </rect>
     </svg>
     <div style="z-index: 100; padding: 100px; background-color: rgba(255, 255, 255, 0.514); border-radius: 60px; text-align: center;display: flex; justify-content: center; align-items: center;">
-        <form action="/register" method="post">
+        <form action="/register" method="post" enctype="multipart/form-data">
+            
+            <label for="images" class="drop-container">
+            <span class="drop-title">Choose your avatar here</span>
+            <input type="file" name="file" id="images" accept="image/*" required style="display: none;">
+            </label>
             <p><label>Username: </label> <input type="text" name="username" value="" required style="border-radius: 7px; border-width: 1px; background-color: rgba(255, 255, 255, 0.911); height: 25px; width: 100%;"/>
+            <p><label>Name: </label> <input type="text" name="name" value="" required style="border-radius: 7px; border-width: 1px; background-color: rgba(255, 255, 255, 0.911); height: 25px; width: 100%;"/>
+            <p><label>Surname: </label> <input type="text" name="surname" value="" required style="border-radius: 7px; border-width: 1px; background-color: rgba(255, 255, 255, 0.911); height: 25px; width: 100%;"/>
             <p><label>Password: </label> <input type="password" name="psw" value="" required style="border-radius: 7px; border-width: 1px; background-color: rgba(255, 255, 255, 0.911); height: 25px; width: 100%;" />
             <p><input type="submit" value="Sign Up" id="regbut" style=""/>
         </form>
     </div>
 </body>
-
 </html>
