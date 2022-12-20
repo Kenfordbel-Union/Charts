@@ -50,14 +50,14 @@
         </rect>
     </svg>
     <div style="z-index: 100; padding: 100px; background-color: rgba(255, 255, 255, 0.514); border-radius: 60px; text-align: center; align-items: center; background-image: url('static/images/name_of_pic')">
+        <img src ='{{ avatar_link }}' style="width: 200px; height: 200px; border-radius: 600px;">
+        <h2>Name: {{ legal_name }}<br>
+        <h2>Email: {{ email }}<br>
+        <h2>Username: {{ username }}<br>
         <figure>
             <a href="/"><img src="{{ url_for('static', filename='images/back.png') }}" style="width: 15%; height: 15%; cursor: pointer;"></a>
             <figcaption>Back</figcaption>
         </figure>
-        
-        <h2>Name: {{ legal_name }}<br>
-        <h2>Email: {{ email }}<br>
-        <h2>Username: {{ username }}<br>
         <h2><a href="/logout">Logout?</a></h2>
     </div>
 </body>

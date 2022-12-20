@@ -472,8 +472,14 @@ ul li {
   gap: 10px;
   flex-direction: column;
   justify-content: center;
+  background-image: url('/static/images/upload.png');
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
   align-items: center;
   height: 200px;
+  max-height: 200px;
+  max-width: 200px;
   padding: 20px;
   border: 2px dashed #555;
   color: #444;
@@ -484,6 +490,10 @@ ul li {
 
 .drop-container:hover {
   background: #eee;
+  background-image: url('/static/images/upload.png');
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: center;
   border-color: #111;
   border-radius: 400px;
 }

@@ -1,12 +1,13 @@
 import pprint
 
 import gridfs
-from flask import Flask, render_template, request, g, abort, flash, redirect, url_for, session
+from flask import Flask, render_template, request, g, abort, flash, redirect, url_for, session, send_file
 import pymongo
 from pymongo import MongoClient
 import base64
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
 mongo = pymongo.MongoClient()
 mydb = mongo["charts"]
 #DBs
@@ -21,6 +22,8 @@ fs = gridfs.GridFS(mydb)
 #app
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
+UPLOAD_FOLDER = r'static/images/user_pics'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'super secret key'
 
 
@@ -712,11 +715,13 @@ def register():
         existing_user = users.find_one({'name': request.form['username']})
         if existing_user is None:
             hashpass = generate_password_hash(request.form['psw'])
-            file = request.files['file'].read()
-            print(type(file))
+            file = request.files['file']
+            filename = f"{request.form['username']}.jpg"
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
 
             users.insert_one({'name' : request.form['username'], 'password': hashpass, 'real_name': request.form['name'],
-                              'surname': request.form['surname'], 'email': request.form['email'], 'image' : file})
+                              'surname': request.form['surname'], 'email': request.form['email']})
 
             session['username'] = request.form['username']
             return redirect(url_for('index'))
@@ -737,7 +742,9 @@ def profile():
     needed_user = users.find_one({'name': username})
     legal_name = needed_user['real_name'] + ' ' + needed_user['surname']
     email = needed_user['email']
-    return render_template('profile.html', username=username, legal_name=legal_name, email=email)
+    avatar_link = f'/static/images/user_pics/{username}.jpg'
+    print(avatar_link)
+    return render_template('profile.html', username=username, legal_name=legal_name, email=email, avatar_link=avatar_link)
 
 
 if __name__ == "__main__":
