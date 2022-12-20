@@ -22,7 +22,7 @@ fs = gridfs.GridFS(mydb)
 #app
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
-UPLOAD_FOLDER = r'Project/static/images/user_pics'
+UPLOAD_FOLDER = r'/static/images/user_pics'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'super secret key'
 
@@ -717,7 +717,7 @@ def register():
             hashpass = generate_password_hash(request.form['psw'])
             file = request.files['file']
             filename = f"{request.form['username']}.jpg"
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            file.save(os.path.join(r'static/images/user_pics/', filename))
 
 
             users.insert_one({'name' : request.form['username'], 'password': hashpass, 'real_name': request.form['name'],
