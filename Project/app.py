@@ -3,6 +3,7 @@ import pprint
 import gridfs
 from flask import Flask, render_template, request, g, abort, flash, redirect, url_for, session
 import pymongo
+from pymongo import MongoClient
 import base64
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,6 +16,7 @@ youtube = mydb["youtube"]
 deezer = mydb["deezer"]
 general_chart = mydb["general"]
 users = mydb["users"]
+fs = gridfs.GridFS(mydb)
 
 #app
 app = Flask(__name__)
@@ -711,8 +713,10 @@ def register():
         if existing_user is None:
             hashpass = generate_password_hash(request.form['psw'])
             file = request.files['file'].read()
+            print(type(file))
+
             users.insert_one({'name' : request.form['username'], 'password': hashpass, 'real_name': request.form['name'],
-                              'surname': request.form['surname'], 'image' : file})
+                              'surname': request.form['surname'], 'email': request.form['email'], 'image' : file})
 
             session['username'] = request.form['username']
             return redirect(url_for('index'))
@@ -732,8 +736,9 @@ def profile():
     username = session['username']
     needed_user = users.find_one({'name': username})
     legal_name = needed_user['real_name'] + ' ' + needed_user['surname']
-    return render_template('profile.html', username=username, legal_name=legal_name)
-    # return f"""<p><a href="{url_for('logout')}">Выйти из профиля</a><p>user info: {session['username']}"""
+    email = needed_user['email']
+    return render_template('profile.html', username=username, legal_name=legal_name, email=email)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True, port=80) #потом поставить False

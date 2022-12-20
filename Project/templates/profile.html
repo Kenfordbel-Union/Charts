@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon_2.ico') }}">
     <title>DiFFCharts | Profile</title>
 </head>
-<body style="font-family: 'Iceberg', sans-serif; max-height: 1vh; display: grid; grid: 100vh/1fr; place-items: center; overflow: visible;">
+<body link="grey" vlink="grey" alink="black" style="font-family: 'Iceberg', sans-serif; max-height: 1vh; display: grid; grid: 100vh/1fr; place-items: center; overflow: visible;">
     <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;">
         <defs>
             <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
@@ -50,9 +50,15 @@
         </rect>
     </svg>
     <div style="z-index: 100; padding: 100px; background-color: rgba(255, 255, 255, 0.514); border-radius: 60px; text-align: center; align-items: center; background-image: url('static/images/name_of_pic')">
-        <h2>Username: {{ username }}<br>
+        <figure>
+            <a href="/"><img src="{{ url_for('static', filename='images/back.png') }}" style="width: 15%; height: 15%; cursor: pointer;"></a>
+            <figcaption>Back</figcaption>
+        </figure>
+        
         <h2>Name: {{ legal_name }}<br>
-        <a href="/logout">Logout?</a></h2>
+        <h2>Email: {{ email }}<br>
+        <h2>Username: {{ username }}<br>
+        <h2><a href="/logout">Logout?</a></h2>
     </div>
 </body>
 
