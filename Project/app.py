@@ -22,7 +22,7 @@ fs = gridfs.GridFS(mydb)
 #app
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
-UPLOAD_FOLDER = r'static/images/user_pics'
+UPLOAD_FOLDER = r'Project/static/images/user_pics'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'super secret key'
 
