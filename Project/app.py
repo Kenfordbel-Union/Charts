@@ -742,7 +742,7 @@ def profile():
     needed_user = users.find_one({'name': username})
     legal_name = needed_user['real_name'] + ' ' + needed_user['surname']
     email = needed_user['email']
-    avatar_link = f'/static/images/user_pics/{username}.jpg'
+    avatar_link = fr'/static/images/user_pics/{username}.jpg'
     print(avatar_link)
     return render_template('profile.html', username=username, legal_name=legal_name, email=email, avatar_link=avatar_link)
 
