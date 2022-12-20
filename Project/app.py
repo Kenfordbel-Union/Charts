@@ -717,7 +717,7 @@ def register():
             hashpass = generate_password_hash(request.form['psw'])
             file = request.files['file']
             filename = f"{request.form['username']}.jpg"
-            file.save(os.path.join(r'static/images/user_pics/', filename))
+            file.save(os.path.join('static/images/user_pics/', filename))
 
 
             users.insert_one({'name' : request.form['username'], 'password': hashpass, 'real_name': request.form['name'],
