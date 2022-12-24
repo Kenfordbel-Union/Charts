@@ -124,7 +124,39 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    -webkit-animation: flip-horizontal-bck 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: flip-horizontal-bck 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
+
+ @-webkit-keyframes flip-horizontal-bck {
+  0% {
+    -webkit-transform: translateZ(0) rotateX(0);
+            transform: translateZ(0) rotateX(0);
+  }
+  50% {
+    -webkit-transform: translateZ(-260px) rotateX(180deg);
+            transform: translateZ(-260px) rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: translateZ(0px) rotateX(0deg);
+            transform: translateZ(0px) rotateX(0deg);
+  }
+}
+@keyframes flip-horizontal-bck {
+  0% {
+    -webkit-transform: translateZ(0) rotateX(0);
+            transform: translateZ(0) rotateX(0);
+  }
+  50% {
+    -webkit-transform: translateZ(-260px) rotateX(180deg);
+            transform: translateZ(-260px) rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: translateZ(0px) rotateX(0deg);
+            transform: translateZ(0px) rotateX(0deg);
+  }
+}
+
 .inside .pictures {
     height: 70px;
     width: 70px;

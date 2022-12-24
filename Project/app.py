@@ -426,7 +426,6 @@ def france():
                 deezer_urls[calc_deezer] = deezer.find_one({f"sfraurl-{calc_deezer}": {"$exists": "true"}})[
                     f'sfraurl-{calc_deezer}']
                 calc_deezer = calc_deezer + 1
-            print(yt_urls)
             #
             # #    yandex1 = yandex.find_one({"song-0": {"$exists": "true"}})['song-0']
 
@@ -451,7 +450,6 @@ def general():
     username = session['username']
     region = "General"
     for i in general_chart.find():
-        print(list(i.values()))
         name = list(i.values())[1]
         general_names[calc] = name
         pic = list(i.values())[5]
@@ -461,7 +459,6 @@ def general():
         url = list(i.values())[7]
         general_urls[calc] = url
         calc += 1
-    print(general_links)
     if "iphone" in user_agent:
         return render_template('general_mobile.html', **locals())
     elif "android" in user_agent:
