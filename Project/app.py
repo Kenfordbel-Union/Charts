@@ -66,7 +66,7 @@ def index():
                 spotify_urls[calc_spotify] = spotify.find_one({f"url-{calc_spotify}": {"$exists": "true"}})[
                     f'url-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
-            for i in range(40):
+            for i in range(39):
                 yt_data[calc_yt] = youtube.find_one({f"song-{calc_yt}": {"$exists": "true"}})[f'song-{calc_yt}']
                 yt_pics[calc_yt] = youtube.find_one({f"logo-{calc_yt}": {"$exists": "true"}})[f'logo-{calc_yt}']
                 yt_links[calc_yt] = youtube.find_one({f"sing-{calc_yt}": {"$exists": "true"}})[f'sing-{calc_yt}']
@@ -138,7 +138,7 @@ def ukraine():
                 spotify_urls[calc_spotify] = spotify.find_one({f"uaurl-{calc_spotify}": {"$exists": "true"}})[
                     f'uaurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
-            for i in range(40):
+            for i in range(39):
                 yt_data[calc_yt] = youtube.find_one({f"uasong-{calc_yt}": {"$exists": "true"}})[f'uasong-{calc_yt}']
                 yt_pics[calc_yt] = youtube.find_one({f"ualogo-{calc_yt}": {"$exists": "true"}})[f'ualogo-{calc_yt}']
                 yt_links[calc_yt] = youtube.find_one({f"uasing-{calc_yt}": {"$exists": "true"}})[
@@ -206,7 +206,7 @@ def belarus():
                 spotify_urls[calc_spotify] = spotify.find_one({f"sbelurl-{calc_spotify}": {"$exists": "true"}})[
                     f'sbelurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
-            for i in range(40):
+            for i in range(39):
                 yt_data[calc_yt] = youtube.find_one({f"sbelsong-{calc_yt}": {"$exists": "true"}})[f'sbelsong-{calc_yt}']
                 yt_pics[calc_yt] = youtube.find_one({f"sbellogo-{calc_yt}": {"$exists": "true"}})[f'sbellogo-{calc_yt}']
                 yt_links[calc_yt] = youtube.find_one({f"sbelsing-{calc_yt}": {"$exists": "true"}})[f'sbelsing-{calc_yt}']
@@ -272,7 +272,7 @@ def usa():
                 spotify_urls[calc_spotify] = spotify.find_one({f"usaurl-{calc_spotify}": {"$exists": "true"}})[
                     f'usaurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
-            for i in range(40):
+            for i in range(39):
                 yt_data[calc_yt] = youtube.find_one({f"usasong-{calc_yt}": {"$exists": "true"}})[f'usasong-{calc_yt}']
                 yt_pics[calc_yt] = youtube.find_one({f"usalogo-{calc_yt}": {"$exists": "true"}})[f'usalogo-{calc_yt}']
                 yt_links[calc_yt] = youtube.find_one({f"usasing-{calc_yt}": {"$exists": "true"}})[
@@ -340,7 +340,7 @@ def spain():
                 spotify_urls[calc_spotify] = spotify.find_one({f"spaurl-{calc_spotify}": {"$exists": "true"}})[
                     f'spaurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
-            for i in range(40):
+            for i in range(39):
                 yt_data[calc_yt] = youtube.find_one({f"spasong-{calc_yt}": {"$exists": "true"}})[f'spasong-{calc_yt}']
                 yt_pics[calc_yt] = youtube.find_one({f"spalogo-{calc_yt}": {"$exists": "true"}})[f'spalogo-{calc_yt}']
                 yt_links[calc_yt] = youtube.find_one({f"spasing-{calc_yt}": {"$exists": "true"}})[
@@ -408,7 +408,7 @@ def france():
                 spotify_urls[calc_spotify] = spotify.find_one({f"sfraurl-{calc_spotify}": {"$exists": "true"}})[
                     f'sfraurl-{calc_spotify}']
                 calc_spotify = calc_spotify + 1
-            for i in range(40):
+            for i in range(39):
                 yt_data[calc_yt] = youtube.find_one({f"sfrasong-{calc_yt}": {"$exists": "true"}})[f'sfrasong-{calc_yt}']
                 yt_pics[calc_yt] = youtube.find_one({f"sfralogo-{calc_yt}": {"$exists": "true"}})[f'sfralogo-{calc_yt}']
                 yt_links[calc_yt] = youtube.find_one({f"sfrasing-{calc_yt}": {"$exists": "true"}})[
