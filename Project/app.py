@@ -97,7 +97,7 @@ def index():
 
 @app.route('/mobile_regions')
 def mobile_regions():
-    if session['username']:
+    if 'username' in session:
         username = session['username']
         return render_template('mobile_regions.html', username=username)
     else:
