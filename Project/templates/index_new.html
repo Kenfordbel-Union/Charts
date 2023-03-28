@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/style_new.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+
+Follow me on
+Instagram: https://www.instagram.com/supahfunk/
+Dribbble: https://dribbble.com/supahfunk
+Twitter: https://twitter.com/supahfunk
+Codepen: https://codepen.io/supah/
+
+© images from istockphoto.com
+
+-->
+
+    <div class="carousel">
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">General</div>
+                <div class="num">GEN</div>
+                <img
+                    src="{{ url_for('static', filename='images/general.png') }}" alt='ooops image' />
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Global</div>
+                <div class="num">GLO</div>
+                <img
+                    src="{{ url_for('static', filename='images/World.png') }}" alt='ooops image' />
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Belarus</div>
+                <div class="num">BY</div>
+                <img
+                    src="{{ url_for('static', filename='images/Belarus.png') }}" alt='ooops image' />
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">France</div>
+                <div class="num">FRA</div>
+                <img
+                    src="{{ url_for('static', filename='images/France.png') }}" alt='ooops image' />
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Spain</div>
+                <div class="num">ESP</div>
+                <img
+                src="{{ url_for('static', filename='images/Spain.png') }}" alt='ooops image' />
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Ukraine</div>
+                <div class="num">UA</div>
+                <img
+                    src="{{ url_for('static', filename='images/Ukraine.png') }}" alt='ooops image' />
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">USA</div>
+                <div class="num">US</div>
+                <img
+                    src="{{ url_for('static', filename='images/USA.png') }}" alt='ooops image' />
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Poland</div>
+                <div class="num">PL</div>
+                <img
+                    src="{{ url_for('static', filename='images/Poland.png') }}" alt='ooops image' />
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Germany</div>
+                <div class="num">DE</div>
+                <img
+                    src="{{ url_for('static', filename='images/Germany.png') }}" alt='ooops image' />
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">England</div>
+                <div class="num">EN</div>
+                <img
+                    src="{{ url_for('static', filename='images/England.png') }}" alt='ooops image' />
+            </div>
+        </div>
+    </div>
+
+    <div class="layout">
+        <!-- <div class="box">High-end, full-service<br />visual content creation<br />for lifestyle branding.</div> -->
+    </div>
+
+    <a href="blank" target="_blank" class="logo">D!</a>
+
+    <div class="cursor"></div>
+    <div class="cursor cursor2"></div>
+    <script>
+        /*--------------------
+Vars
+--------------------*/
+let progress = 50
+let startX = 0
+let active = 0
+let isDown = false
+
+/*--------------------
+Contants
+--------------------*/
+const speedWheel = 0.02
+const speedDrag = -0.1
+
+/*--------------------
+Get Z
+--------------------*/
+const getZindex = (array, index) => (array.map((_, i) => (index === i) ? array.length : array.length - Math.abs(index - i)))
+
+/*--------------------
+Items
+--------------------*/
+const $items = document.querySelectorAll('.carousel-item')
+const $cursors = document.querySelectorAll('.cursor')
+
+const displayItems = (item, index, active) => {
+  const zIndex = getZindex([...$items], active)[index]
+  item.style.setProperty('--zIndex', zIndex)
+  item.style.setProperty('--active', (index-active)/$items.length)
+}
+
+/*--------------------
+Animate
+--------------------*/
+const animate = () => {
+  progress = Math.max(0, Math.min(progress, 100))
+  active = Math.floor(progress/100*($items.length-1))
+  
+  $items.forEach((item, index) => displayItems(item, index, active))
+}
+animate()
+
+/*--------------------
+Click on Items
+--------------------*/
+$items.forEach((item, i) => {
+  item.addEventListener('click', () => {
+    progress = (i/$items.length) * 100 + 10
+    animate()
+  })
+})
+
+/*--------------------
+Handlers
+--------------------*/
+const handleWheel = e => {
+  const wheelProgress = e.deltaY * speedWheel
+  progress = progress + wheelProgress
+  animate()
+}
+
+const handleMouseMove = (e) => {
+  if (e.type === 'mousemove') {
+    $cursors.forEach(($cursor) => {
+      $cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+    })
+  }
+  if (!isDown) return
+  const x = e.clientX || (e.touches && e.touches[0].clientX) || 0
+  const mouseProgress = (x - startX) * speedDrag
+  progress = progress + mouseProgress
+  startX = x
+  animate()
+}
+
+const handleMouseDown = e => {
+  isDown = true
+  startX = e.clientX || (e.touches && e.touches[0].clientX) || 0
+}
+
+const handleMouseUp = () => {
+  isDown = false
+}
+
+/*--------------------
+Listeners
+--------------------*/
+document.addEventListener('mousewheel', handleWheel)
+document.addEventListener('mousedown', handleMouseDown)
+document.addEventListener('mousemove', handleMouseMove)
+document.addEventListener('mouseup', handleMouseUp)
+document.addEventListener('touchstart', handleMouseDown)
+document.addEventListener('touchmove', handleMouseMove)
+document.addEventListener('touchend', handleMouseUp)
+    </script>
+</body>
+
+</html>

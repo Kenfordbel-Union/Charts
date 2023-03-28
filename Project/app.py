@@ -28,6 +28,10 @@ app.secret_key = 'super secret key'
 
 
 
+@app.route('/welcome')
+def welcome():
+    return render_template('index_new.html')
+
 @app.route('/')
 def index():
     user_agent = request.headers.get('User-Agent')
